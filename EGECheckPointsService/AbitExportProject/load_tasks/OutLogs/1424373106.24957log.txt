@@ -1,0 +1,125 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Application>
+      <ApplicationNumber>67627</ApplicationNumber>
+      <RegistrationDate>2014-06-23T00:00:00</RegistrationDate>
+      <UID>67627</UID>
+      <Entrant>
+        <UID>67627</UID>
+        <FirstName>Виталий</FirstName>
+        <MiddleName>Андреевич</MiddleName>
+        <LastName>Вяткин</LastName>
+        <GenderID>1</GenderID>
+      </Entrant>
+      <NeedHostel>true</NeedHostel>
+      <StatusID>4</StatusID>
+      <SelectedCompetitiveGroups>
+        <CompetitiveGroupID>354550</CompetitiveGroupID>
+        <CompetitiveGroupID>354683</CompetitiveGroupID>
+      </SelectedCompetitiveGroups>
+      <SelectedCompetitiveGroupItems>
+        <CompetitiveGroupItemID>354550</CompetitiveGroupItemID>
+        <CompetitiveGroupItemID>354683</CompetitiveGroupItemID>
+      </SelectedCompetitiveGroupItems>
+      <FinSourceAndEduForms>
+        <FinSourceEduForm>
+          <FinanceSourceID>14</FinanceSourceID>
+          <EducationFormID>11</EducationFormID>
+        </FinSourceEduForm>
+        <FinSourceEduForm>
+          <FinanceSourceID>14</FinanceSourceID>
+          <EducationFormID>11</EducationFormID>
+        </FinSourceEduForm>
+      </FinSourceAndEduForms>
+      <EntranceTestResults>
+        <EntranceTestResult>
+          <UID>95336</UID>
+          <ResultValue>60</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>2</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>95337</UID>
+          <ResultValue>67</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>1</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+      </EntranceTestResults>
+      <ApplicationDocuments>
+        <IdentityDocument>
+          <OriginalReceived>false</OriginalReceived>
+          <DocumentSeries>8709</DocumentSeries>
+          <DocumentNumber>411792</DocumentNumber>
+          <DocumentDate>2010-04-01</DocumentDate>
+          <IdentityDocumentTypeID>1</IdentityDocumentTypeID>
+          <NationalityTypeID>1</NationalityTypeID>
+          <BirthDate>1996-02-04</BirthDate>
+        </IdentityDocument>
+        <EduDocuments>
+          <EduDocument>
+            <SchoolCertificateDocument>
+              <DocumentSeries>нет</DocumentSeries>
+              <DocumentNumber>01124000655968</DocumentNumber>
+              <DocumentDate>2014-06-16</DocumentDate>
+              <OriginalReceived>false</OriginalReceived>
+              <GPA>0</GPA>
+            </SchoolCertificateDocument>
+          </EduDocument>
+        </EduDocuments>
+      </ApplicationDocuments>
+    </Application>
+  </PackageData>
+</Root>
+<AppSingleImportResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <Applications>
+        <Application>
+          <ApplicationNumber>67627</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>90</ErrorCode>
+            <Message>Невозможно импортировать заявление для приёмной кампании со статусом отличным от "Идет набор". (Заявление, UID: 67627)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+        </Application>
+      </Applications>
+      <EntranceTestResults>
+        <EntranceTestResult>
+          <ApplicationNumber>67627</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 95336)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>60</ResultValue>
+          <SubjectName>Математика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67627</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 95337)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>67</ResultValue>
+          <SubjectName>Русский язык</SubjectName>
+        </EntranceTestResult>
+      </EntranceTestResults>
+    </Failed>
+  </Log>
+</AppSingleImportResult>

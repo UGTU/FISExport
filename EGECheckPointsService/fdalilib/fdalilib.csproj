@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA17BF75-BF64-4C13-BD07-8A4E74693E6F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fdalilib</RootNamespace>
+    <AssemblyName>fdalilib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImportClasses\AnswerCheckSingleApp.designer.cs" />
+    <Compile Include="ImportClasses\AnswerDictionary.designer.cs" />
+    <Compile Include="ImportClasses\AnswerDictionaryDetail.designer.cs" />
+    <Compile Include="ImportClasses\ConflictItemsInfo.cs" />
+    <Compile Include="ImportClasses\Dictionary.cs" />
+    <Compile Include="ImportClasses\EducationDocument.cs" />
+    <Compile Include="ImportClasses\Errors\ResultConflicts.cs" />
+    <Compile Include="ImportClasses\Errors\TError.cs" />
+    <Compile Include="ImportClasses\Errors\TErrorInfo.cs" />
+    <Compile Include="ImportClasses\OrderOfAdmissionUID.cs" />
+    <Compile Include="ImportClasses\PackageData.cs" />
+    <Compile Include="ImportClasses\QueryCheckSingleApp.designer.cs" />
+    <Compile Include="ImportClasses\QueryDictionaryDetail.designer.cs" />
+    <Compile Include="ImportClasses\QueryImport.designer.cs" />
+    <Compile Include="ImportClasses\ShortApplication.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocument.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocumentImportIncorrectResult.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocumentImportResult.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocumentImportCorrectResult.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocumentMark.cs" />
+    <Compile Include="ImportClasses\Ege\EgeDocumentResultBase.cs" />
+    <Compile Include="ImportClasses\Ege\GetEgeDocument.cs" />
+    <Compile Include="Service\FisProxyServiceContract.cs" />
+    <Compile Include="ImportClasses\Logs\AppSingleImportResult.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedAllowEducationDocument.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedApplication.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedApplicationCommonBenefit.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCampaign.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCampaignDate.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCommonBenefitItem.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCustomDocument.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedDisabilityDocument.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestBenefitItem.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestItem.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestResult.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedMedicalDocument.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedOlympicDocument.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedOlympicTotalDocument.cs" />
+    <Compile Include="ImportClasses\Logs\ResultLog.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailed.cs" />
+    <Compile Include="ImportClasses\Logs\LogSuccessful.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedAdmissionVolume.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCompetitiveGroup.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedCompetitiveGroupItem.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedTargetOrganization.cs" />
+    <Compile Include="ImportClasses\Logs\LogFailedTargetOrganizationDirection.cs" />
+    <Compile Include="Answer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service\IFisProxyService.cs" />
+    <Compile Include="Service\WebClientFisProxyService.cs" />
+    <Compile Include="FisProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImportClasses\QueryGetImportResult.designer.cs" />
+    <Compile Include="ImportClasses\QueryValidation.designer.cs" />
+    <Compile Include="ImportClasses\AnswerGetDeleteResult.designer.cs" />
+    <Compile Include="ImportClasses\AnswerDelete.designer.cs" />
+    <Compile Include="ImportClasses\QueryGetDeleteResult.designer.cs" />
+    <Compile Include="ImportClasses\AnswerCheckAppPackage.designer.cs" />
+    <Compile Include="ImportClasses\AnswerGetInstitutionData.designer.cs" />
+    <Compile Include="ImportClasses\QueryCheckAppPackage.designer.cs" />
+    <Compile Include="ImportClasses\QueryGetInstitutionData.designer.cs" />
+    <Compile Include="ImportClasses\QueryPartOfUniversityDetails.designer.cs" />
+    <Compile Include="ImportClasses\AnswerImport.designer.cs" />
+    <Compile Include="ImportClasses\AnswerValidation.designer.cs" />
+    <Compile Include="ImportClasses\AnswerOlympDictionaryDetail.designer.cs" />
+    <Compile Include="ImportClasses\AnswerSpecDictionaryDetail.designer.cs" />
+    <Compile Include="ImportClasses\AnswerGetImportResult.designer.cs" />
+    <Compile Include="ImportClasses\QueryDelete.designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerCheckSingleApp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerDictionary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerDictionaryDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryCheckSingleApp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryDictionary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryDictionaryDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryImport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryImportSingleApp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryValidation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryGetImportResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryGetDeleteResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryGetInstitutionData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryCheckAppPackage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryPartOfUniversityDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerValidation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerOlympDictionaryDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerSpecDictionaryDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerImportSingleApp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerImport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerGetDeleteResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerGetInstitutionData.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerPartOfUniversityDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerCheckAppPackage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerDelete.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\AnswerGetImportResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2015\QueryDelete.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-imported-single-app.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\query-dict-details.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\import_single_app.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\query-import.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\query-check-single-app.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\query-dictionaries-list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-dict-details-olimpic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-dict-details-prof.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-dict-details.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-import-single.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\answer-check-app.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Схемы\Answer-dictionaries-list.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XMLCODE\Applications\" />
+    <Folder Include="XMLCODE\CheckResults\" />
+    <Folder Include="XMLCODE\Dictionaries\" />
+    <Folder Include="XMLCODE\EntranceCampaignStruct\" />
+    <Folder Include="XMLCODE\Errors\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

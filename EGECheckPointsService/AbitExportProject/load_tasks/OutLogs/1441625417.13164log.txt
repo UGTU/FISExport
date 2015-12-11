@@ -1,0 +1,10 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PackageData />
+  <GetResultImportApplication>
+    <PackageID>0</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>

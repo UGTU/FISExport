@@ -1,0 +1,27 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetDictionaryContent>
+    <DictionaryCode>12</DictionaryCode>
+  </GetDictionaryContent>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<DictionaryData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Code>12</Code>
+  <Name>Статус проверки заявлений</Name>
+  <DictionaryItems>
+    <DictionaryItem>
+      <ID>-1</ID>
+      <Name>Не проверен</Name>
+    </DictionaryItem>
+    <DictionaryItem>
+      <ID>0</ID>
+      <Name>Найдены заявления для проверки</Name>
+    </DictionaryItem>
+    <DictionaryItem>
+      <ID>1</ID>
+      <Name>Не найдены заявления для проверки</Name>
+    </DictionaryItem>
+  </DictionaryItems>
+</DictionaryData>

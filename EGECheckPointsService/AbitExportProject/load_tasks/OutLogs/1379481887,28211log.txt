@@ -1,0 +1,26 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Applications />
+    <OrdersOfAdmission>
+      <OrderOfAdmission>
+        <Application>
+          <ApplicationNumber>43089</ApplicationNumber>
+          <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        </Application>
+        <DirectionID>1216</DirectionID>
+        <EducationFormID>10</EducationFormID>
+        <FinanceSourceID>14</FinanceSourceID>
+        <EducationLevelID>2</EducationLevelID>
+        <Stage>0</Stage>
+      </OrderOfAdmission>
+    </OrdersOfAdmission>
+  </PackageData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Ошибка валидации XML. Line: 2 - Position: 6 - The element 'Applications' has incomplete content. List of possible elements expected: 'Application'.</ErrorText>
+</Error>

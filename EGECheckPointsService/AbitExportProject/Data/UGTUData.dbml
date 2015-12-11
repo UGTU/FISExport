@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UGTU" Class="UGTUDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.16.22;Initial Catalog=UGTU;User ID=exportfis" SettingsObjectName="AbitExportProject.Properties.Settings" SettingsPropertyName="UGTUConnectionString5" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nn_abit" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ik_medal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ik_vid_pens" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_podg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_ob_rab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_special_uchet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_zaved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ngodokon" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Cdopsved" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ik_pred" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cDolgnost" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StazYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StazMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cLgot" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="cOsnovan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Student_ABIT_postup" Member="ABIT_postups" ThisKey="nCode" OtherKey="nCode" Type="ABIT_postup" />
+      <Association Name="Person_Student" Member="Person" ThisKey="nCode" OtherKey="nCode" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Clastname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cfirstname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Cotch" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Dd_birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cplacebirth" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Linval" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ldeti" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Lrab" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="lSex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Lobchegit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="cSotTel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ctelefon" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Ik_grazd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_sem_pol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cInn" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cStrax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ik_voen_zvanie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="itab_n" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_nac" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PersonGUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Student" Member="Student" ThisKey="nCode" OtherKey="nCode" Type="Student" Cardinality="One" />
+      <Association Name="Person_Doc_stud" Member="Doc_studs" ThisKey="nCode" OtherKey="nCode" Type="Doc_stud" />
+      <Association Name="Person_Export_FB_journal" Member="Export_FB_journal" ThisKey="nCode" OtherKey="nCode" Type="Export_FB_journal" Cardinality="One" />
+      <Association Name="grazd_Person" Member="grazd" ThisKey="Ik_grazd" OtherKey="ik_grazd" Type="grazd" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_sost_zach" Member="ABIT_sost_zaches">
+    <Type Name="ABIT_sost_zach">
+      <Column Name="ik_zach" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cname_zach" Type="System.String" DbType="Char(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_type_zach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_sost_zach_ABIT_postup" Member="ABIT_postups" ThisKey="ik_zach" OtherKey="ik_zach" Type="ABIT_postup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kat_zach" Member="Kat_zaches">
+    <Type Name="Kat_zach">
+      <Column Name="Ik_kat_zach" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cname_kat_zach" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_type_kat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bit_Lgota" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsRussOlimpWinner" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Kat_zach_ABIT_postup" Member="ABIT_postups" ThisKey="Ik_kat_zach" OtherKey="ik_kat_zach" Type="ABIT_postup" />
+      <Association Name="TypeKatZach_Kat_zach" Member="TypeKatZach" ThisKey="ik_type_kat" OtherKey="ik_type_kat" Type="TypeKatZach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeKatZach" Member="TypeKatZaches">
+    <Type Name="TypeKatZach">
+      <Column Name="ik_type_kat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CType_kat" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TypeKatZach_Kat_zach" Member="Kat_zaches" ThisKey="ik_type_kat" OtherKey="ik_type_kat" Type="Kat_zach" />
+      <Association Name="TypeKatZach_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="ik_type_kat" OtherKey="id_eduSource" Type="Abit_Campaign_Content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Form_ed" Member="Form_eds">
+    <Type Name="Form_ed">
+      <Column Name="Ik_form_ed" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cname_form_ed" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Form_ed_Relation_spec_fac" Member="Relation_spec_facs" ThisKey="Ik_form_ed" OtherKey="Ik_form_ed" Type="Relation_spec_fac" />
+      <Association Name="Form_ed_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="Ik_form_ed" OtherKey="id_form" Type="Abit_Campaign_Content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Doc_stud" Member="Doc_studs">
+    <Type Name="Doc_stud">
+      <Column Name="Ik_doc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dd_vidan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cd_kem_vidan" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Ik_vid_doc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Np_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Cd_seria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Doc_stud" Member="Person" ThisKey="nCode" OtherKey="nCode" Type="Person" IsForeignKey="true" />
+      <Association Name="document_Doc_stud" Member="document" ThisKey="Ik_vid_doc" OtherKey="ik_vid_doc" Type="document" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.grazd" Member="grazds">
+    <Type Name="grazd">
+      <Column Name="ik_grazd" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="c_grazd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="grazd_Person" Member="Persons" ThisKey="ik_grazd" OtherKey="Ik_grazd" Type="Person" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direction" Member="Directions">
+    <Type Name="Direction">
+      <Column Name="ik_direction" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cName_direction" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="cShort_name_direction" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ThesisName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ExcelPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DiplExcPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Direction_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="ik_direction" OtherKey="id_direction" Type="Abit_Campaign_Content" />
+      <Association Name="Direction_EducationBranch" Member="EducationBranches" ThisKey="ik_direction" OtherKey="ik_direction" Type="EducationBranch" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Vstup_exam" Member="ABIT_Vstup_exams">
+    <Type Name="ABIT_Vstup_exam">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cosenka" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NN_abit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_disc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_sdach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_rasp_kab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNvedom" Type="System.String" DbType="Char(20)" CanBeNull="true" />
+      <Association Name="ABIT_VidSdachi_ABIT_Vstup_exam" Member="ABIT_VidSdachi" ThisKey="ik_sdach" OtherKey="ik_sdach" Type="ABIT_VidSdachi" IsForeignKey="true" />
+      <Association Name="ABIT_Disc_ABIT_Vstup_exam" Member="ABIT_Disc" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Disc" IsForeignKey="true" />
+      <Association Name="ABIT_Rassadka_ABIT_Vstup_exam" Member="ABIT_Rassadka" ThisKey="id_rasp_kab" OtherKey="id" Type="ABIT_Rassadka" IsForeignKey="true" />
+      <Association Name="ABIT_postup_ABIT_Vstup_exam" Member="ABIT_postup" ThisKey="NN_abit" OtherKey="NN_abit" Type="ABIT_postup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_VidSdachi" Member="ABIT_VidSdachis">
+    <Type Name="ABIT_VidSdachi">
+      <Column Name="ik_sdach" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cname_sdach" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cshort_sdach" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_VidSdachi_ABIT_Vstup_exam" Member="ABIT_Vstup_exams" ThisKey="ik_sdach" OtherKey="ik_sdach" Type="ABIT_Vstup_exam" />
+      <Association Name="ABIT_VidSdachi_ABIT_Raspisanie" Member="ABIT_Raspisanies" ThisKey="ik_sdach" OtherKey="ik_sdach" Type="ABIT_Raspisanie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Campaign_status" Member="Campaign_status">
+    <Type Name="Campaign_status">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Abit_Campaign" Member="Abit_Campaigns">
+    <Type Name="Abit_Campaign">
+      <Column Name="id" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Abit_Campaign_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="id" OtherKey="ID_Campaign" Type="Abit_Campaign_Content" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Diapazon_Disc" Member="ABIT_Diapazon_Discs">
+    <Type Name="ABIT_Diapazon_Disc">
+      <Column Name="ik_disc_nabor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NNrecord" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_disc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Min_ball" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bit_Profil" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="bit_Concurs" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ABIT_Disc_ABIT_Diapazon_Disc" Member="ABIT_Disc" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Disc" IsForeignKey="true" />
+      <Association Name="ABIT_Diapazon_spec_fac_ABIT_Diapazon_Disc" Member="ABIT_Diapazon_spec_fac" ThisKey="NNrecord" OtherKey="NNrecord" Type="ABIT_Diapazon_spec_fac" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Disc" Member="ABIT_Discs">
+    <Type Name="ABIT_Disc">
+      <Column Name="ik_disc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="сname_disc" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_FB_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_Disc_ABIT_Vstup_exam" Member="ABIT_Vstup_exams" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Vstup_exam" />
+      <Association Name="ABIT_Disc_ABIT_Diapazon_Disc" Member="ABIT_Diapazon_Discs" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Diapazon_Disc" />
+      <Association Name="ABIT_Disc_ABIT_Raspisanie" Member="ABIT_Raspisanies" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Raspisanie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Diapazon_spec_fac" Member="ABIT_Diapazon_spec_facs">
+    <Type Name="ABIT_Diapazon_spec_fac">
+      <Column Name="NNrecord" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ik_spec_fac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDiapazon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EndDiapazon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MestCKP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MestBudjet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MestKontrakt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ready" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lRussian" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MestLgot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Main_NNRecord_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_Diapazon_spec_fac_ABIT_Diapazon_Disc" Member="ABIT_Diapazon_Discs" ThisKey="NNrecord" OtherKey="NNrecord" Type="ABIT_Diapazon_Disc" />
+      <Association Name="ABIT_Diapazon_spec_fac_ABIT_postup" Member="ABIT_postups" ThisKey="NNrecord" OtherKey="NNrecord" Type="ABIT_postup" />
+      <Association Name="Relation_spec_fac_ABIT_Diapazon_spec_fac" Member="Relation_spec_fac" ThisKey="ik_spec_fac" OtherKey="ik_spec_fac" Type="Relation_spec_fac" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relation_spec_fac" Member="Relation_spec_facs">
+    <Type Name="Relation_spec_fac">
+      <Column Name="ik_spec_fac" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ik_spec" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_fac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YearObuch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_rule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_form_ed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_kat_zaved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VidGos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MonthObuch" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmentGUID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="is_short" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="is_old" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ik_room" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Relation_spec_fac_ABIT_Diapazon_spec_fac" Member="ABIT_Diapazon_spec_facs" ThisKey="ik_spec_fac" OtherKey="ik_spec_fac" Type="ABIT_Diapazon_spec_fac" />
+      <Association Name="Form_ed_Relation_spec_fac" Member="Form_ed" ThisKey="Ik_form_ed" OtherKey="Ik_form_ed" Type="Form_ed" IsForeignKey="true" />
+      <Association Name="EducationBranch_Relation_spec_fac" Member="EducationBranch" ThisKey="ik_spec" OtherKey="ik_spec" Type="EducationBranch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Rassadka" Member="ABIT_Rassadkas">
+    <Type Name="ABIT_Rassadka">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_rasp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_room" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ABIT_Rassadka_ABIT_Vstup_exam" Member="ABIT_Vstup_exams" ThisKey="id" OtherKey="id_rasp_kab" Type="ABIT_Vstup_exam" />
+      <Association Name="ABIT_Raspisanie_ABIT_Rassadka" Member="ABIT_Raspisanie" ThisKey="id_rasp" OtherKey="id_rasp" Type="ABIT_Raspisanie" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_Raspisanie" Member="ABIT_Raspisanies">
+    <Type Name="ABIT_Raspisanie">
+      <Column Name="id_rasp" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_of" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeBegin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TimeEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ik_sdach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_disc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_typ_mer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_Raspisanie_ABIT_Rassadka" Member="ABIT_Rassadkas" ThisKey="id_rasp" OtherKey="id_rasp" Type="ABIT_Rassadka" />
+      <Association Name="ABIT_Disc_ABIT_Raspisanie" Member="ABIT_Disc" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Disc" IsForeignKey="true" />
+      <Association Name="ABIT_VidSdachi_ABIT_Raspisanie" Member="ABIT_VidSdachi" ThisKey="ik_sdach" OtherKey="ik_sdach" Type="ABIT_VidSdachi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.documents" Member="documents">
+    <Type Name="document">
+      <Column Name="ik_vid_doc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cvid_doc" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsIdentity" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsEducational" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_subFB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_type_grazd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="document_Doc_stud" Member="Doc_studs" ThisKey="ik_vid_doc" OtherKey="Ik_vid_doc" Type="Doc_stud" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ABIT_postup" Member="ABIT_postups">
+    <Type Name="ABIT_postup">
+      <Column Name="NN_abit" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegNomer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NNrecord" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_zach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_kat_zach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dd_pod_zayav" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dd_vozvr_zayav" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Realy_postup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsMain" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="dd_vvoda_zayav" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dd_online" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SchoolAverMark" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ik_prikaz_zach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idTarget" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_postup_ABIT_Vstup_exam" Member="ABIT_Vstup_exams" ThisKey="NN_abit" OtherKey="NN_abit" Type="ABIT_Vstup_exam" />
+      <Association Name="ABIT_Diapazon_spec_fac_ABIT_postup" Member="ABIT_Diapazon_spec_fac" ThisKey="NNrecord" OtherKey="NNrecord" Type="ABIT_Diapazon_spec_fac" IsForeignKey="true" />
+      <Association Name="ABIT_sost_zach_ABIT_postup" Member="ABIT_sost_zach" ThisKey="ik_zach" OtherKey="ik_zach" Type="ABIT_sost_zach" IsForeignKey="true" />
+      <Association Name="Kat_zach_ABIT_postup" Member="Kat_zach" ThisKey="ik_kat_zach" OtherKey="Ik_kat_zach" Type="Kat_zach" IsForeignKey="true" />
+      <Association Name="Student_ABIT_postup" Member="Student" ThisKey="nCode" OtherKey="nCode" Type="Student" IsForeignKey="true" />
+      <Association Name="Abit_Target_ABIT_postup" Member="Abit_Target" ThisKey="idTarget" OtherKey="idTarget" Type="Abit_Target" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Abit_Target" Member="Abit_Targets">
+    <Type Name="Abit_Target">
+      <Column Name="idTarget" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTargetOrganization" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="spaces" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNRecord" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Abit_Target_ABIT_postup" Member="ABIT_postups" ThisKey="idTarget" OtherKey="idTarget" Type="ABIT_postup" />
+      <Association Name="TargetOrganization_Abit_Target" Member="TargetOrganization" ThisKey="idTargetOrganization" OtherKey="id" Type="TargetOrganization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TargetOrganization" Member="TargetOrganizations">
+    <Type Name="TargetOrganization">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrganizationName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="TargetOrganization_Abit_Target" Member="Abit_Targets" ThisKey="id" OtherKey="idTargetOrganization" Type="Abit_Target" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Abit_Campaign_Content" Member="Abit_Campaign_Contents">
+    <Type Name="Abit_Campaign_Content">
+      <Column Name="ID_Content" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Campaign" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_form" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_eduSource" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date_start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Date_end" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Date_order" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ik_prikaz_zach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Abit_Campaign_Abit_Campaign_Content" Member="Abit_Campaign" ThisKey="ID_Campaign" OtherKey="id" Type="Abit_Campaign" IsForeignKey="true" />
+      <Association Name="Direction_Abit_Campaign_Content" Member="Direction" ThisKey="id_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
+      <Association Name="Form_ed_Abit_Campaign_Content" Member="Form_ed" ThisKey="id_form" OtherKey="Ik_form_ed" Type="Form_ed" IsForeignKey="true" />
+      <Association Name="TypeKatZach_Abit_Campaign_Content" Member="TypeKatZach" ThisKey="id_eduSource" OtherKey="ik_type_kat" Type="TypeKatZach" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EducationBranch" Member="EducationBranches">
+    <Type Name="EducationBranch">
+      <Column Name="ik_spec" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cname_spec" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Cshort_spec" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sh_spec" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ik_direction" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ik_vip_dep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dDate_spec" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nN_prikaz" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="spDateExit" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cname_qualif" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SpecСategory" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QualifShortName" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_main_spec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_type_branch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YearNormObuch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ik_FinancingSource" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="EducationBranch_Relation_spec_fac" Member="Relation_spec_facs" ThisKey="ik_spec" OtherKey="ik_spec" Type="Relation_spec_fac" />
+      <Association Name="EducationBranch_EducationBranch" Member="EducationBranches" ThisKey="ik_spec" OtherKey="id_parent" Type="EducationBranch" />
+      <Association Name="EducationBranch_EducationBranch" Member="EducationBranch1" ThisKey="id_parent" OtherKey="ik_spec" Type="EducationBranch" IsForeignKey="true" />
+      <Association Name="Direction_EducationBranch" Member="Direction" ThisKey="ik_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
+      <Association Name="FinancingSource_EducationBranch" Member="FinancingSource" ThisKey="ik_FinancingSource" OtherKey="ik_FinancingSource" Type="FinancingSource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FinancingSource" Member="FinancingSources">
+    <Type Name="FinancingSource">
+      <Column Name="ik_FinancingSource" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FinancingSourceName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="FinancingSource_EducationBranch" Member="EducationBranches" ThisKey="ik_FinancingSource" OtherKey="ik_FinancingSource" Type="EducationBranch" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Export_FB_journal" Member="Export_FB_journals">
+    <Type Name="Export_FB_journal">
+      <Column Name="xml_str" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Date_beg_import" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Date_end_import" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Import_result" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Is_actual" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Date_change" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Registration_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ErrorCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NNYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Prikaz_result" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Person_Export_FB_journal" Member="Person" ThisKey="nCode" OtherKey="nCode" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

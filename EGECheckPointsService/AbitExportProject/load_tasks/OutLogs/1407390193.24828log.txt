@@ -1,0 +1,22 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>1332566</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Пакет еще не обработан</ErrorText>
+</Error>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>1332566</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>

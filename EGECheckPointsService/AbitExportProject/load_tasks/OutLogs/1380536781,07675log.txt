@@ -1,0 +1,109 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Applications>
+      <Application>
+        <ApplicationNumber>44400</ApplicationNumber>
+        <RegistrationDate>2013-06-28T00:00:00</RegistrationDate>
+        <UID>44400</UID>
+        <Entrant>
+          <UID>44400</UID>
+          <FirstName>Максим</FirstName>
+          <MiddleName>Андреевич</MiddleName>
+          <LastName>Бабиков</LastName>
+          <GenderID>1</GenderID>
+        </Entrant>
+        <NeedHostel>false</NeedHostel>
+        <StatusID>4</StatusID>
+        <SelectedCompetitiveGroups>
+          <CompetitiveGroupID>354551</CompetitiveGroupID>
+          <CompetitiveGroupID>354551</CompetitiveGroupID>
+        </SelectedCompetitiveGroups>
+        <SelectedCompetitiveGroupItems>
+          <CompetitiveGroupItemID>354551</CompetitiveGroupItemID>
+          <CompetitiveGroupItemID>354551</CompetitiveGroupItemID>
+        </SelectedCompetitiveGroupItems>
+        <FinSourceAndEduForms>
+          <FinSourceEduForm>
+            <FinanceSourceID>15</FinanceSourceID>
+            <EducationFormID>11</EducationFormID>
+          </FinSourceEduForm>
+          <FinSourceEduForm>
+            <FinanceSourceID>15</FinanceSourceID>
+            <EducationFormID>10</EducationFormID>
+          </FinSourceEduForm>
+        </FinSourceAndEduForms>
+        <ApplicationDocuments>
+          <IdentityDocument>
+            <OriginalReceived>true</OriginalReceived>
+            <DocumentSeries>8709</DocumentSeries>
+            <DocumentNumber>369686</DocumentNumber>
+            <DocumentDate>2009-05-26</DocumentDate>
+            <IdentityDocumentTypeID>1</IdentityDocumentTypeID>
+            <NationalityTypeID>1</NationalityTypeID>
+            <BirthDate>1995-03-26</BirthDate>
+          </IdentityDocument>
+          <EduDocuments>
+            <EduDocument>
+              <SchoolCertificateDocument>
+                <OriginalReceivedDate>2013-06-28</OriginalReceivedDate>
+                <DocumentSeries>11АБ</DocumentSeries>
+                <DocumentNumber>0021598</DocumentNumber>
+                <DocumentDate>2013-06-22</DocumentDate>
+                <OriginalReceived>true</OriginalReceived>
+                <GPA>0</GPA>
+              </SchoolCertificateDocument>
+            </EduDocument>
+          </EduDocuments>
+        </ApplicationDocuments>
+      </Application>
+    </Applications>
+  </PackageData>
+</Root>
+<ImportPackageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PackageID>675946</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportPackageInfo>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>675946</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Пакет еще не обработан</ErrorText>
+</Error>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>675946</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed />
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>1</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+    </Successful>
+  </Log>
+  <PackageID>675946</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

@@ -1,0 +1,321 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Application>
+      <ApplicationNumber>67696</ApplicationNumber>
+      <RegistrationDate>2014-06-23T00:00:00</RegistrationDate>
+      <UID>67696</UID>
+      <Entrant>
+        <UID>67696</UID>
+        <FirstName>Галина</FirstName>
+        <MiddleName>Васильевна</MiddleName>
+        <LastName>Щанова</LastName>
+        <GenderID>2</GenderID>
+      </Entrant>
+      <NeedHostel>true</NeedHostel>
+      <StatusID>4</StatusID>
+      <SelectedCompetitiveGroups>
+        <CompetitiveGroupID>354550</CompetitiveGroupID>
+        <CompetitiveGroupID>354440</CompetitiveGroupID>
+        <CompetitiveGroupID>354549</CompetitiveGroupID>
+      </SelectedCompetitiveGroups>
+      <SelectedCompetitiveGroupItems>
+        <CompetitiveGroupItemID>354550</CompetitiveGroupItemID>
+        <CompetitiveGroupItemID>354440</CompetitiveGroupItemID>
+        <CompetitiveGroupItemID>354549</CompetitiveGroupItemID>
+      </SelectedCompetitiveGroupItems>
+      <FinSourceAndEduForms>
+        <FinSourceEduForm>
+          <FinanceSourceID>14</FinanceSourceID>
+          <EducationFormID>11</EducationFormID>
+        </FinSourceEduForm>
+        <FinSourceEduForm>
+          <FinanceSourceID>14</FinanceSourceID>
+          <EducationFormID>11</EducationFormID>
+        </FinSourceEduForm>
+        <FinSourceEduForm>
+          <FinanceSourceID>14</FinanceSourceID>
+          <EducationFormID>11</EducationFormID>
+        </FinSourceEduForm>
+      </FinSourceAndEduForms>
+      <EntranceTestResults>
+        <EntranceTestResult>
+          <UID>94988</UID>
+          <ResultValue>84</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>2</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>94989</UID>
+          <ResultValue>71</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>1</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>96335</UID>
+          <ResultValue>69</ResultValue>
+          <ResultSourceTypeID>2</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectName>Черчение</SubjectName>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>2</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>96333</UID>
+          <ResultValue>73</ResultValue>
+          <ResultSourceTypeID>2</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectName>Композиция</SubjectName>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>2</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>96334</UID>
+          <ResultValue>45</ResultValue>
+          <ResultSourceTypeID>2</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectName>Рисунок</SubjectName>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>2</EntranceTestTypeID>
+          <CompetitiveGroupID>354550</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>94991</UID>
+          <ResultValue>84</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>2</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354440</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>94992</UID>
+          <ResultValue>84</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>10</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354440</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>94993</UID>
+          <ResultValue>71</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>1</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354440</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>95001</UID>
+          <ResultValue>84</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>2</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354549</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>95002</UID>
+          <ResultValue>84</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>10</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354549</CompetitiveGroupID>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <UID>95003</UID>
+          <ResultValue>71</ResultValue>
+          <ResultSourceTypeID>1</ResultSourceTypeID>
+          <EntranceTestSubject>
+            <SubjectID>1</SubjectID>
+          </EntranceTestSubject>
+          <EntranceTestTypeID>1</EntranceTestTypeID>
+          <CompetitiveGroupID>354549</CompetitiveGroupID>
+        </EntranceTestResult>
+      </EntranceTestResults>
+      <ApplicationDocuments>
+        <IdentityDocument>
+          <OriginalReceived>true</OriginalReceived>
+          <DocumentSeries>8709</DocumentSeries>
+          <DocumentNumber>412412</DocumentNumber>
+          <DocumentDate>2010-07-29</DocumentDate>
+          <IdentityDocumentTypeID>1</IdentityDocumentTypeID>
+          <NationalityTypeID>1</NationalityTypeID>
+          <BirthDate>1996-06-25</BirthDate>
+        </IdentityDocument>
+        <EduDocuments>
+          <EduDocument>
+            <SchoolCertificateDocument>
+              <OriginalReceivedDate>2014-06-23</OriginalReceivedDate>
+              <DocumentSeries>-</DocumentSeries>
+              <DocumentNumber>01124000241732</DocumentNumber>
+              <DocumentDate>2014-06-21</DocumentDate>
+              <OriginalReceived>true</OriginalReceived>
+              <GPA>0</GPA>
+            </SchoolCertificateDocument>
+          </EduDocument>
+        </EduDocuments>
+      </ApplicationDocuments>
+    </Application>
+  </PackageData>
+</Root>
+<AppSingleImportResult xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <Applications>
+        <Application>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>1009</ErrorCode>
+            <Message>Не найдено соответствующего вступительного испытания. (Заявление, UID: 67696)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+        </Application>
+      </Applications>
+      <EntranceTestResults>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>1009</ErrorCode>
+            <Message>Не найдено соответствующего вступительного испытания. (Результаты вступительных испытаний, UID: 96335)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Вступительное испытание ОУ</ResultSourceType>
+          <ResultValue>69</ResultValue>
+          <SubjectName>Черчение</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>1009</ErrorCode>
+            <Message>Не найдено соответствующего вступительного испытания. (Результаты вступительных испытаний, UID: 96333)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Вступительное испытание ОУ</ResultSourceType>
+          <ResultValue>73</ResultValue>
+          <SubjectName>Композиция</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>1009</ErrorCode>
+            <Message>Не найдено соответствующего вступительного испытания. (Результаты вступительных испытаний, UID: 96334)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Вступительное испытание ОУ</ResultSourceType>
+          <ResultValue>45</ResultValue>
+          <SubjectName>Рисунок</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 94988)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>84</ResultValue>
+          <SubjectName>Математика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 94989)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>71</ResultValue>
+          <SubjectName>Русский язык</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 94991)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>84</ResultValue>
+          <SubjectName>Математика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 94992)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>84</ResultValue>
+          <SubjectName>Физика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 94993)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>71</ResultValue>
+          <SubjectName>Русский язык</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 95001)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>84</ResultValue>
+          <SubjectName>Математика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 95002)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>84</ResultValue>
+          <SubjectName>Физика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>67696</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 95003)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2014-06-23T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Свидетельство ЕГЭ</ResultSourceType>
+          <ResultValue>71</ResultValue>
+          <SubjectName>Русский язык</SubjectName>
+        </EntranceTestResult>
+      </EntranceTestResults>
+    </Failed>
+  </Log>
+</AppSingleImportResult>

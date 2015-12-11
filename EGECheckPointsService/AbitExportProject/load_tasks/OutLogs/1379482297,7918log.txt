@@ -1,0 +1,126 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Applications>
+      <Application>
+        <ApplicationNumber>43089</ApplicationNumber>
+        <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        <UID>43089</UID>
+        <Entrant>
+          <UID>43089</UID>
+          <FirstName>Марина</FirstName>
+          <MiddleName>Владимировна</MiddleName>
+          <LastName>Алексеева</LastName>
+          <GenderID>2</GenderID>
+        </Entrant>
+        <NeedHostel>false</NeedHostel>
+        <StatusID>4</StatusID>
+        <SelectedCompetitiveGroups>
+          <CompetitiveGroupID>354442</CompetitiveGroupID>
+        </SelectedCompetitiveGroups>
+        <SelectedCompetitiveGroupItems>
+          <CompetitiveGroupItemID>354442</CompetitiveGroupItemID>
+        </SelectedCompetitiveGroupItems>
+        <FinSourceAndEduForms>
+          <FinSourceEduForm>
+            <FinanceSourceID>14</FinanceSourceID>
+            <EducationFormID>10</EducationFormID>
+          </FinSourceEduForm>
+        </FinSourceAndEduForms>
+        <ApplicationDocuments>
+          <IdentityDocument>
+            <OriginalReceived>true</OriginalReceived>
+            <DocumentSeries>8705</DocumentSeries>
+            <DocumentNumber>139440</DocumentNumber>
+            <DocumentDate>2006-05-10</DocumentDate>
+            <IdentityDocumentTypeID>1</IdentityDocumentTypeID>
+            <NationalityTypeID>1</NationalityTypeID>
+            <BirthDate>1984-04-16</BirthDate>
+          </IdentityDocument>
+          <EduDocuments>
+            <EduDocument>
+              <BasicDiplomaDocument>
+                <OriginalReceivedDate>2013-06-10</OriginalReceivedDate>
+                <DocumentSeries>Г</DocumentSeries>
+                <DocumentNumber>421886</DocumentNumber>
+                <DocumentDate>2003-06-20</DocumentDate>
+                <OriginalReceived>true</OriginalReceived>
+              </BasicDiplomaDocument>
+            </EduDocument>
+          </EduDocuments>
+        </ApplicationDocuments>
+      </Application>
+    </Applications>
+    <OrdersOfAdmission>
+      <OrderOfAdmission>
+        <Application>
+          <ApplicationNumber>43089</ApplicationNumber>
+          <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        </Application>
+        <DirectionID>1216</DirectionID>
+        <EducationFormID>10</EducationFormID>
+        <FinanceSourceID>14</FinanceSourceID>
+        <EducationLevelID>2</EducationLevelID>
+        <Stage>0</Stage>
+      </OrderOfAdmission>
+    </OrdersOfAdmission>
+  </PackageData>
+</Root>
+<ImportPackageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PackageID>655133</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportPackageInfo>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>655133</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Пакет еще не обработан</ErrorText>
+</Error>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>655133</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <OrdersOfAdmissions>
+        <Application>
+          <ApplicationNumber>43089</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>3016</ErrorCode>
+            <Message>В заявлении не указаны необходимые результаты вступительных испытаний. Необходимо добавить результаты вступительных испытаний или исключить группу из заявления. (Приказ, UID: Не указан)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        </Application>
+      </OrdersOfAdmissions>
+    </Failed>
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>1</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+    </Successful>
+  </Log>
+  <PackageID>655133</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

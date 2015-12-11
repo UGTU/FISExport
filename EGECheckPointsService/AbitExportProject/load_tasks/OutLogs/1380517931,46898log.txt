@@ -1,0 +1,166 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <Applications>
+      <Application>
+        <ApplicationNumber>43878</ApplicationNumber>
+        <RegistrationDate>2013-06-26T00:00:00</RegistrationDate>
+        <UID>43878</UID>
+        <Entrant>
+          <UID>43878</UID>
+          <FirstName>Анастасия</FirstName>
+          <MiddleName>Александровна</MiddleName>
+          <LastName>Яковлева</LastName>
+          <GenderID>2</GenderID>
+        </Entrant>
+        <NeedHostel>false</NeedHostel>
+        <StatusID>4</StatusID>
+        <SelectedCompetitiveGroups>
+          <CompetitiveGroupID>354554</CompetitiveGroupID>
+          <CompetitiveGroupID>354554</CompetitiveGroupID>
+        </SelectedCompetitiveGroups>
+        <SelectedCompetitiveGroupItems>
+          <CompetitiveGroupItemID>354554</CompetitiveGroupItemID>
+          <CompetitiveGroupItemID>354554</CompetitiveGroupItemID>
+        </SelectedCompetitiveGroupItems>
+        <FinSourceAndEduForms>
+          <FinSourceEduForm>
+            <FinanceSourceID>15</FinanceSourceID>
+            <EducationFormID>11</EducationFormID>
+          </FinSourceEduForm>
+          <FinSourceEduForm>
+            <FinanceSourceID>14</FinanceSourceID>
+            <EducationFormID>10</EducationFormID>
+          </FinSourceEduForm>
+        </FinSourceAndEduForms>
+        <EntranceTestResults>
+          <EntranceTestResult>
+            <UID>90980</UID>
+            <ResultValue>87</ResultValue>
+            <ResultSourceTypeID>2</ResultSourceTypeID>
+            <EntranceTestSubject>
+              <SubjectID>2</SubjectID>
+            </EntranceTestSubject>
+            <EntranceTestTypeID>1</EntranceTestTypeID>
+            <CompetitiveGroupID>354554</CompetitiveGroupID>
+          </EntranceTestResult>
+          <EntranceTestResult>
+            <UID>90981</UID>
+            <ResultValue>88</ResultValue>
+            <ResultSourceTypeID>2</ResultSourceTypeID>
+            <EntranceTestSubject>
+              <SubjectID>1</SubjectID>
+            </EntranceTestSubject>
+            <EntranceTestTypeID>1</EntranceTestTypeID>
+            <CompetitiveGroupID>354554</CompetitiveGroupID>
+          </EntranceTestResult>
+        </EntranceTestResults>
+        <ApplicationDocuments>
+          <IdentityDocument>
+            <OriginalReceived>true</OriginalReceived>
+            <DocumentSeries>8707</DocumentSeries>
+            <DocumentNumber>288034</DocumentNumber>
+            <DocumentDate>2008-04-10</DocumentDate>
+            <IdentityDocumentTypeID>1</IdentityDocumentTypeID>
+            <NationalityTypeID>1</NationalityTypeID>
+            <BirthDate>1994-01-20</BirthDate>
+          </IdentityDocument>
+          <EduDocuments>
+            <EduDocument>
+              <MiddleEduDiplomaDocument>
+                <OriginalReceivedDate>2013-06-26</OriginalReceivedDate>
+                <DocumentSeries>90СПА</DocumentSeries>
+                <DocumentNumber>0451216</DocumentNumber>
+                <DocumentDate>2013-06-22</DocumentDate>
+                <OriginalReceived>true</OriginalReceived>
+                <GPA>0</GPA>
+              </MiddleEduDiplomaDocument>
+            </EduDocument>
+          </EduDocuments>
+        </ApplicationDocuments>
+      </Application>
+    </Applications>
+  </PackageData>
+</Root>
+<ImportPackageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PackageID>675649</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportPackageInfo>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>675649</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Пакет еще не обработан</ErrorText>
+</Error>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>675649</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <Applications>
+        <Application>
+          <ApplicationNumber>43878</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>51</ErrorCode>
+            <Message>Заявление содержит неразрешенные для конкурсной группы форму обучения и источник финансирования. (Заявление, UID: 43878)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+        </Application>
+      </Applications>
+      <EntranceTestResults>
+        <EntranceTestResult>
+          <ApplicationNumber>43878</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 90980)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Вступительное испытание ОУ</ResultSourceType>
+          <ResultValue>87</ResultValue>
+          <SubjectName>Математика</SubjectName>
+        </EntranceTestResult>
+        <EntranceTestResult>
+          <ApplicationNumber>43878</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>4</ErrorCode>
+            <Message>Родительский объект не проимпортирован (Результаты вступительных испытаний, UID: 90981)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+          <ResultSourceType>Вступительное испытание ОУ</ResultSourceType>
+          <ResultValue>88</ResultValue>
+          <SubjectName>Русский язык</SubjectName>
+        </EntranceTestResult>
+      </EntranceTestResults>
+    </Failed>
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>0</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+    </Successful>
+  </Log>
+  <PackageID>675649</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

@@ -1,0 +1,48 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetDictionaryContent>
+    <DictionaryCode>0</DictionaryCode>
+  </GetDictionaryContent>
+  <PackageData>
+    <CampaignInfo>
+      <Campaigns />
+    </CampaignInfo>
+    <AdmissionInfo>
+      <AdmissionVolume />
+      <DistributedAdmissionVolume />
+      <CompetitiveGroups />
+    </AdmissionInfo>
+    <InstitutionAchievements />
+    <Applications />
+    <OrdersOfAdmission />
+    <RecommendedLists />
+    <Items />
+  </PackageData>
+  <GetResultImportApplication>
+    <Item>0</Item>
+    <ItemElementName>PackageGUID</ItemElementName>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>pk@ugtu.net</Login>
+    <Pass>2lvFeaJ</Pass>
+  </AuthData>
+  <DataForDelete>
+    <Applications />
+    <OrdersOfAdmission>
+      <Application />
+      <OrdersOfAdmission />
+    </OrdersOfAdmission>
+    <CompetitiveGroups />
+    <Campaigns />
+    <InstitutionAchievements />
+    <CompetitiveGroupItems />
+    <EntranceTestResults />
+    <ApplicationCommonBenefits />
+    <RecommendedLists />
+  </DataForDelete>
+  <GetResultDeleteApplication>
+    <Item>0</Item>
+  </GetResultDeleteApplication>
+  <GetResultCheckApplication>
+    <Item>0</Item>
+  </GetResultCheckApplication>
+</Root>

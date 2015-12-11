@@ -1,0 +1,76 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+  <PackageData>
+    <OrdersOfAdmission>
+      <OrderOfAdmission>
+        <Application>
+          <ApplicationNumber>43089</ApplicationNumber>
+          <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        </Application>
+        <DirectionID>1216</DirectionID>
+        <EducationFormID>10</EducationFormID>
+        <FinanceSourceID>14</FinanceSourceID>
+        <EducationLevelID>2</EducationLevelID>
+        <Stage>0</Stage>
+      </OrderOfAdmission>
+    </OrdersOfAdmission>
+  </PackageData>
+</Root>
+<ImportPackageInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PackageID>652980</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportPackageInfo>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>652980</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<Error xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ErrorCode>0</ErrorCode>
+  <ErrorText>Пакет еще не обработан</ErrorText>
+</Error>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>652980</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <OrdersOfAdmissions>
+        <Application>
+          <ApplicationNumber>43089</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>3016</ErrorCode>
+            <Message>В заявлении не указаны необходимые результаты вступительных испытаний. Необходимо добавить результаты вступительных испытаний или исключить группу из заявления. (Приказ, UID: Не указан)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-10T00:00:00</RegistrationDate>
+        </Application>
+      </OrdersOfAdmissions>
+    </Failed>
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>0</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+    </Successful>
+  </Log>
+  <PackageID>652980</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

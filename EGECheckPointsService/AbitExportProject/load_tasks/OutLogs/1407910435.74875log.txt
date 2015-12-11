@@ -1,0 +1,124 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>1333273</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <CampaignDates>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 3)</Message>
+          </ErrorInfo>
+          <UID>3</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 6)</Message>
+          </ErrorInfo>
+          <UID>6</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 7)</Message>
+          </ErrorInfo>
+          <UID>7</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 8)</Message>
+          </ErrorInfo>
+          <UID>8</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 9)</Message>
+          </ErrorInfo>
+          <UID>9</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 10)</Message>
+          </ErrorInfo>
+          <UID>10</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 11)</Message>
+          </ErrorInfo>
+          <UID>11</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 13)</Message>
+          </ErrorInfo>
+          <UID>13</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 14)</Message>
+          </ErrorInfo>
+          <UID>14</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 15)</Message>
+          </ErrorInfo>
+          <UID>15</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 16)</Message>
+          </ErrorInfo>
+          <UID>16</UID>
+        </CampaignDate>
+        <CampaignDate>
+          <ErrorInfo>
+            <ErrorCode>36</ErrorCode>
+            <Message>У свойства Stage объекта указано некорректное справочное значение (Дата приемной кампании, UID: 17)</Message>
+          </ErrorInfo>
+          <UID>17</UID>
+        </CampaignDate>
+      </CampaignDates>
+      <Campaigns>
+        <Campaign>
+          <ErrorInfo>
+            <ErrorCode>61</ErrorCode>
+            <Message>Приемная кампания содержит некорректные данные. (Приемная кампания, UID: 1)</Message>
+          </ErrorInfo>
+          <Name>УГТУ 2014</Name>
+        </Campaign>
+      </Campaigns>
+    </Failed>
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>0</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+      <RecommendedLists>0</RecommendedLists>
+    </Successful>
+  </Log>
+  <PackageID>1333273</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

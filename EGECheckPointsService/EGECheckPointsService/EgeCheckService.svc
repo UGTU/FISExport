@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="EGECheckPointsService.EgeCheckService" CodeBehind="EgeCheckService.svc.cs" %>

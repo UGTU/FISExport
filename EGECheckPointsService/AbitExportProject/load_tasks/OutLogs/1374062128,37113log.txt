@@ -1,0 +1,462 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetResultImportApplication>
+    <PackageID>342390</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>fmarakasov@ugtu.net</Login>
+    <Pass>bylnMu4</Pass>
+  </AuthData>
+</Root>
+<ImportResultPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Conflicts />
+  <Log>
+    <Failed>
+      <Applications>
+        <Application>
+          <ApplicationNumber>5713</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>24</ErrorCode>
+            <Message>Номер заявления не уникален. (Заявление, UID: 43849)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>0</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>24</ErrorCode>
+            <Message>Номер заявления не уникален. (Заявление, UID: 44880)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-02T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>0</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>24</ErrorCode>
+            <Message>Номер заявления не уникален. (Заявление, UID: 45555)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-06T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>3703</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 43469)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5716</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 43892)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>4808</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 44567)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-29T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5744</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 44837)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-01T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5623</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 45270)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-03T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5769</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 45508)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-05T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>3301</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>55</ErrorCode>
+            <Message>В БД существует заявление с тем же номером но другим UID'ом. (Заявление, UID: 45868)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-11T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>10501</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 43102)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-18T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1453</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 43185)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-05T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>8501</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 43186)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-19T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>11602</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 43275)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-08T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>6403</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 43954)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-17T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>2927</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 44589)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-29T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>4045</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 45256)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-03T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1691</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 45371)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-04T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1775</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>69</ErrorCode>
+            <Message>Для указанного типа документа должно быть российское гражданство. (Заявление, UID: 46015)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-13T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1451</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 43106)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-06T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1054</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43141)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-10T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1060</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43357)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-21T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1063</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43503)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1064</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43504)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1065</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43513)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1066</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43523)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1067</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 43527)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>6862</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Диплом о высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 43533)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5903</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 43625)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-24T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5612</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 43677)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-25T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5713</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 43769)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-25T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>123</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>51</ErrorCode>
+            <Message>Заявление содержит неразрешенные для конкурсной группы форму обучения и источник финансирования. (Заявление, UID: 43878)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5617</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 44011)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-26T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1070</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 44055)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-27T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5619</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 44131)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-27T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5621</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 44195)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-27T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>2667</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 44552)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-06-28T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>0</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>87</ErrorCode>
+            <Message>Возможно импортировать заявления только со статусами "Принято" и "Отозвано". (Заявление, UID: 44746)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-01T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>2930</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 44784)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-01T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5741</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 44787)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-01T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5745</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 44954)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-02T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>322</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 45020)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-02T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1076</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45077)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-02T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1736</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>84</ErrorCode>
+            <Message>Заявление должно содержать один из следующих документов об образовании: Аттестат о среднем (полном) общем образовании, Диплом о высшем профессиональном образовании, Диплом о среднем профессиональном образовании, Диплом о начальном профессиональном образовании, Диплом о неполном высшем профессиональном образовании, Иной документ об образовании. (Заявление, UID: 45704)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-04T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1084</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45838)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-10T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1085</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45841)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-10T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1086</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45843)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-10T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1087</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45844)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-10T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1088</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45883)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-11T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1089</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45891)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-11T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1090</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 45896)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-11T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>616</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>51</ErrorCode>
+            <Message>Заявление содержит неразрешенные для конкурсной группы форму обучения и источник финансирования. (Заявление, UID: 45931)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-11T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>5636</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354557. (Заявление, UID: 45989)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-12T00:00:00.0000000</RegistrationDate>
+        </Application>
+        <Application>
+          <ApplicationNumber>1094</ApplicationNumber>
+          <ErrorInfo>
+            <ErrorCode>52</ErrorCode>
+            <Message>В заявлении указан несуществующий идентификатор конкурсной группы. UID: 354556. (Заявление, UID: 46123)</Message>
+          </ErrorInfo>
+          <RegistrationDate>2013-07-16T00:00:00.0000000</RegistrationDate>
+        </Application>
+      </Applications>
+    </Failed>
+    <Successful>
+      <AdmissionVolumes>0</AdmissionVolumes>
+      <Applications>172</Applications>
+      <Campaigns>0</Campaigns>
+      <CompetitiveGroupItems>0</CompetitiveGroupItems>
+      <CompetitiveGroups>0</CompetitiveGroups>
+      <ConsideredApplications>0</ConsideredApplications>
+      <OrdersOfAdmissions>0</OrdersOfAdmissions>
+      <RecommendedApplications>0</RecommendedApplications>
+    </Successful>
+  </Log>
+  <PackageID>342390</PackageID>
+  <InstitutionID>6377</InstitutionID>
+</ImportResultPackage>

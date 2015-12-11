@@ -1,0 +1,44 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PackageData />
+  <GetResultImportApplication>
+    <PackageID>0</PackageID>
+  </GetResultImportApplication>
+  <AuthData>
+    <Login>pk@ugtu.net</Login>
+    <Pass>2lvFeaJ</Pass>
+  </AuthData>
+  <DataForDelete>
+    <Applications />
+    <OrdersOfAdmission>
+      <OrdersOfAdmission>
+        <OrderOfAdmissionUID>18720</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18719</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18747</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18753</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18718</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18749</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18746</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18716</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18721</OrderOfAdmissionUID>
+        <OrderOfAdmissionUID>18717</OrderOfAdmissionUID>
+      </OrdersOfAdmission>
+    </OrdersOfAdmission>
+    <CompetitiveGroups>
+      <Items />
+    </CompetitiveGroups>
+    <Campaigns>
+      <Items />
+    </Campaigns>
+    <InstitutionAchievements />
+    <CompetitiveGroupItems>
+      <Items />
+    </CompetitiveGroupItems>
+    <EntranceTestResults>
+      <Items />
+    </EntranceTestResults>
+    <ApplicationCommonBenefits>
+      <Items />
+    </ApplicationCommonBenefits>
+    <RecommendedLists />
+  </DataForDelete>
+</Root>
