@@ -1,9 +1,0 @@
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\AbitExport.Tests.dll
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\AbitExport.Tests.pdb
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\export2fis.exe
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\fdalilib.dll
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\export2fis.pdb
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\bin\Debug\fdalilib.pdb
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\obj\Debug\AbitExport.Tests.csprojResolveAssemblyReference.cache
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\obj\Debug\AbitExport.Tests.dll
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\AbitExport.Tests\obj\Debug\AbitExport.Tests.pdb

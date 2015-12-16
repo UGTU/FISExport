@@ -1,5 +1,0 @@
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.dll.config
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.dll
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.pdb
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.dll
-E:\Projects\EGECheckPointService\EGECheckPointsService\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.pdb
