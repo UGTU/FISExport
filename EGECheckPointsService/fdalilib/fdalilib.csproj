@@ -47,52 +47,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImportClasses\AnswerCheckSingleApp.designer.cs" />
-    <Compile Include="ImportClasses\AnswerDictionary.designer.cs" />
-    <Compile Include="ImportClasses\AnswerDictionaryDetail.designer.cs" />
-    <Compile Include="ImportClasses\ConflictItemsInfo.cs" />
-    <Compile Include="ImportClasses\Dictionary.cs" />
-    <Compile Include="ImportClasses\EducationDocument.cs" />
-    <Compile Include="ImportClasses\Errors\ResultConflicts.cs" />
-    <Compile Include="ImportClasses\Errors\TError.cs" />
-    <Compile Include="ImportClasses\Errors\TErrorInfo.cs" />
-    <Compile Include="ImportClasses\OrderOfAdmissionUID.cs" />
-    <Compile Include="ImportClasses\PackageData.cs" />
-    <Compile Include="ImportClasses\QueryCheckSingleApp.designer.cs" />
-    <Compile Include="ImportClasses\QueryDictionaryDetail.designer.cs" />
-    <Compile Include="ImportClasses\QueryImport.designer.cs" />
-    <Compile Include="ImportClasses\ShortApplication.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocument.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocumentImportIncorrectResult.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocumentImportResult.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocumentImportCorrectResult.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocumentMark.cs" />
-    <Compile Include="ImportClasses\Ege\EgeDocumentResultBase.cs" />
-    <Compile Include="ImportClasses\Ege\GetEgeDocument.cs" />
+    <Compile Include="Actions2015\AnswerCheckSingleApp.designer.cs" />
+    <Compile Include="Actions2015\AnswerDictionary.designer.cs" />
+    <Compile Include="Actions2015\AnswerDictionaryDetail.designer.cs" />
+    <Compile Include="Actions2015\ConflictItemsInfo.cs" />
+    <Compile Include="Actions2015\Dictionary.cs" />
+    <Compile Include="Actions2015\EducationDocument.cs" />
+    <Compile Include="Actions2015\Errors\ResultConflicts.cs" />
+    <Compile Include="Actions2015\Errors\TError.cs" />
+    <Compile Include="Actions2015\Errors\TErrorInfo.cs" />
+    <Compile Include="Actions2015\PackageData.cs" />
+    <Compile Include="Actions2015\QueryCheckSingleApp.designer.cs" />
+    <Compile Include="Actions2015\QueryDictionaryDetail.designer.cs" />
+    <Compile Include="Actions2015\QueryImport.designer.cs" />
+    <Compile Include="Actions2015\ShortApplication.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocument.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocumentImportIncorrectResult.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocumentImportResult.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocumentImportCorrectResult.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocumentMark.cs" />
+    <Compile Include="Actions2015\Ege\EgeDocumentResultBase.cs" />
+    <Compile Include="Actions2015\Ege\GetEgeDocument.cs" />
+    <Compile Include="Actions2016\BatchApplicationCheck\ответ-валидация.designer.cs" />
+    <Compile Include="Actions2016\DictionaryOlympicDetails\запрос-детали по справочнику.designer.cs" />
+    <Compile Include="Actions2016\DictionarySpecDetails\запрос-детали по справочнику.designer.cs" />
+    <Compile Include="Actions2016\SingleApplicationCheck\ответ-валидация.designer.cs" />
+    <Compile Include="LogWriter.cs" />
     <Compile Include="Service\FisProxyServiceContract.cs" />
-    <Compile Include="ImportClasses\Logs\AppSingleImportResult.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedAllowEducationDocument.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedApplication.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedApplicationCommonBenefit.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCampaign.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCampaignDate.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCommonBenefitItem.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCustomDocument.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedDisabilityDocument.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestBenefitItem.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestItem.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedEntranceTestResult.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedMedicalDocument.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedOlympicDocument.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedOlympicTotalDocument.cs" />
-    <Compile Include="ImportClasses\Logs\ResultLog.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailed.cs" />
-    <Compile Include="ImportClasses\Logs\LogSuccessful.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedAdmissionVolume.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCompetitiveGroup.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedCompetitiveGroupItem.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedTargetOrganization.cs" />
-    <Compile Include="ImportClasses\Logs\LogFailedTargetOrganizationDirection.cs" />
+    <Compile Include="Actions2015\Logs\AppSingleImportResult.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedAllowEducationDocument.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedApplication.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedApplicationCommonBenefit.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCampaign.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCampaignDate.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCommonBenefitItem.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCustomDocument.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedDisabilityDocument.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedEntranceTestBenefitItem.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedEntranceTestItem.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedEntranceTestResult.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedMedicalDocument.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedOlympicDocument.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedOlympicTotalDocument.cs" />
+    <Compile Include="Actions2015\Logs\ResultLog.cs" />
+    <Compile Include="Actions2015\Logs\LogFailed.cs" />
+    <Compile Include="Actions2015\Logs\LogSuccessful.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedAdmissionVolume.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCompetitiveGroup.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedCompetitiveGroupItem.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedTargetOrganization.cs" />
+    <Compile Include="Actions2015\Logs\LogFailedTargetOrganizationDirection.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -103,22 +107,45 @@
     <Compile Include="Service\WebClientFisProxyService.cs" />
     <Compile Include="FisProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ImportClasses\QueryGetImportResult.designer.cs" />
-    <Compile Include="ImportClasses\QueryValidation.designer.cs" />
-    <Compile Include="ImportClasses\AnswerGetDeleteResult.designer.cs" />
-    <Compile Include="ImportClasses\AnswerDelete.designer.cs" />
-    <Compile Include="ImportClasses\QueryGetDeleteResult.designer.cs" />
-    <Compile Include="ImportClasses\AnswerCheckAppPackage.designer.cs" />
-    <Compile Include="ImportClasses\AnswerGetInstitutionData.designer.cs" />
-    <Compile Include="ImportClasses\QueryCheckAppPackage.designer.cs" />
-    <Compile Include="ImportClasses\QueryGetInstitutionData.designer.cs" />
-    <Compile Include="ImportClasses\QueryPartOfUniversityDetails.designer.cs" />
-    <Compile Include="ImportClasses\AnswerImport.designer.cs" />
-    <Compile Include="ImportClasses\AnswerValidation.designer.cs" />
-    <Compile Include="ImportClasses\AnswerOlympDictionaryDetail.designer.cs" />
-    <Compile Include="ImportClasses\AnswerSpecDictionaryDetail.designer.cs" />
-    <Compile Include="ImportClasses\AnswerGetImportResult.designer.cs" />
-    <Compile Include="ImportClasses\QueryDelete.designer.cs" />
+    <Compile Include="Actions2015\QueryGetImportResult.designer.cs" />
+    <Compile Include="Actions2015\QueryValidation.designer.cs" />
+    <Compile Include="Actions2015\AnswerGetDeleteResult.designer.cs" />
+    <Compile Include="Actions2015\AnswerDelete.designer.cs" />
+    <Compile Include="Actions2015\QueryGetDeleteResult.designer.cs" />
+    <Compile Include="Actions2015\AnswerCheckAppPackage.designer.cs" />
+    <Compile Include="Actions2015\AnswerGetInstitutionData.designer.cs" />
+    <Compile Include="Actions2015\QueryCheckAppPackage.designer.cs" />
+    <Compile Include="Actions2015\QueryGetInstitutionData.designer.cs" />
+    <Compile Include="Actions2015\QueryPartOfUniversityDetails.designer.cs" />
+    <Compile Include="Actions2015\AnswerImport.designer.cs" />
+    <Compile Include="Actions2015\AnswerValidation.designer.cs" />
+    <Compile Include="Actions2015\AnswerOlympDictionaryDetail.designer.cs" />
+    <Compile Include="Actions2015\AnswerSpecDictionaryDetail.designer.cs" />
+    <Compile Include="Actions2015\AnswerGetImportResult.designer.cs" />
+    <Compile Include="Actions2015\QueryDelete.designer.cs" />
+    <Compile Include="Actions2016\Authorization\запрос-авторизация.designer.cs" />
+    <Compile Include="Actions2016\DictionaryDetails\запрос-детали по справочнику.designer.cs" />
+    <Compile Include="Actions2016\SingleAppicationImport\запрос-импорт 1 заявления.designer.cs" />
+    <Compile Include="Actions2016\GetDeleteResult\запрос-получение результата удаления.designer.cs" />
+    <Compile Include="Actions2016\GetUniversityProperty\запрос-получение сведений об ОУ.designer.cs" />
+    <Compile Include="Actions2016\SingleApplicationCheck\запрос-проверка 1 заявления.designer.cs" />
+    <Compile Include="Actions2016\BatchApplicationCheck\запрос-проверка заявлений в пакете.designer.cs" />
+    <Compile Include="Actions2016\Dictionary\запрос-список справочников.designer.cs" />
+    <Compile Include="Actions2016\Delete\запрос-удаление.designer.cs" />
+    <Compile Include="Actions2016\GetPartUniversityProperty\запрос-часть сведений по ОУ.designer.cs" />
+    <Compile Include="Actions2016\DictionaryOlympicDetails\ответ-детали по справочнику олимпиад.designer.cs" />
+    <Compile Include="Actions2016\DictionarySpecDetails\ответ-детали по справочнику специальностей.designer.cs" />
+    <Compile Include="Actions2016\DictionaryDetails\ответ-детали по справочнику.designer.cs" />
+    <Compile Include="Actions2016\SingleAppicationImport\ответ-импорт 1 заявления.designer.cs" />
+    <Compile Include="Actions2016\BatchApplicationImport\ответ-импорт.designer.cs" />
+    <Compile Include="Actions2016\GetImportResult\ответ-получение результата импорта.designer.cs" />
+    <Compile Include="Actions2016\GetDeleteResult\ответ-получение результата удаления.designer.cs" />
+    <Compile Include="Actions2016\GetUniversityProperty\ответ-получение сведений об ОУ.designer.cs" />
+    <Compile Include="Actions2016\GetPartUniversityProperty\ответ-получение части сведений об ОУ.designer.cs" />
+    <Compile Include="Actions2016\Delete\ответ-удаление.designer.cs" />
+    <Compile Include="Actions2016\Dictionary\ответ-список справочников.designer.cs" />
+    <Compile Include="Actions2016\BatchApplicationImport\запрос-импорт.designer.cs" />
+    <Compile Include="Actions2016\GetImportResult\запрос-получение результата импорта.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -203,6 +230,78 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="XML\Schemes 2015\QueryDelete.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-авторизация.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-детали по справочнику.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-импорт 1 заявления.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-импорт.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-получение результата импорта.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-получение результата удаления.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-получение сведений об ОУ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-проверка 1 заявления.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-проверка заявлений в пакете.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-список справочников.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-удаление.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\запрос-часть сведений по ОУ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-валидация.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-детали по справочнику олимпиад.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-детали по справочнику специальностей.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-детали по справочнику.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-импорт 1 заявления.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-импорт.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-получение результата импорта.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-получение результата удаления.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-получение сведений об ОУ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-получение части сведений об ОУ.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-список справочников.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XML\Schemes 2016\ответ-удаление.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="XML\Схемы\answer-imported-single-app.xsd">

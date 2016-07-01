@@ -47,11 +47,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABITServiceDAO.cs" />
+    <Compile Include="ActionMethods\BaseMethod.cs" />
+    <Compile Include="ActionMethods\CreateEGEPackMethod.cs" />
+    <Compile Include="ActionMethods\ExportCampaignInfoMethod.cs" />
+    <Compile Include="ActionMethods\GetDictionaryDetailsMethod.cs" />
+    <Compile Include="ActionMethods\GetImportResultMethod.cs" />
+    <Compile Include="ActionMethods\GetOlympicDictionaryDetailsMethod.cs" />
     <Compile Include="Collector.cs" />
-    <Compile Include="Data\AbitPostup.cs" />
-    <Compile Include="Data\EgeDocuments.cs" />
-    <Compile Include="Data\Person.cs" />
-    <Compile Include="Data\Subject.cs" />
+    <Compile Include="Controllers\ActionController.cs" />
+    <Compile Include="ActionMethods\BaseProxyMethod.cs" />
+    <Compile Include="ActionMethods\BatchApplicationImportMethod.cs" />
+    <Compile Include="ActionMethods\GetDictionaryMethod.cs" />
+    <Compile Include="Data\Domain\Abit_Campaign.cs" />
+    <Compile Include="Data\UGTUData1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UGTUData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportParam.cs" />
+    <Compile Include="ParsersToDB\DictionaryDetailsOlympicParser.cs" />
+    <Compile Include="ParsersToDB\DictionaryDetailsParser.cs" />
+    <Compile Include="ParsersToDB\DictionaryParser.cs" />
+    <Compile Include="DataDecoders\DateTimeDecoder.cs" />
+    <Compile Include="Data\Domain\AbitPostup.cs" />
+    <Compile Include="Data\Domain\Doc_stud.cs" />
+    <Compile Include="Data\Domain\EgeDocuments.cs" />
+    <Compile Include="Data\Domain\Export_FB_journal.cs" />
+    <Compile Include="Data\Domain\Person.cs" />
+    <Compile Include="Data\Domain\Subject.cs" />
     <Compile Include="Data\UGTUData.cs">
       <DependentUpon>UGTUData.dbml</DependentUpon>
     </Compile>
@@ -61,11 +84,6 @@
     <Compile Include="ICommandLineParamResolver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\UGTUData.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UGTUData.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -76,8 +94,8 @@
     <None Include="App.config" />
     <None Include="Data\UGTUData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>UGTUData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>UGTUData1.designer.cs</LastGenOutput>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -98,6 +116,7 @@
       <DependentUpon>UGTUData.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

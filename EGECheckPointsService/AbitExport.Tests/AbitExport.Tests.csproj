@@ -62,6 +62,10 @@
       <Project>{1a4d0338-4714-4b68-8520-351ea6c5e7df}</Project>
       <Name>AbitExportProject</Name>
     </ProjectReference>
+    <ProjectReference Include="..\fdalilib\fdalilib.csproj">
+      <Project>{EA17BF75-BF64-4C13-BD07-8A4E74693E6F}</Project>
+      <Name>fdalilib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

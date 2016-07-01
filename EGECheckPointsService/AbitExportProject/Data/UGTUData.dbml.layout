@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.625, 14.75" name="UGTUData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 18.875, 19" name="UGTUData">
   <DataContextMoniker Name="/UGTUDataDataContext" />
   <nestedChildShapes>
-    <classShape Id="3c928c8a-82a6-44d4-8fcd-5d3ed0654095" absoluteBounds="3.75, 0.875, 2, 3.8862125651041666">
+    <classShape Id="3c928c8a-82a6-44d4-8fcd-5d3ed0654095" absoluteBounds="8.625, 0.75, 2, 3.8862125651041666">
       <DataClassMoniker Name="/UGTUDataDataContext/Student" />
       <nestedChildShapes>
-        <elementListCompartment Id="a1e404b2-a70e-4319-b389-56ff6df63f51" absoluteBounds="3.7649999999999997, 1.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a1e404b2-a70e-4319-b389-56ff6df63f51" absoluteBounds="8.64, 1.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="cfc49a6d-ae28-41a4-a0b8-206f46458937" absoluteBounds="11.125, 0.5, 2, 5.2323225911458326">
@@ -14,372 +14,438 @@
         <elementListCompartment Id="3687ed93-a175-4ec7-aa31-c48251b8652d" absoluteBounds="11.14, 0.96, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.125 : 3.01524983723958); (5.75 : 3.01524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.125 : 2.03125); (10.625 : 2.03125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Person/Person_Student" />
       <nodes>
         <classShapeMoniker Id="cfc49a6d-ae28-41a4-a0b8-206f46458937" />
         <classShapeMoniker Id="3c928c8a-82a6-44d4-8fcd-5d3ed0654095" />
       </nodes>
     </associationConnector>
-    <classShape Id="1b66dbe3-947a-4d30-9320-b350786ee833" absoluteBounds="9.875, 7.375, 2, 1.5785953776041666">
+    <classShape Id="1b66dbe3-947a-4d30-9320-b350786ee833" absoluteBounds="9.375, 9.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_sost_zach" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb927b86-4e81-4527-8b74-7e13ae7c52ac" absoluteBounds="9.89, 7.8350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bb927b86-4e81-4527-8b74-7e13ae7c52ac" absoluteBounds="9.39, 9.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="28e15427-120e-4005-a33e-9317c5f88d4b" absoluteBounds="11.375, 9.375, 2, 1.9631982421875">
+    <classShape Id="28e15427-120e-4005-a33e-9317c5f88d4b" absoluteBounds="9.625, 7, 2, 1.9631982421875">
       <DataClassMoniker Name="/UGTUDataDataContext/Kat_zach" />
       <nestedChildShapes>
-        <elementListCompartment Id="a022f033-5f33-4ee4-8404-a958bcf8d4e5" absoluteBounds="11.39, 9.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a022f033-5f33-4ee4-8404-a958bcf8d4e5" absoluteBounds="9.64, 7.4600000000000009, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c27881fb-7f8b-420a-a42b-e6ae6bf8a5ac" absoluteBounds="9, 9.625, 2, 1.3862939453125">
+    <classShape Id="c27881fb-7f8b-420a-a42b-e6ae6bf8a5ac" absoluteBounds="12.125, 6.625, 2, 1.3862939453125">
       <DataClassMoniker Name="/UGTUDataDataContext/TypeKatZach" />
       <nestedChildShapes>
-        <elementListCompartment Id="726414f0-28ff-48cd-84a4-689a9f332a9e" absoluteBounds="9.015, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="726414f0-28ff-48cd-84a4-689a9f332a9e" absoluteBounds="12.14, 7.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11 : 10.3181469726562); (11.375 : 10.3181469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(12.125 : 7.50564697265625); (11.625 : 7.50564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/TypeKatZach/TypeKatZach_Kat_zach" />
       <nodes>
         <classShapeMoniker Id="c27881fb-7f8b-420a-a42b-e6ae6bf8a5ac" />
         <classShapeMoniker Id="28e15427-120e-4005-a33e-9317c5f88d4b" />
       </nodes>
     </associationConnector>
-    <classShape Id="ff9c4e83-7b2d-43d7-a787-43db2ff93c55" absoluteBounds="0.75, 9.125, 2, 1.3862939453125">
+    <classShape Id="ff9c4e83-7b2d-43d7-a787-43db2ff93c55" absoluteBounds="0.625, 6.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/UGTUDataDataContext/Form_ed" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d9831af-04b6-471c-99c1-6f96a285751d" absoluteBounds="0.76500000000000012, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7d9831af-04b6-471c-99c1-6f96a285751d" absoluteBounds="0.64000000000000057, 6.9600000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7d5945cc-c3db-4279-91be-85f568c62198" absoluteBounds="8.625, 0.75, 2, 2.1554996744791666">
+    <classShape Id="7d5945cc-c3db-4279-91be-85f568c62198" absoluteBounds="13.625, 3.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/UGTUDataDataContext/Doc_stud" />
       <nestedChildShapes>
-        <elementListCompartment Id="0ed35769-74bd-4912-a90d-b7582770c18e" absoluteBounds="8.64, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0ed35769-74bd-4912-a90d-b7582770c18e" absoluteBounds="13.64, 4.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.125 : 1.82774983723958); (10.625 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.125 : 4.80366129557292); (13.625 : 4.80366129557292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Person/Person_Doc_stud" />
       <nodes>
         <classShapeMoniker Id="cfc49a6d-ae28-41a4-a0b8-206f46458937" />
         <classShapeMoniker Id="7d5945cc-c3db-4279-91be-85f568c62198" />
       </nodes>
     </associationConnector>
-    <classShape Id="3dd54541-1161-49d4-81cf-84e291d8a79b" absoluteBounds="1, 0.5, 2, 1.3862939453125">
+    <classShape Id="3dd54541-1161-49d4-81cf-84e291d8a79b" absoluteBounds="6, 0.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/UGTUDataDataContext/grazd" />
       <nestedChildShapes>
-        <elementListCompartment Id="f732130c-91f1-4108-b939-93bae14c3fbe" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f732130c-91f1-4108-b939-93bae14c3fbe" absoluteBounds="6.0150000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3 : 0.501065379957933); (3.37606537995793 : 0.125); (10.75 : 0.125); (11.125 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8 : 0.59375); (11.125 : 0.59375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/grazd/grazd_Person" />
       <nodes>
         <classShapeMoniker Id="3dd54541-1161-49d4-81cf-84e291d8a79b" />
         <classShapeMoniker Id="cfc49a6d-ae28-41a4-a0b8-206f46458937" />
       </nodes>
     </associationConnector>
-    <classShape Id="548066d6-0488-4c6d-91ea-7567ef0a95c0" absoluteBounds="3.25, 5.125, 2, 2.1554996744791666">
+    <classShape Id="548066d6-0488-4c6d-91ea-7567ef0a95c0" absoluteBounds="6, 2.125, 2, 2.1554996744791666">
       <DataClassMoniker Name="/UGTUDataDataContext/Direction" />
       <nestedChildShapes>
-        <elementListCompartment Id="b2e7ebd6-5696-43e9-91e9-56636ae0a37d" absoluteBounds="3.265, 5.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b2e7ebd6-5696-43e9-91e9-56636ae0a37d" absoluteBounds="6.0150000000000006, 2.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4787c11c-b711-4b8a-9a30-4c41135ff830" absoluteBounds="6.25, 3.125, 2, 2.1554996744791666">
+    <classShape Id="4787c11c-b711-4b8a-9a30-4c41135ff830" absoluteBounds="4.125, 10.875, 2, 2.1554996744791666">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Vstup_exam" />
       <nestedChildShapes>
-        <elementListCompartment Id="18d4ecf4-ce7a-44e6-982d-2520e3de6afe" absoluteBounds="6.265, 3.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="18d4ecf4-ce7a-44e6-982d-2520e3de6afe" absoluteBounds="4.14, 11.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1741da30-72cc-4acd-8534-cd188e0a2aed" absoluteBounds="14.25, 4.25, 2, 1.9631982421875">
+    <classShape Id="1741da30-72cc-4acd-8534-cd188e0a2aed" absoluteBounds="8.5, 13.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_VidSdachi" />
       <nestedChildShapes>
-        <elementListCompartment Id="a8a57b65-6d51-471b-b682-f004bd211bb6" absoluteBounds="14.265, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8a57b65-6d51-471b-b682-f004bd211bb6" absoluteBounds="8.515, 14.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.25 : 5.23159912109375); (13.7083333333333 : 5.23159912109375 : JumpStart); (13.4166666666667 : 5.23159912109375 : JumpEnd); (13.375 : 5.23159912109375); (13.375 : 5.98232259114583); (11 : 5.98232259114583); (11 : 6.9920068359375); (10.9583333333333 : 6.9920068359375 : JumpStart); (10.7916666666667 : 6.9920068359375 : JumpEnd); (8.625 : 6.9920068359375); (8.625 : 6.5); (8.58333333333333 : 6.5 : JumpStart); (8.41666666666667 : 6.5 : JumpEnd); (7.89583333333333 : 6.5 : JumpStart); (7.72916666666667 : 6.5 : JumpEnd); (7.25 : 6.5); (7.25 : 5.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 14.7315991210937); (5.79776478484459 : 14.7315991210937); (5.79776478484459 : 13.0304996744792)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_VidSdachi/ABIT_VidSdachi_ABIT_Vstup_exam" />
       <nodes>
         <classShapeMoniker Id="1741da30-72cc-4acd-8534-cd188e0a2aed" />
         <classShapeMoniker Id="4787c11c-b711-4b8a-9a30-4c41135ff830" />
       </nodes>
     </associationConnector>
-    <classShape Id="7a37e141-0816-436c-859e-5970e0195530" absoluteBounds="14.25, 0.5, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/UGTUDataDataContext/Campaign_status" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f962b93a-8db7-4f41-8e33-eef48d0ec3c5" absoluteBounds="14.265, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ee4711ee-8553-4a11-993c-e1baf0463356" absoluteBounds="18.375, 1.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5d7bacb4-b92d-4ca1-9ce1-364028ebf953" absoluteBounds="18.39, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="45adde2a-ffd2-44f0-9d9c-1ec9aab433d7" absoluteBounds="3.375, 9.75, 2, 1.9631982421875">
+    <classShape Id="45adde2a-ffd2-44f0-9d9c-1ec9aab433d7" absoluteBounds="1.5, 13.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Diapazon_Disc" />
       <nestedChildShapes>
-        <elementListCompartment Id="6eecc4b8-5479-457a-919d-5104bf456540" absoluteBounds="3.3899999999999997, 10.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6eecc4b8-5479-457a-919d-5104bf456540" absoluteBounds="1.5149999999999997, 14.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="289d8250-b90e-4017-a8d4-4103733b9371" absoluteBounds="14.625, 2.125, 2, 1.9631982421875">
+    <classShape Id="289d8250-b90e-4017-a8d4-4103733b9371" absoluteBounds="4.5, 14.875, 2, 1.9631982421875">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Disc" />
       <nestedChildShapes>
-        <elementListCompartment Id="af757ea8-5d62-4d6a-b995-97ad2275aa3d" absoluteBounds="14.64, 2.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="af757ea8-5d62-4d6a-b995-97ad2275aa3d" absoluteBounds="4.5150000000000006, 15.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.625 : 3.10659912109375); (13.625 : 3.10659912109375); (13.625 : 6.10732259114583); (11.25 : 6.10732259114583); (11.25 : 7.1170068359375); (10.875 : 7.1170068359375); (10.875 : 3.15549967447917); (8.5 : 3.15549967447917); (8.5 : 5.53049967447917); (7.781252 : 5.53049967447917); (7.781252 : 5.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.0863823924223 : 14.875); (5.0863823924223 : 13.0304996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Disc/ABIT_Disc_ABIT_Vstup_exam" />
       <nodes>
         <classShapeMoniker Id="289d8250-b90e-4017-a8d4-4103733b9371" />
         <classShapeMoniker Id="4787c11c-b711-4b8a-9a30-4c41135ff830" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(14.625 : 3.62865068164063); (13.7083333333333 : 3.62865068164062 : JumpStart); (13.5416666666667 : 3.62865068164063 : JumpEnd); (13.5 : 3.62865068164063); (13.5 : 5.85732259114583); (13.4583333333333 : 5.85732259114583 : JumpStart); (13.2916666666667 : 5.85732259114583 : JumpEnd); (11.0625 : 5.85732259114583); (11.0625 : 6.8670068359375); (10.9375 : 6.8670068359375); (10.9375 : 3.15549967447917); (8.625 : 3.15549967447917); (8.625 : 5.53049967447917); (7.89583333333333 : 5.53049967447917 : JumpStart); (7.72916666666667 : 5.53049967447917 : JumpEnd); (7.33333333333333 : 5.53049967447917 : JumpStart); (7.16666666666667 : 5.53049967447917 : JumpEnd); (5.67708333333333 : 5.53049967447917 : JumpStart); (5.51041666666667 : 5.53049967447917 : JumpEnd); (5.375 : 5.53049967447917); (5.375 : 9.2612939453125); (4.3750005 : 9.2612939453125); (4.3750005 : 9.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 15.2940991210937); (3.5 : 15.2940991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Disc/ABIT_Disc_ABIT_Diapazon_Disc" />
       <nodes>
         <classShapeMoniker Id="289d8250-b90e-4017-a8d4-4103733b9371" />
         <classShapeMoniker Id="45adde2a-ffd2-44f0-9d9c-1ec9aab433d7" />
       </nodes>
     </associationConnector>
-    <classShape Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" absoluteBounds="7, 10.875, 2, 3.1170068359375">
+    <classShape Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" absoluteBounds="3.5, 6, 2, 3.1170068359375">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Diapazon_spec_fac" />
       <nestedChildShapes>
-        <elementListCompartment Id="1385bff9-048a-489e-8614-8f8d74a34e02" absoluteBounds="7.015, 11.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1385bff9-048a-489e-8614-8f8d74a34e02" absoluteBounds="3.5149999999999997, 6.4600000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7 : 11.2940991210937); (6.08333333333333 : 11.2940991210937 : JumpStart); (5.91666666666667 : 11.2940991210937 : JumpEnd); (5.375 : 11.2940991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.8125 : 9.1170068359375); (3.8125 : 14.28125); (3.5 : 14.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Diapazon_spec_fac/ABIT_Diapazon_spec_fac_ABIT_Diapazon_Disc" />
       <nodes>
         <classShapeMoniker Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" />
         <classShapeMoniker Id="45adde2a-ffd2-44f0-9d9c-1ec9aab433d7" />
       </nodes>
     </associationConnector>
-    <classShape Id="cae06b43-f623-4af5-a64f-19fb2b776832" absoluteBounds="0.5, 6.625, 2, 3.3093082682291666">
+    <classShape Id="cae06b43-f623-4af5-a64f-19fb2b776832" absoluteBounds="0.5, 2.625, 2, 3.3093082682291666">
       <DataClassMoniker Name="/UGTUDataDataContext/Relation_spec_fac" />
       <nestedChildShapes>
-        <elementListCompartment Id="bd10cae1-633c-4501-a1e4-7038a9b35f4f" absoluteBounds="0.51500000000000012, 7.0850000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bd10cae1-633c-4501-a1e4-7038a9b35f4f" absoluteBounds="0.51500000000000012, 3.0850000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(0.59375 : 9.93430826822917); (0.59375 : 12.8838525390625); (5.91666666666667 : 12.8838525390625 : JumpStart); (6.08333333333333 : 12.8838525390625 : JumpEnd); (7 : 12.8838525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 5.29165771484375); (5.40625 : 5.29165771484375); (5.40625 : 6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Relation_spec_fac/Relation_spec_fac_ABIT_Diapazon_spec_fac" />
       <nodes>
         <classShapeMoniker Id="cae06b43-f623-4af5-a64f-19fb2b776832" />
         <classShapeMoniker Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(0.75 : 9.81814697265625); (0.25 : 9.81814697265625); (0.25 : 8.27965413411458); (0.5 : 8.27965413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.5625 : 6.5); (1.5625 : 5.93430826822917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Form_ed/Form_ed_Relation_spec_fac" />
       <nodes>
         <classShapeMoniker Id="ff9c4e83-7b2d-43d7-a787-43db2ff93c55" />
         <classShapeMoniker Id="cae06b43-f623-4af5-a64f-19fb2b776832" />
       </nodes>
     </associationConnector>
-    <classShape Id="91a2c89d-aeb8-41a2-8c06-9597ec21e766" absoluteBounds="3.125, 7.75, 2, 1.3862939453125">
+    <classShape Id="91a2c89d-aeb8-41a2-8c06-9597ec21e766" absoluteBounds="8.875, 12, 2, 1.3862939453125">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Rassadka" />
       <nestedChildShapes>
-        <elementListCompartment Id="e084699b-7c39-4aa1-ae5e-24bd465e8830" absoluteBounds="3.1399999999999997, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e084699b-7c39-4aa1-ae5e-24bd465e8830" absoluteBounds="8.89, 12.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.1562505 : 7.75); (3.1562505 : 4.94310628255208); (5.51041666666667 : 4.94310628255208 : JumpStart); (5.67708333333333 : 4.94310628255208 : JumpEnd); (6.25 : 4.94310628255208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.875 : 12.7107568359375); (6.125 : 12.7107568359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Rassadka/ABIT_Rassadka_ABIT_Vstup_exam" />
       <nodes>
         <classShapeMoniker Id="91a2c89d-aeb8-41a2-8c06-9597ec21e766" />
         <classShapeMoniker Id="4787c11c-b711-4b8a-9a30-4c41135ff830" />
       </nodes>
     </associationConnector>
-    <classShape Id="b7f8b422-1472-409b-83e3-a0625875c320" absoluteBounds="12.625, 6.875, 2, 2.1554996744791666">
+    <classShape Id="b7f8b422-1472-409b-83e3-a0625875c320" absoluteBounds="11.625, 12, 2, 2.1554996744791666">
       <DataClassMoniker Name="/UGTUDataDataContext/ABIT_Raspisanie" />
       <nestedChildShapes>
-        <elementListCompartment Id="9e8f813b-8a1b-4f4a-bdc8-baecb3ad9da3" absoluteBounds="12.64, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9e8f813b-8a1b-4f4a-bdc8-baecb3ad9da3" absoluteBounds="11.64, 12.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(12.625 : 7.95274983723958); (12.375 : 7.95274983723958); (12.375 : 6.9920068359375); (12.2083333333333 : 6.9920068359375 : JumpStart); (12.0416666666667 : 6.9920068359375 : JumpEnd); (11.3333333333333 : 6.9920068359375 : JumpStart); (11.1666666666667 : 6.9920068359375 : JumpEnd); (10.9583333333333 : 6.9920068359375 : JumpStart); (10.7916666666667 : 6.9920068359375 : JumpEnd); (8.77083333333333 : 6.9920068359375 : JumpStart); (8.60416666666667 : 6.9920068359375 : JumpEnd); (8.5 : 6.9920068359375); (8.5 : 6.25); (8.33333333333333 : 6.25 : JumpStart); (8.16666666666667 : 6.25 : JumpEnd); (7.89583333333333 : 6.25 : JumpStart); (7.72916666666667 : 6.25 : JumpEnd); (7.33333333333333 : 6.25 : JumpStart); (7.16666666666667 : 6.25 : JumpEnd); (5.75 : 6.25); (5.75 : 7.5); (5.67708333333333 : 7.5 : JumpStart); (5.51041666666667 : 7.5 : JumpEnd); (5.45833333333333 : 7.5 : JumpStart); (5.29166666666667 : 7.5 : JumpEnd); (4.125 : 7.5); (4.125 : 7.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.625 : 12.6931469726562); (10.875 : 12.6931469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Raspisanie/ABIT_Raspisanie_ABIT_Rassadka" />
       <nodes>
         <classShapeMoniker Id="b7f8b422-1472-409b-83e3-a0625875c320" />
         <classShapeMoniker Id="91a2c89d-aeb8-41a2-8c06-9597ec21e766" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.46875 : 4.0881982421875); (16.46875 : 7.95274983723958); (14.625 : 7.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(6.5 : 16.3069482421875); (11.8906274552105 : 16.3069482421875); (11.8906274552105 : 14.1554996744792)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Disc/ABIT_Disc_ABIT_Raspisanie" />
       <nodes>
         <classShapeMoniker Id="289d8250-b90e-4017-a8d4-4103733b9371" />
         <classShapeMoniker Id="b7f8b422-1472-409b-83e3-a0625875c320" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(15.7812525 : 6.2131982421875); (15.7812525 : 7.38262241861979); (14.625 : 7.38262241861979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.5 : 13.9527498372396); (11.625 : 13.9527498372396)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/ABIT_VidSdachi/ABIT_VidSdachi_ABIT_Raspisanie" />
       <nodes>
         <classShapeMoniker Id="1741da30-72cc-4acd-8534-cd188e0a2aed" />
         <classShapeMoniker Id="b7f8b422-1472-409b-83e3-a0625875c320" />
       </nodes>
     </associationConnector>
-    <classShape Id="82f4c229-2196-452d-9d7c-3ca0fb6f6720" absoluteBounds="6.25, 0.5, 2, 2.3478011067708335">
+    <classShape Id="82f4c229-2196-452d-9d7c-3ca0fb6f6720" absoluteBounds="16.125, 1.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/UGTUDataDataContext/document" />
       <nestedChildShapes>
-        <elementListCompartment Id="0ef0d0cd-14e3-440e-b2ec-a1482d9a8680" absoluteBounds="6.265, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0ef0d0cd-14e3-440e-b2ec-a1482d9a8680" absoluteBounds="16.14, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.25 : 1.79890055338542); (8.625 : 1.79890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(17.125 : 4.09780110677083); (17.125 : 4.95274983723958); (15.625 : 4.95274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/document/document_Doc_stud" />
       <nodes>
         <classShapeMoniker Id="82f4c229-2196-452d-9d7c-3ca0fb6f6720" />
         <classShapeMoniker Id="7d5945cc-c3db-4279-91be-85f568c62198" />
       </nodes>
     </associationConnector>
-    <classShape Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" absoluteBounds="6.375, 6.75, 2, 3.6939111328124996">
-      <DataClassMoniker Name="/UGTUDataDataContext/ABIT_postup" />
-      <nestedChildShapes>
-        <elementListCompartment Id="814d0a87-623d-49b1-a249-7449b8f42444" absoluteBounds="6.39, 7.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(7.8125 : 6.75); (7.8125 : 5.28049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_postup/ABIT_postup_ABIT_Vstup_exam" />
-      <nodes>
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-        <classShapeMoniker Id="4787c11c-b711-4b8a-9a30-4c41135ff830" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.6875 : 10.875); (7.6875 : 10.4439111328125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Diapazon_spec_fac/ABIT_Diapazon_spec_fac_ABIT_postup" />
-      <nodes>
-        <classShapeMoniker Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" />
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(9.875 : 8.16429768880208); (8.64583333333333 : 8.16429768880208 : JumpStart); (8.47916666666667 : 8.16429768880208 : JumpEnd); (8.375 : 8.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_sost_zach/ABIT_sost_zach_ABIT_postup" />
-      <nodes>
-        <classShapeMoniker Id="1b66dbe3-947a-4d30-9320-b350786ee833" />
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11.375 : 9.46875); (10.0833333333333 : 9.46875 : JumpStart); (9.91666666666667 : 9.46875 : JumpEnd); (8.375 : 9.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/UGTUDataDataContext/Kat_zach/Kat_zach_ABIT_postup" />
-      <nodes>
-        <classShapeMoniker Id="28e15427-120e-4005-a33e-9317c5f88d4b" />
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.59375 : 4.76121256510417); (5.59375 : 9.4375); (5.91666666666667 : 9.4375 : JumpStart); (6.08333333333333 : 9.4375 : JumpEnd); (6.375 : 9.4375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/Student/Student_ABIT_postup" />
-      <nodes>
-        <classShapeMoniker Id="3c928c8a-82a6-44d4-8fcd-5d3ed0654095" />
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="93df8a05-1a7c-4548-acef-bba2d2c6fa94" absoluteBounds="9.625, 12.25, 2, 1.5785953776041666">
+    <classShape Id="93df8a05-1a7c-4548-acef-bba2d2c6fa94" absoluteBounds="12.375, 8.75, 2, 1.5785953776041666">
       <DataClassMoniker Name="/UGTUDataDataContext/Abit_Target" />
       <nestedChildShapes>
-        <elementListCompartment Id="f256a020-3622-4e6b-9741-398ce8104e37" absoluteBounds="9.64, 12.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f256a020-3622-4e6b-9741-398ce8104e37" absoluteBounds="12.39, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.625 : 13.8285953776042); (10.625 : 14.2420068359375); (6 : 14.2420068359375); (6 : 7.9843755); (6.375 : 7.9843755)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/Abit_Target/Abit_Target_ABIT_postup" />
-      <nodes>
-        <classShapeMoniker Id="93df8a05-1a7c-4548-acef-bba2d2c6fa94" />
-        <classShapeMoniker Id="6d1a0c30-e7bc-4ee5-9a22-c230f9604673" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="c3453b14-cd3f-4129-8db8-020a0acd943c" absoluteBounds="12.25, 12.125, 2, 1.1939925130208333">
+    <classShape Id="c3453b14-cd3f-4129-8db8-020a0acd943c" absoluteBounds="14.75, 9.25, 2, 1.1939925130208333">
       <DataClassMoniker Name="/UGTUDataDataContext/TargetOrganization" />
       <nestedChildShapes>
-        <elementListCompartment Id="205d0682-1f6a-4565-b558-1ba3c1bebc3b" absoluteBounds="12.265, 12.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="205d0682-1f6a-4565-b558-1ba3c1bebc3b" absoluteBounds="14.765, 9.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(12.25 : 12.7844962565104); (11.625 : 12.7844962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(14.75 : 9.78929768880208); (14.375 : 9.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/TargetOrganization/TargetOrganization_Abit_Target" />
       <nodes>
         <classShapeMoniker Id="c3453b14-cd3f-4129-8db8-020a0acd943c" />
         <classShapeMoniker Id="93df8a05-1a7c-4548-acef-bba2d2c6fa94" />
       </nodes>
     </associationConnector>
-    <classShape Id="14d410ec-711b-489f-b51f-052f0ef37ba8" absoluteBounds="17.875, 4.125, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign_Content" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b6dfc0fa-3bc8-4498-8eca-196ea759e9db" absoluteBounds="17.89, 4.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(19.125 : 2.70359537760417); (19.125 : 4.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/Abit_Campaign/Abit_Campaign_Abit_Campaign_Content" />
-      <nodes>
-        <classShapeMoniker Id="ee4711ee-8553-4a11-993c-e1baf0463356" />
-        <classShapeMoniker Id="14d410ec-711b-489f-b51f-052f0ef37ba8" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 5.89024983723958); (5.29166666666667 : 5.89024983723958 : JumpStart); (5.45833333333333 : 5.89024983723958 : JumpEnd); (5.51041666666667 : 5.89024983723958 : JumpStart); (5.67708333333333 : 5.89024983723958 : JumpEnd); (7.16666666666667 : 5.89024983723958 : JumpStart); (7.33333333333333 : 5.89024983723958 : JumpEnd); (7.72916666666667 : 5.89024983723958 : JumpStart); (7.89583333333333 : 5.89024983723958 : JumpEnd); (8.25 : 5.89024983723958); (8.25 : 6.5); (8.41666666666667 : 6.5 : JumpStart); (8.58333333333333 : 6.5 : JumpEnd); (8.6875 : 6.5); (8.6875 : 7.2420068359375); (12.0416666666667 : 7.2420068359375 : JumpStart); (12.2083333333333 : 7.2420068359375 : JumpEnd); (12.2916666666667 : 7.2420068359375 : JumpStart); (12.4583333333333 : 7.2420068359375 : JumpEnd); (12.5 : 7.2420068359375); (12.5 : 6.625); (15.6979191666667 : 6.625 : JumpStart); (15.8645858333333 : 6.625 : JumpEnd); (16.3854166666667 : 6.625 : JumpStart); (16.5520833333333 : 6.625 : JumpEnd); (17.625 : 6.625); (17.625 : 7.10740397135417); (18.2604146666667 : 7.10740397135417 : JumpStart); (18.4270813333333 : 7.10740397135417 : JumpEnd); (18.875 : 7.10740397135417); (18.875 : 6.85740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/UGTUDataDataContext/Direction/Direction_Abit_Campaign_Content" />
-      <nodes>
-        <classShapeMoniker Id="548066d6-0488-4c6d-91ea-7567ef0a95c0" />
-        <classShapeMoniker Id="14d410ec-711b-489f-b51f-052f0ef37ba8" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.81814697265625); (3.3125 : 9.81814697265625); (3.3125 : 9.6875); (5.91666666666667 : 9.6875 : JumpStart); (6.08333333333333 : 9.6875 : JumpEnd); (6.3125 : 9.6875); (6.3125 : 6.6875); (8.5625 : 6.6875); (8.5625 : 9.3125); (9.91666666666667 : 9.3125 : JumpStart); (10.0833333333333 : 9.3125 : JumpEnd); (18.343748 : 9.3125); (18.343748 : 6.85740397135417)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/UGTUDataDataContext/Form_ed/Form_ed_Abit_Campaign_Content" />
-      <nodes>
-        <classShapeMoniker Id="ff9c4e83-7b2d-43d7-a787-43db2ff93c55" />
-        <classShapeMoniker Id="14d410ec-711b-489f-b51f-052f0ef37ba8" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10 : 9.625); (10 : 9.125); (12.125 : 9.125); (12.125 : 6.3381982421875); (15.6979191666667 : 6.3381982421875 : JumpStart); (15.8645858333333 : 6.3381982421875 : JumpEnd); (16.3854166666667 : 6.3381982421875 : JumpStart); (16.5520833333333 : 6.3381982421875 : JumpEnd); (17.25 : 6.3381982421875); (17.25 : 5.3437505); (17.875 : 5.3437505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/UGTUDataDataContext/TypeKatZach/TypeKatZach_Abit_Campaign_Content" />
-      <nodes>
-        <classShapeMoniker Id="c27881fb-7f8b-420a-a42b-e6ae6bf8a5ac" />
-        <classShapeMoniker Id="14d410ec-711b-489f-b51f-052f0ef37ba8" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="6cef5f3c-e45e-4826-af72-2428f572bfec" absoluteBounds="0.875, 2.25, 2, 4.2708154296875">
+    <classShape Id="6cef5f3c-e45e-4826-af72-2428f572bfec" absoluteBounds="3.25, 0.5, 2, 4.2708154296875">
       <DataClassMoniker Name="/UGTUDataDataContext/EducationBranch" />
       <nestedChildShapes>
-        <elementListCompartment Id="31dd272d-863d-4ed5-9ce7-5f347b8943e0" absoluteBounds="0.89000000000000012, 2.71, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="31dd272d-863d-4ed5-9ce7-5f347b8943e0" absoluteBounds="3.265, 0.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.6875 : 6.5208154296875); (1.6875 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.25 : 3.69790771484375); (2.5 : 3.69790771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/EducationBranch/EducationBranch_Relation_spec_fac" />
       <nodes>
         <classShapeMoniker Id="6cef5f3c-e45e-4826-af72-2428f572bfec" />
         <classShapeMoniker Id="cae06b43-f623-4af5-a64f-19fb2b776832" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.58423076923077 : 2.25); (1.58423076923077 : 2); (2.17961538461538 : 2); (2.17961538461538 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.95923076923077 : 0.5); (3.95923076923077 : 0.25); (4.55461538461539 : 0.25); (4.55461538461539 : 0.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/EducationBranch/EducationBranch_EducationBranch" />
       <nodes>
         <classShapeMoniker Id="6cef5f3c-e45e-4826-af72-2428f572bfec" />
         <classShapeMoniker Id="6cef5f3c-e45e-4826-af72-2428f572bfec" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.25 : 5.82290771484375); (3.23958383333333 : 5.82290771484375 : JumpStart); (3.07291716666667 : 5.82290771484375 : JumpEnd); (2.875 : 5.82290771484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(6 : 3.20274983723958); (5.25 : 3.20274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Direction/Direction_EducationBranch" />
       <nodes>
         <classShapeMoniker Id="548066d6-0488-4c6d-91ea-7567ef0a95c0" />
         <classShapeMoniker Id="6cef5f3c-e45e-4826-af72-2428f572bfec" />
       </nodes>
     </associationConnector>
-    <classShape Id="f2988081-b637-490f-bf37-80bc68753d28" absoluteBounds="1.375, 8.25, 2, 1.3862939453125">
+    <classShape Id="f2988081-b637-490f-bf37-80bc68753d28" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
       <DataClassMoniker Name="/UGTUDataDataContext/FinancingSource" />
       <nestedChildShapes>
-        <elementListCompartment Id="79b9d658-a29b-41e7-a3fb-c9f76b29dff1" absoluteBounds="1.3900000000000001, 8.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="79b9d658-a29b-41e7-a3fb-c9f76b29dff1" absoluteBounds="0.51500000000000012, 0.96000000000000085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.71875 : 8.25); (2.71875 : 6.5208154296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.5 : 1.19314697265625); (3.25 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/UGTUDataDataContext/FinancingSource/FinancingSource_EducationBranch" />
       <nodes>
         <classShapeMoniker Id="f2988081-b637-490f-bf37-80bc68753d28" />
         <classShapeMoniker Id="6cef5f3c-e45e-4826-af72-2428f572bfec" />
       </nodes>
     </associationConnector>
-    <classShape Id="0011ba2d-fa83-422a-9fd7-5c14bb8e66d3" absoluteBounds="8.75, 3.625, 2, 3.1170068359375">
+    <classShape Id="17da13af-1cf5-4eab-9da3-e898a178f33c" absoluteBounds="13.625, 0.5, 2, 3.1170068359375">
       <DataClassMoniker Name="/UGTUDataDataContext/Export_FB_journal" />
       <nestedChildShapes>
-        <elementListCompartment Id="5c4592c0-bba3-4b0a-b61c-d5ac87d54703" absoluteBounds="8.765, 4.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4bbf4f5c-4913-489f-a6fa-ac6a15dbb772" absoluteBounds="13.64, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.125 : 4.67866129557292); (11.0208333333333 : 4.67866129557292 : JumpStart); (10.7916666666667 : 4.67866129557292 : JumpEnd); (10.75 : 4.67866129557292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.125 : 2.05850341796875); (13.625 : 2.05850341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/UGTUDataDataContext/Person/Person_Export_FB_journal" />
       <nodes>
         <classShapeMoniker Id="cfc49a6d-ae28-41a4-a0b8-206f46458937" />
-        <classShapeMoniker Id="0011ba2d-fa83-422a-9fd7-5c14bb8e66d3" />
+        <classShapeMoniker Id="17da13af-1cf5-4eab-9da3-e898a178f33c" />
       </nodes>
     </associationConnector>
+    <classShape Id="66c76f7b-28df-43d4-b995-ba990f4e48fc" absoluteBounds="6.25, 4.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign_Content" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b1158da-f9d8-4ea1-a398-4da586b53ef1" absoluteBounds="6.2650000000000006, 5.3350000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 4.28049967447917); (7.125 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Direction/Direction_Abit_Campaign_Content" />
+      <nodes>
+        <classShapeMoniker Id="548066d6-0488-4c6d-91ea-7567ef0a95c0" />
+        <classShapeMoniker Id="66c76f7b-28df-43d4-b995-ba990f4e48fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 7.19314697265625); (3.25 : 7.19314697265625); (3.25 : 5.75); (5.75 : 5.75); (5.75 : 4.5); (6.45996399467297 : 4.5); (6.45996399467297 : 4.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Form_ed/Form_ed_Abit_Campaign_Content" />
+      <nodes>
+        <classShapeMoniker Id="ff9c4e83-7b2d-43d7-a787-43db2ff93c55" />
+        <classShapeMoniker Id="66c76f7b-28df-43d4-b995-ba990f4e48fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.125 : 6.73434575737847); (10.84625 : 6.73434575737847); (10.84625 : 6.36976242404514); (8.6719875 : 6.36976242404514); (8.6719875 : 6.73434575737847); (8.25 : 6.73434575737847)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/TypeKatZach/TypeKatZach_Abit_Campaign_Content" />
+      <nodes>
+        <classShapeMoniker Id="c27881fb-7f8b-420a-a42b-e6ae6bf8a5ac" />
+        <classShapeMoniker Id="66c76f7b-28df-43d4-b995-ba990f4e48fc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f8f5d686-0260-442e-a385-b40c7e422d24" absoluteBounds="0.875, 8.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UGTUDataDataContext/DictionaryContent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e12bbaf5-b8c9-4c8b-84bd-f53be90f1aec" absoluteBounds="0.89000000000000012, 9.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a2003e9-e87b-4195-9851-ae12190560d5" absoluteBounds="15.75, 14, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign_Direction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13747f01-7cd1-4650-adc5-ba55dd298db2" absoluteBounds="15.765, 14.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.01230510636389 : 10.2035953776042); (2.01230510636389 : 10.7395833333333); (0.583333333333333 : 10.7395833333333); (0.583333333333333 : 17.7476622604167); (15.2735625 : 17.7476622604167); (15.2735625 : 14.70599559375); (15.75 : 14.70599559375)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/DictionaryContent/DictionaryContent_Abit_Campaign_Direction" />
+      <nodes>
+        <classShapeMoniker Id="f8f5d686-0260-442e-a385-b40c7e422d24" />
+        <classShapeMoniker Id="9a2003e9-e87b-4195-9851-ae12190560d5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4d863fc4-0e57-4ce9-85e4-334d2354b583" absoluteBounds="15.75, 15.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign_FormEd" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee568362-42f2-4ee6-8799-72717c29a30b" absoluteBounds="15.765, 15.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.63955071073273 : 10.2035953776042); (1.63955071073273 : 10.625); (0.416666666666667 : 10.625); (0.416666666666667 : 17.9319482421875); (15.5 : 17.9319482421875); (15.5 : 16.0969962565104); (15.75 : 16.0969962565104)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/DictionaryContent/DictionaryContent_Abit_Campaign_FormEd" />
+      <nodes>
+        <classShapeMoniker Id="f8f5d686-0260-442e-a385-b40c7e422d24" />
+        <classShapeMoniker Id="4d863fc4-0e57-4ce9-85e4-334d2354b583" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52d5ed00-169a-4592-8656-f250e16589a9" absoluteBounds="0.875, 11.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/UGTUDataDataContext/DictionaryList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd38219e-6b9b-4691-9db5-5272b4fcec99" absoluteBounds="0.89000000000000012, 11.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.56998944203285 : 11.5); (2.56998944203285 : 10.2035953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/DictionaryList/DictionaryList_DictionaryContent" />
+      <nodes>
+        <classShapeMoniker Id="52d5ed00-169a-4592-8656-f250e16589a9" />
+        <classShapeMoniker Id="f8f5d686-0260-442e-a385-b40c7e422d24" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="aa4ca774-b8ee-404a-ad74-aa0ccf6d8566" absoluteBounds="15, 11.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/UGTUDataDataContext/Abit_Campaign" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ab0abc3-a395-46a7-9b44-6ad75deacd63" absoluteBounds="15.015, 12.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.375 : 13.5881982421875); (16.375 : 14)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Abit_Campaign/Abit_Campaign_Abit_Campaign_Direction" />
+      <nodes>
+        <classShapeMoniker Id="aa4ca774-b8ee-404a-ad74-aa0ccf6d8566" />
+        <classShapeMoniker Id="9a2003e9-e87b-4195-9851-ae12190560d5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.13678125 : 13.5881982421875); (15.13678125 : 15.7672456282552); (15.1902291666667 : 15.7672456282552 : JumpStart); (15.3568958333333 : 15.7672456282552 : JumpEnd); (15.75 : 15.7672456282552)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UGTUDataDataContext/Abit_Campaign/Abit_Campaign_Abit_Campaign_FormEd" />
+      <nodes>
+        <classShapeMoniker Id="aa4ca774-b8ee-404a-ad74-aa0ccf6d8566" />
+        <classShapeMoniker Id="4d863fc4-0e57-4ce9-85e4-334d2354b583" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.875 : 9.73549587120004); (0.25 : 9.73549587120004); (0.25 : 18.3508121744792); (18.1822916666667 : 18.3508121744792); (18.1822916666667 : 13.75); (17.375 : 13.75); (17.375 : 12.6318416681649); (17 : 12.6318416681649)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/DictionaryContent/DictionaryContent_Abit_Campaign" />
+      <nodes>
+        <classShapeMoniker Id="f8f5d686-0260-442e-a385-b40c7e422d24" />
+        <classShapeMoniker Id="aa4ca774-b8ee-404a-ad74-aa0ccf6d8566" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.875 : 9.41429768880208); (0.114583333333334 : 9.41429768880208); (0.114583333333334 : 18.5364583333333); (18.4036458333333 : 18.5364583333333); (18.4036458333333 : 12.138573516768); (17 : 12.138573516768)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/DictionaryContent/DictionaryContent_Abit_Campaign1" />
+      <nodes>
+        <classShapeMoniker Id="f8f5d686-0260-442e-a385-b40c7e422d24" />
+        <classShapeMoniker Id="aa4ca774-b8ee-404a-ad74-aa0ccf6d8566" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" absoluteBounds="6.375, 8.25, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/UGTUDataDataContext/ABIT_postup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f54640ff-dc27-4457-8320-c554f7bec264" absoluteBounds="6.39, 8.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 11.6017569986979); (6.125 : 11.6017569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_postup/ABIT_postup_ABIT_Vstup_exam" />
+      <nodes>
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+        <classShapeMoniker Id="4787c11c-b711-4b8a-9a30-4c41135ff830" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.68350341796875); (6.375 : 8.68350341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_Diapazon_spec_fac/ABIT_Diapazon_spec_fac_ABIT_postup" />
+      <nodes>
+        <classShapeMoniker Id="5424b489-fd02-4ffb-b7cd-3c7d09ca042d" />
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.375 : 9.91429768880208); (8.82557708333333 : 9.91429768880208 : JumpStart); (8.65891041666667 : 9.91429768880208 : JumpEnd); (8.375 : 9.91429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/ABIT_sost_zach/ABIT_sost_zach_ABIT_postup" />
+      <nodes>
+        <classShapeMoniker Id="1b66dbe3-947a-4d30-9320-b350786ee833" />
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.375 : 9.04409912109375); (8.375 : 9.04409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Abit_Target/Abit_Target_ABIT_postup" />
+      <nodes>
+        <classShapeMoniker Id="93df8a05-1a7c-4548-acef-bba2d2c6fa94" />
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 8.60659912109375); (8.82557708333333 : 8.60659912109375 : JumpStart); (8.65891041666667 : 8.60659912109375 : JumpEnd); (8.375 : 8.60659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Kat_zach/Kat_zach_ABIT_postup" />
+      <nodes>
+        <classShapeMoniker Id="28e15427-120e-4005-a33e-9317c5f88d4b" />
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.74224375 : 4.63621256510417); (8.74224375 : 11.3517976888021); (8.375 : 11.3517976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UGTUDataDataContext/Student/Student_ABIT_postup" />
+      <nodes>
+        <classShapeMoniker Id="3c928c8a-82a6-44d4-8fcd-5d3ed0654095" />
+        <classShapeMoniker Id="7868f9cd-7d0f-449f-a1e6-c655b256aefe" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="15382c93-e7bf-4ee3-9fd9-eefd3954d624" absoluteBounds="12.625, 14.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/UGTUDataDataContext/PackageImport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18f69766-2bf6-4c00-8113-30831b89b687" absoluteBounds="12.64, 15.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

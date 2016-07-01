@@ -1,7 +1,12 @@
 ﻿using System;
+using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
 using AbitExportProject;
+using AbitExportProject.ActionMethods;
+using AbitExportProject.Controllers;
+using AbitExportProject.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace AbitExport.Tests
 {
@@ -11,26 +16,17 @@ namespace AbitExport.Tests
         [TestMethod]
         public void TestBatchParseArgs()
         {
-            Assert.IsTrue(Program.ParseArgument("/P").ExportType == Program.ExportType.Batch);            
+         //   Assert.IsTrue(BaseProxyMethod<Root>.ParseArgument("/P").ExportType == ExportType.Batch);            
 
         }
 
         [TestMethod]
         public void TestSingleParseArgs()
         {
-            var actual = Program.ParseArgument("/id:44986");
-            Assert.AreEqual(Program.ExportType.Single, actual.ExportType);
-            Assert.AreEqual(44986, actual.AbitId);
+            //var actual = BaseMethod.ParseArgument("/id:44986");
+            //Assert.AreEqual(ExportType.Single, actual.ExportType);
+            //Assert.AreEqual(44986, actual.AbitId);
         }
-
-   /*     [TestMethod]
-        public void TestSingleParseWithExtraSpaceArgs()
-        {
-            var actual = Program.ParseArgument(" /id:  20342  ");
-            Assert.AreEqual(Program.ExportType.Single, actual.ExportType);
-            Assert.AreEqual(20342, actual.AbitId);
-
-        }*/
 
         [TestMethod]
         [DeploymentItem("export2fis.exe")]
@@ -53,13 +49,23 @@ namespace AbitExport.Tests
         [TestMethod]
         public void TestMethodImportSingle()
         {
-            Program.ExportSingle(new Program.ExportParam(Program.ExportType.Single, 44986),DateTime.Today.Year);
+            //var bc = new BaseMethod();
+            //bc.ExportSingle(44986, DateTime.Today.Year);
         }
 
         [TestMethod]
         public void TestImportBatch()
         {
-            Program.ExportSingle(new Program.ExportParam(Program.ExportType.Batch, 0), DateTime.Today.Year);
+         //   Program.ExportSingle(new Program.ExportParam(Program.ExportType.Batch, 0), DateTime.Today.Year);
+        }
+
+        [TestMethod]
+        public void GetDictionaryFromXml()
+        {
+            var method = new GetDictionaryMethod();
+            var result = method.ReadDataFromFile("dict.xml");
+            Console.WriteLine("Операция выполнена. Нажмите [ENTER]...");
+            Console.ReadLine();
         }
 
     }

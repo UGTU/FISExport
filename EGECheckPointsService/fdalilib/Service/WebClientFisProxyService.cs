@@ -36,6 +36,8 @@ namespace Fdalilib.Service
         /// </summary>
         public Uri BaseUri { get; private set; }
 
+
+
         /// <summary>
         ///     Получает коллекцию справочников
         /// </summary>
