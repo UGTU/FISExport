@@ -52,7 +52,7 @@ namespace Fdalilib.Actions2016.GetImportResult
 
         private uint itemField;
 
-        private ItemChoiceType itemElementNameField;
+        //private ItemChoiceType itemElementNameField;
 
         //[System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public uint PackageID
@@ -67,29 +67,29 @@ namespace Fdalilib.Actions2016.GetImportResult
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType ItemElementName
-        {
-            get
-            {
-                return this.itemElementNameField;
-            }
-            set
-            {
-                this.itemElementNameField = value;
-            }
-        }
+        //[System.Xml.Serialization.XmlIgnoreAttribute()]
+        //public ItemChoiceType ItemElementName
+        //{
+        //    get
+        //    {
+        //        return this.itemElementNameField;
+        //    }
+        //    set
+        //    {
+        //        this.itemElementNameField = value;
+        //    }
+        //}
     }
 
-    public enum ItemChoiceType
-    {
+    //public enum ItemChoiceType
+    //{
 
-        /// <remarks/>
-        PackageGUID,
+    //    /// <remarks/>
+    //    PackageGUID,
 
-        /// <remarks/>
-        PackageID,
-    }
+    //    /// <remarks/>
+    //    PackageID,
+    //}
 
     public partial class Root
     {
