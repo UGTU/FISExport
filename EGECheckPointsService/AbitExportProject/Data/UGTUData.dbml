@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UGTU" Class="UGTUDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.16.22;Initial Catalog=UGTU;Persist Security Info=True;User ID=exportfis" SettingsObjectName="AbitExportProject.Properties.Settings" SettingsPropertyName="UGTUConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=UGTU;Integrated Security=True" SettingsObjectName="AbitExportProject.Properties.Settings" SettingsPropertyName="UGTUConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Student" Member="Students">
     <Type Name="Student">
       <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -111,19 +111,6 @@
       <Column Name="c_grazd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="grazd_Person" Member="Persons" ThisKey="ik_grazd" OtherKey="Ik_grazd" Type="Person" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Direction" Member="Directions">
-    <Type Name="Direction">
-      <Column Name="ik_direction" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="cName_direction" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="cShort_name_direction" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ThesisName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="ExcelPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="DiplExcPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Direction_EducationBranch" Member="EducationBranches" ThisKey="ik_direction" OtherKey="ik_direction" Type="EducationBranch" />
-      <Association Name="Direction_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="ik_direction" OtherKey="id_direction" Type="Abit_Campaign_Content" />
     </Type>
   </Table>
   <Table Name="dbo.ABIT_Vstup_exam" Member="ABIT_Vstup_exams">
@@ -293,8 +280,8 @@
       <Association Name="EducationBranch_Relation_spec_fac" Member="Relation_spec_facs" ThisKey="ik_spec" OtherKey="ik_spec" Type="Relation_spec_fac" />
       <Association Name="EducationBranch_EducationBranch" Member="EducationBranches" ThisKey="ik_spec" OtherKey="id_parent" Type="EducationBranch" />
       <Association Name="EducationBranch_EducationBranch" Member="EducationBranch1" ThisKey="id_parent" OtherKey="ik_spec" Type="EducationBranch" IsForeignKey="true" />
-      <Association Name="Direction_EducationBranch" Member="Direction" ThisKey="ik_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
       <Association Name="FinancingSource_EducationBranch" Member="FinancingSource" ThisKey="ik_FinancingSource" OtherKey="ik_FinancingSource" Type="FinancingSource" IsForeignKey="true" />
+      <Association Name="Direction_EducationBranch" Member="Direction" ThisKey="ik_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.FinancingSource" Member="FinancingSources">
@@ -334,9 +321,9 @@
       <Column Name="Date_order" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ik_prikaz_zach" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NNyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Direction_Abit_Campaign_Content" Member="Direction" ThisKey="id_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
       <Association Name="Form_ed_Abit_Campaign_Content" Member="Form_ed" ThisKey="id_form" OtherKey="Ik_form_ed" Type="Form_ed" IsForeignKey="true" />
       <Association Name="TypeKatZach_Abit_Campaign_Content" Member="TypeKatZach" ThisKey="id_eduSource" OtherKey="ik_type_kat" Type="TypeKatZach" IsForeignKey="true" />
+      <Association Name="Direction_Abit_Campaign_Content" Member="Direction" ThisKey="id_direction" OtherKey="ik_direction" Type="Direction" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="FIS.DictionaryContent" Member="DictionaryContents">
@@ -420,6 +407,32 @@
     <Type Name="PackageImport">
       <Column Name="id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ImportTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeDirection" Member="TypeDirections">
+    <Type Name="TypeDirection">
+      <Column Name="id_type_direction" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameTypeDirection" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="idDirectionSuperType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FIS_TypePK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TypeDirection_Direction" Member="Directions" ThisKey="id_type_direction" OtherKey="id_type_direction" Type="Direction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direction" Member="Directions">
+    <Type Name="Direction">
+      <Column Name="ik_direction" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cName_direction" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cShort_name_direction" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ThesisName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ExcelPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DiplExcPatternName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ik_FB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Podgot" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_type_direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Direction_EducationBranch" Member="EducationBranches" ThisKey="ik_direction" OtherKey="ik_direction" Type="EducationBranch" />
+      <Association Name="Direction_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="ik_direction" OtherKey="id_direction" Type="Abit_Campaign_Content" />
+      <Association Name="TypeDirection_Direction" Member="TypeDirection" ThisKey="id_type_direction" OtherKey="id_type_direction" Type="TypeDirection" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -58,6 +58,7 @@
     <Compile Include="ActionMethods\BaseProxyMethod.cs" />
     <Compile Include="ActionMethods\BatchApplicationImportMethod.cs" />
     <Compile Include="ActionMethods\GetDictionaryMethod.cs" />
+    <Compile Include="Controllers\MagicNumberController.cs" />
     <Compile Include="Data\Domain\Abit_Campaign.cs" />
     <Compile Include="Data\UGTUData1.designer.cs">
       <AutoGen>True</AutoGen>

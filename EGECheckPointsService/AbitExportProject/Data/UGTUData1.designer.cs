@@ -54,9 +54,6 @@ namespace AbitExportProject.Data
     partial void Insertgrazd(grazd instance);
     partial void Updategrazd(grazd instance);
     partial void Deletegrazd(grazd instance);
-    partial void InsertDirection(Direction instance);
-    partial void UpdateDirection(Direction instance);
-    partial void DeleteDirection(Direction instance);
     partial void InsertABIT_Vstup_exam(ABIT_Vstup_exam instance);
     partial void UpdateABIT_Vstup_exam(ABIT_Vstup_exam instance);
     partial void DeleteABIT_Vstup_exam(ABIT_Vstup_exam instance);
@@ -123,10 +120,16 @@ namespace AbitExportProject.Data
     partial void InsertPackageImport(PackageImport instance);
     partial void UpdatePackageImport(PackageImport instance);
     partial void DeletePackageImport(PackageImport instance);
+    partial void InsertTypeDirection(TypeDirection instance);
+    partial void UpdateTypeDirection(TypeDirection instance);
+    partial void DeleteTypeDirection(TypeDirection instance);
+    partial void InsertDirection(Direction instance);
+    partial void UpdateDirection(Direction instance);
+    partial void DeleteDirection(Direction instance);
     #endregion
 		
 		public UGTUDataDataContext() : 
-				base(global::AbitExportProject.Properties.Settings.Default.UGTUConnectionString, mappingSource)
+				base(global::AbitExportProject.Properties.Settings.Default.UGTUConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -216,14 +219,6 @@ namespace AbitExportProject.Data
 			get
 			{
 				return this.GetTable<grazd>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Direction> Directions
-		{
-			get
-			{
-				return this.GetTable<Direction>();
 			}
 		}
 		
@@ -400,6 +395,22 @@ namespace AbitExportProject.Data
 			get
 			{
 				return this.GetTable<PackageImport>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TypeDirection> TypeDirections
+		{
+			get
+			{
+				return this.GetTable<TypeDirection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Direction> Directions
+		{
+			get
+			{
+				return this.GetTable<Direction>();
 			}
 		}
 	}
@@ -2786,268 +2797,6 @@ namespace AbitExportProject.Data
 		{
 			this.SendPropertyChanging();
 			entity.grazd = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Direction")]
-	public partial class Direction : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ik_direction;
-		
-		private string _cName_direction;
-		
-		private string _cShort_name_direction;
-		
-		private string _ThesisName;
-		
-		private string _ExcelPatternName;
-		
-		private string _DiplExcPatternName;
-		
-		private System.Nullable<int> _ik_FB;
-		
-		private EntitySet<EducationBranch> _EducationBranches;
-		
-		private EntitySet<Abit_Campaign_Content> _Abit_Campaign_Contents;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onik_directionChanging(int value);
-    partial void Onik_directionChanged();
-    partial void OncName_directionChanging(string value);
-    partial void OncName_directionChanged();
-    partial void OncShort_name_directionChanging(string value);
-    partial void OncShort_name_directionChanged();
-    partial void OnThesisNameChanging(string value);
-    partial void OnThesisNameChanged();
-    partial void OnExcelPatternNameChanging(string value);
-    partial void OnExcelPatternNameChanged();
-    partial void OnDiplExcPatternNameChanging(string value);
-    partial void OnDiplExcPatternNameChanged();
-    partial void Onik_FBChanging(System.Nullable<int> value);
-    partial void Onik_FBChanged();
-    #endregion
-		
-		public Direction()
-		{
-			this._EducationBranches = new EntitySet<EducationBranch>(new Action<EducationBranch>(this.attach_EducationBranches), new Action<EducationBranch>(this.detach_EducationBranches));
-			this._Abit_Campaign_Contents = new EntitySet<Abit_Campaign_Content>(new Action<Abit_Campaign_Content>(this.attach_Abit_Campaign_Contents), new Action<Abit_Campaign_Content>(this.detach_Abit_Campaign_Contents));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ik_direction", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ik_direction
-		{
-			get
-			{
-				return this._ik_direction;
-			}
-			set
-			{
-				if ((this._ik_direction != value))
-				{
-					this.Onik_directionChanging(value);
-					this.SendPropertyChanging();
-					this._ik_direction = value;
-					this.SendPropertyChanged("ik_direction");
-					this.Onik_directionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cName_direction", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string cName_direction
-		{
-			get
-			{
-				return this._cName_direction;
-			}
-			set
-			{
-				if ((this._cName_direction != value))
-				{
-					this.OncName_directionChanging(value);
-					this.SendPropertyChanging();
-					this._cName_direction = value;
-					this.SendPropertyChanged("cName_direction");
-					this.OncName_directionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cShort_name_direction", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string cShort_name_direction
-		{
-			get
-			{
-				return this._cShort_name_direction;
-			}
-			set
-			{
-				if ((this._cShort_name_direction != value))
-				{
-					this.OncShort_name_directionChanging(value);
-					this.SendPropertyChanging();
-					this._cShort_name_direction = value;
-					this.SendPropertyChanged("cShort_name_direction");
-					this.OncShort_name_directionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThesisName", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string ThesisName
-		{
-			get
-			{
-				return this._ThesisName;
-			}
-			set
-			{
-				if ((this._ThesisName != value))
-				{
-					this.OnThesisNameChanging(value);
-					this.SendPropertyChanging();
-					this._ThesisName = value;
-					this.SendPropertyChanged("ThesisName");
-					this.OnThesisNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExcelPatternName", DbType="VarChar(30)")]
-		public string ExcelPatternName
-		{
-			get
-			{
-				return this._ExcelPatternName;
-			}
-			set
-			{
-				if ((this._ExcelPatternName != value))
-				{
-					this.OnExcelPatternNameChanging(value);
-					this.SendPropertyChanging();
-					this._ExcelPatternName = value;
-					this.SendPropertyChanged("ExcelPatternName");
-					this.OnExcelPatternNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiplExcPatternName", DbType="VarChar(30)")]
-		public string DiplExcPatternName
-		{
-			get
-			{
-				return this._DiplExcPatternName;
-			}
-			set
-			{
-				if ((this._DiplExcPatternName != value))
-				{
-					this.OnDiplExcPatternNameChanging(value);
-					this.SendPropertyChanging();
-					this._DiplExcPatternName = value;
-					this.SendPropertyChanged("DiplExcPatternName");
-					this.OnDiplExcPatternNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ik_FB", DbType="Int")]
-		public System.Nullable<int> ik_FB
-		{
-			get
-			{
-				return this._ik_FB;
-			}
-			set
-			{
-				if ((this._ik_FB != value))
-				{
-					this.Onik_FBChanging(value);
-					this.SendPropertyChanging();
-					this._ik_FB = value;
-					this.SendPropertyChanged("ik_FB");
-					this.Onik_FBChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_EducationBranch", Storage="_EducationBranches", ThisKey="ik_direction", OtherKey="ik_direction")]
-		public EntitySet<EducationBranch> EducationBranches
-		{
-			get
-			{
-				return this._EducationBranches;
-			}
-			set
-			{
-				this._EducationBranches.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_Abit_Campaign_Content", Storage="_Abit_Campaign_Contents", ThisKey="ik_direction", OtherKey="id_direction")]
-		public EntitySet<Abit_Campaign_Content> Abit_Campaign_Contents
-		{
-			get
-			{
-				return this._Abit_Campaign_Contents;
-			}
-			set
-			{
-				this._Abit_Campaign_Contents.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_EducationBranches(EducationBranch entity)
-		{
-			this.SendPropertyChanging();
-			entity.Direction = this;
-		}
-		
-		private void detach_EducationBranches(EducationBranch entity)
-		{
-			this.SendPropertyChanging();
-			entity.Direction = null;
-		}
-		
-		private void attach_Abit_Campaign_Contents(Abit_Campaign_Content entity)
-		{
-			this.SendPropertyChanging();
-			entity.Direction = this;
-		}
-		
-		private void detach_Abit_Campaign_Contents(Abit_Campaign_Content entity)
-		{
-			this.SendPropertyChanging();
-			entity.Direction = null;
 		}
 	}
 	
@@ -6190,9 +5939,9 @@ namespace AbitExportProject.Data
 		
 		private EntityRef<EducationBranch> _EducationBranch1;
 		
-		private EntityRef<Direction> _Direction;
-		
 		private EntityRef<FinancingSource> _FinancingSource;
+		
+		private EntityRef<Direction> _Direction;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6241,8 +5990,8 @@ namespace AbitExportProject.Data
 			this._Relation_spec_facs = new EntitySet<Relation_spec_fac>(new Action<Relation_spec_fac>(this.attach_Relation_spec_facs), new Action<Relation_spec_fac>(this.detach_Relation_spec_facs));
 			this._EducationBranches = new EntitySet<EducationBranch>(new Action<EducationBranch>(this.attach_EducationBranches), new Action<EducationBranch>(this.detach_EducationBranches));
 			this._EducationBranch1 = default(EntityRef<EducationBranch>);
-			this._Direction = default(EntityRef<Direction>);
 			this._FinancingSource = default(EntityRef<FinancingSource>);
+			this._Direction = default(EntityRef<Direction>);
 			OnCreated();
 		}
 		
@@ -6678,40 +6427,6 @@ namespace AbitExportProject.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_EducationBranch", Storage="_Direction", ThisKey="ik_direction", OtherKey="ik_direction", IsForeignKey=true)]
-		public Direction Direction
-		{
-			get
-			{
-				return this._Direction.Entity;
-			}
-			set
-			{
-				Direction previousValue = this._Direction.Entity;
-				if (((previousValue != value) 
-							|| (this._Direction.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Direction.Entity = null;
-						previousValue.EducationBranches.Remove(this);
-					}
-					this._Direction.Entity = value;
-					if ((value != null))
-					{
-						value.EducationBranches.Add(this);
-						this._ik_direction = value.ik_direction;
-					}
-					else
-					{
-						this._ik_direction = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Direction");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="FinancingSource_EducationBranch", Storage="_FinancingSource", ThisKey="ik_FinancingSource", OtherKey="ik_FinancingSource", IsForeignKey=true)]
 		public FinancingSource FinancingSource
 		{
@@ -6742,6 +6457,40 @@ namespace AbitExportProject.Data
 						this._ik_FinancingSource = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("FinancingSource");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_EducationBranch", Storage="_Direction", ThisKey="ik_direction", OtherKey="ik_direction", IsForeignKey=true)]
+		public Direction Direction
+		{
+			get
+			{
+				return this._Direction.Entity;
+			}
+			set
+			{
+				Direction previousValue = this._Direction.Entity;
+				if (((previousValue != value) 
+							|| (this._Direction.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Direction.Entity = null;
+						previousValue.EducationBranches.Remove(this);
+					}
+					this._Direction.Entity = value;
+					if ((value != null))
+					{
+						value.EducationBranches.Add(this);
+						this._ik_direction = value.ik_direction;
+					}
+					else
+					{
+						this._ik_direction = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Direction");
 				}
 			}
 		}
@@ -7322,11 +7071,11 @@ namespace AbitExportProject.Data
 		
 		private int _NNyear;
 		
-		private EntityRef<Direction> _Direction;
-		
 		private EntityRef<Form_ed> _Form_ed;
 		
 		private EntityRef<TypeKatZach> _TypeKatZach;
+		
+		private EntityRef<Direction> _Direction;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -7356,9 +7105,9 @@ namespace AbitExportProject.Data
 		
 		public Abit_Campaign_Content()
 		{
-			this._Direction = default(EntityRef<Direction>);
 			this._Form_ed = default(EntityRef<Form_ed>);
 			this._TypeKatZach = default(EntityRef<TypeKatZach>);
+			this._Direction = default(EntityRef<Direction>);
 			OnCreated();
 		}
 		
@@ -7574,40 +7323,6 @@ namespace AbitExportProject.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_Abit_Campaign_Content", Storage="_Direction", ThisKey="id_direction", OtherKey="ik_direction", IsForeignKey=true)]
-		public Direction Direction
-		{
-			get
-			{
-				return this._Direction.Entity;
-			}
-			set
-			{
-				Direction previousValue = this._Direction.Entity;
-				if (((previousValue != value) 
-							|| (this._Direction.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Direction.Entity = null;
-						previousValue.Abit_Campaign_Contents.Remove(this);
-					}
-					this._Direction.Entity = value;
-					if ((value != null))
-					{
-						value.Abit_Campaign_Contents.Add(this);
-						this._id_direction = value.ik_direction;
-					}
-					else
-					{
-						this._id_direction = default(int);
-					}
-					this.SendPropertyChanged("Direction");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Form_ed_Abit_Campaign_Content", Storage="_Form_ed", ThisKey="id_form", OtherKey="Ik_form_ed", IsForeignKey=true)]
 		public Form_ed Form_ed
 		{
@@ -7672,6 +7387,40 @@ namespace AbitExportProject.Data
 						this._id_eduSource = default(int);
 					}
 					this.SendPropertyChanged("TypeKatZach");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_Abit_Campaign_Content", Storage="_Direction", ThisKey="id_direction", OtherKey="ik_direction", IsForeignKey=true)]
+		public Direction Direction
+		{
+			get
+			{
+				return this._Direction.Entity;
+			}
+			set
+			{
+				Direction previousValue = this._Direction.Entity;
+				if (((previousValue != value) 
+							|| (this._Direction.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Direction.Entity = null;
+						previousValue.Abit_Campaign_Contents.Remove(this);
+					}
+					this._Direction.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_Campaign_Contents.Add(this);
+						this._id_direction = value.ik_direction;
+					}
+					else
+					{
+						this._id_direction = default(int);
+					}
+					this.SendPropertyChanged("Direction");
 				}
 			}
 		}
@@ -9516,6 +9265,543 @@ namespace AbitExportProject.Data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TypeDirection")]
+	public partial class TypeDirection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_type_direction;
+		
+		private string _NameTypeDirection;
+		
+		private int _idDirectionSuperType;
+		
+		private System.Nullable<int> _ik_FIS_TypePK;
+		
+		private EntitySet<Direction> _Directions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_type_directionChanging(int value);
+    partial void Onid_type_directionChanged();
+    partial void OnNameTypeDirectionChanging(string value);
+    partial void OnNameTypeDirectionChanged();
+    partial void OnidDirectionSuperTypeChanging(int value);
+    partial void OnidDirectionSuperTypeChanged();
+    partial void Onik_FIS_TypePKChanging(System.Nullable<int> value);
+    partial void Onik_FIS_TypePKChanged();
+    #endregion
+		
+		public TypeDirection()
+		{
+			this._Directions = new EntitySet<Direction>(new Action<Direction>(this.attach_Directions), new Action<Direction>(this.detach_Directions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_type_direction", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_type_direction
+		{
+			get
+			{
+				return this._id_type_direction;
+			}
+			set
+			{
+				if ((this._id_type_direction != value))
+				{
+					this.Onid_type_directionChanging(value);
+					this.SendPropertyChanging();
+					this._id_type_direction = value;
+					this.SendPropertyChanged("id_type_direction");
+					this.Onid_type_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameTypeDirection", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string NameTypeDirection
+		{
+			get
+			{
+				return this._NameTypeDirection;
+			}
+			set
+			{
+				if ((this._NameTypeDirection != value))
+				{
+					this.OnNameTypeDirectionChanging(value);
+					this.SendPropertyChanging();
+					this._NameTypeDirection = value;
+					this.SendPropertyChanged("NameTypeDirection");
+					this.OnNameTypeDirectionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idDirectionSuperType", DbType="Int NOT NULL")]
+		public int idDirectionSuperType
+		{
+			get
+			{
+				return this._idDirectionSuperType;
+			}
+			set
+			{
+				if ((this._idDirectionSuperType != value))
+				{
+					this.OnidDirectionSuperTypeChanging(value);
+					this.SendPropertyChanging();
+					this._idDirectionSuperType = value;
+					this.SendPropertyChanged("idDirectionSuperType");
+					this.OnidDirectionSuperTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ik_FIS_TypePK", DbType="Int")]
+		public System.Nullable<int> ik_FIS_TypePK
+		{
+			get
+			{
+				return this._ik_FIS_TypePK;
+			}
+			set
+			{
+				if ((this._ik_FIS_TypePK != value))
+				{
+					this.Onik_FIS_TypePKChanging(value);
+					this.SendPropertyChanging();
+					this._ik_FIS_TypePK = value;
+					this.SendPropertyChanged("ik_FIS_TypePK");
+					this.Onik_FIS_TypePKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeDirection_Direction", Storage="_Directions", ThisKey="id_type_direction", OtherKey="id_type_direction")]
+		public EntitySet<Direction> Directions
+		{
+			get
+			{
+				return this._Directions;
+			}
+			set
+			{
+				this._Directions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Directions(Direction entity)
+		{
+			this.SendPropertyChanging();
+			entity.TypeDirection = this;
+		}
+		
+		private void detach_Directions(Direction entity)
+		{
+			this.SendPropertyChanging();
+			entity.TypeDirection = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Direction")]
+	public partial class Direction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ik_direction;
+		
+		private string _cName_direction;
+		
+		private string _cShort_name_direction;
+		
+		private string _ThesisName;
+		
+		private string _ExcelPatternName;
+		
+		private string _DiplExcPatternName;
+		
+		private System.Nullable<int> _ik_FB;
+		
+		private System.Nullable<int> _SortOrder;
+		
+		private string _Podgot;
+		
+		private int _id_type_direction;
+		
+		private EntitySet<EducationBranch> _EducationBranches;
+		
+		private EntitySet<Abit_Campaign_Content> _Abit_Campaign_Contents;
+		
+		private EntityRef<TypeDirection> _TypeDirection;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onik_directionChanging(int value);
+    partial void Onik_directionChanged();
+    partial void OncName_directionChanging(string value);
+    partial void OncName_directionChanged();
+    partial void OncShort_name_directionChanging(string value);
+    partial void OncShort_name_directionChanged();
+    partial void OnThesisNameChanging(string value);
+    partial void OnThesisNameChanged();
+    partial void OnExcelPatternNameChanging(string value);
+    partial void OnExcelPatternNameChanged();
+    partial void OnDiplExcPatternNameChanging(string value);
+    partial void OnDiplExcPatternNameChanged();
+    partial void Onik_FBChanging(System.Nullable<int> value);
+    partial void Onik_FBChanged();
+    partial void OnSortOrderChanging(System.Nullable<int> value);
+    partial void OnSortOrderChanged();
+    partial void OnPodgotChanging(string value);
+    partial void OnPodgotChanged();
+    partial void Onid_type_directionChanging(int value);
+    partial void Onid_type_directionChanged();
+    #endregion
+		
+		public Direction()
+		{
+			this._EducationBranches = new EntitySet<EducationBranch>(new Action<EducationBranch>(this.attach_EducationBranches), new Action<EducationBranch>(this.detach_EducationBranches));
+			this._Abit_Campaign_Contents = new EntitySet<Abit_Campaign_Content>(new Action<Abit_Campaign_Content>(this.attach_Abit_Campaign_Contents), new Action<Abit_Campaign_Content>(this.detach_Abit_Campaign_Contents));
+			this._TypeDirection = default(EntityRef<TypeDirection>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ik_direction", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ik_direction
+		{
+			get
+			{
+				return this._ik_direction;
+			}
+			set
+			{
+				if ((this._ik_direction != value))
+				{
+					this.Onik_directionChanging(value);
+					this.SendPropertyChanging();
+					this._ik_direction = value;
+					this.SendPropertyChanged("ik_direction");
+					this.Onik_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cName_direction", DbType="VarChar(50)")]
+		public string cName_direction
+		{
+			get
+			{
+				return this._cName_direction;
+			}
+			set
+			{
+				if ((this._cName_direction != value))
+				{
+					this.OncName_directionChanging(value);
+					this.SendPropertyChanging();
+					this._cName_direction = value;
+					this.SendPropertyChanged("cName_direction");
+					this.OncName_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cShort_name_direction", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string cShort_name_direction
+		{
+			get
+			{
+				return this._cShort_name_direction;
+			}
+			set
+			{
+				if ((this._cShort_name_direction != value))
+				{
+					this.OncShort_name_directionChanging(value);
+					this.SendPropertyChanging();
+					this._cShort_name_direction = value;
+					this.SendPropertyChanged("cShort_name_direction");
+					this.OncShort_name_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThesisName", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string ThesisName
+		{
+			get
+			{
+				return this._ThesisName;
+			}
+			set
+			{
+				if ((this._ThesisName != value))
+				{
+					this.OnThesisNameChanging(value);
+					this.SendPropertyChanging();
+					this._ThesisName = value;
+					this.SendPropertyChanged("ThesisName");
+					this.OnThesisNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExcelPatternName", DbType="VarChar(30)")]
+		public string ExcelPatternName
+		{
+			get
+			{
+				return this._ExcelPatternName;
+			}
+			set
+			{
+				if ((this._ExcelPatternName != value))
+				{
+					this.OnExcelPatternNameChanging(value);
+					this.SendPropertyChanging();
+					this._ExcelPatternName = value;
+					this.SendPropertyChanged("ExcelPatternName");
+					this.OnExcelPatternNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiplExcPatternName", DbType="VarChar(30)")]
+		public string DiplExcPatternName
+		{
+			get
+			{
+				return this._DiplExcPatternName;
+			}
+			set
+			{
+				if ((this._DiplExcPatternName != value))
+				{
+					this.OnDiplExcPatternNameChanging(value);
+					this.SendPropertyChanging();
+					this._DiplExcPatternName = value;
+					this.SendPropertyChanged("DiplExcPatternName");
+					this.OnDiplExcPatternNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ik_FB", DbType="Int")]
+		public System.Nullable<int> ik_FB
+		{
+			get
+			{
+				return this._ik_FB;
+			}
+			set
+			{
+				if ((this._ik_FB != value))
+				{
+					this.Onik_FBChanging(value);
+					this.SendPropertyChanging();
+					this._ik_FB = value;
+					this.SendPropertyChanged("ik_FB");
+					this.Onik_FBChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SortOrder", DbType="Int")]
+		public System.Nullable<int> SortOrder
+		{
+			get
+			{
+				return this._SortOrder;
+			}
+			set
+			{
+				if ((this._SortOrder != value))
+				{
+					this.OnSortOrderChanging(value);
+					this.SendPropertyChanging();
+					this._SortOrder = value;
+					this.SendPropertyChanged("SortOrder");
+					this.OnSortOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Podgot", DbType="VarChar(100)")]
+		public string Podgot
+		{
+			get
+			{
+				return this._Podgot;
+			}
+			set
+			{
+				if ((this._Podgot != value))
+				{
+					this.OnPodgotChanging(value);
+					this.SendPropertyChanging();
+					this._Podgot = value;
+					this.SendPropertyChanged("Podgot");
+					this.OnPodgotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_type_direction", DbType="Int NOT NULL")]
+		public int id_type_direction
+		{
+			get
+			{
+				return this._id_type_direction;
+			}
+			set
+			{
+				if ((this._id_type_direction != value))
+				{
+					if (this._TypeDirection.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_type_directionChanging(value);
+					this.SendPropertyChanging();
+					this._id_type_direction = value;
+					this.SendPropertyChanged("id_type_direction");
+					this.Onid_type_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_EducationBranch", Storage="_EducationBranches", ThisKey="ik_direction", OtherKey="ik_direction")]
+		public EntitySet<EducationBranch> EducationBranches
+		{
+			get
+			{
+				return this._EducationBranches;
+			}
+			set
+			{
+				this._EducationBranches.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Direction_Abit_Campaign_Content", Storage="_Abit_Campaign_Contents", ThisKey="ik_direction", OtherKey="id_direction")]
+		public EntitySet<Abit_Campaign_Content> Abit_Campaign_Contents
+		{
+			get
+			{
+				return this._Abit_Campaign_Contents;
+			}
+			set
+			{
+				this._Abit_Campaign_Contents.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TypeDirection_Direction", Storage="_TypeDirection", ThisKey="id_type_direction", OtherKey="id_type_direction", IsForeignKey=true)]
+		public TypeDirection TypeDirection
+		{
+			get
+			{
+				return this._TypeDirection.Entity;
+			}
+			set
+			{
+				TypeDirection previousValue = this._TypeDirection.Entity;
+				if (((previousValue != value) 
+							|| (this._TypeDirection.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TypeDirection.Entity = null;
+						previousValue.Directions.Remove(this);
+					}
+					this._TypeDirection.Entity = value;
+					if ((value != null))
+					{
+						value.Directions.Add(this);
+						this._id_type_direction = value.id_type_direction;
+					}
+					else
+					{
+						this._id_type_direction = default(int);
+					}
+					this.SendPropertyChanged("TypeDirection");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_EducationBranches(EducationBranch entity)
+		{
+			this.SendPropertyChanging();
+			entity.Direction = this;
+		}
+		
+		private void detach_EducationBranches(EducationBranch entity)
+		{
+			this.SendPropertyChanging();
+			entity.Direction = null;
+		}
+		
+		private void attach_Abit_Campaign_Contents(Abit_Campaign_Content entity)
+		{
+			this.SendPropertyChanging();
+			entity.Direction = this;
+		}
+		
+		private void detach_Abit_Campaign_Contents(Abit_Campaign_Content entity)
+		{
+			this.SendPropertyChanging();
+			entity.Direction = null;
 		}
 	}
 }

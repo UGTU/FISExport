@@ -19,7 +19,7 @@ namespace AbitExportProject.ActionMethods
 
         public int Year => DateTime.Today.Year;
 
-        public PackageDataCampaignInfo GetCampaignInfo(UGTUDataDataContext mainCtx, int year)
+        public static PackageDataCampaignInfo GetCampaignInfo(UGTUDataDataContext mainCtx, int year)
         {
             //var camp = mainCtx.Abit_Campaigns.Where(x => x.YearFrom == year).ToList();
 
