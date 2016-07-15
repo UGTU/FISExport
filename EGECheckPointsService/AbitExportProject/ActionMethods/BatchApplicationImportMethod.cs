@@ -127,6 +127,7 @@ namespace AbitExportProject.ActionMethods
                     AdmissionInfo.NumberQuotaZSpecified = AdmissionInfo.NumberQuotaZ > 0;
 
                     admVolume.Add(AdmissionInfo);
+
                     /*abitSpec.Main_NNRecord_FB = abitSpec.NNrecord;
                     var exams = abitSpec.ABIT_Diapazon_Discs.Select(disc => new PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem()
                     {
