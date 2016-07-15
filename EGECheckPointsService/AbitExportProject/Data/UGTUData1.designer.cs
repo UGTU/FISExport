@@ -126,6 +126,9 @@ namespace AbitExportProject.Data
     partial void InsertDirection(Direction instance);
     partial void UpdateDirection(Direction instance);
     partial void DeleteDirection(Direction instance);
+    partial void InsertAbit_CompetitiveGroup(Abit_CompetitiveGroup instance);
+    partial void UpdateAbit_CompetitiveGroup(Abit_CompetitiveGroup instance);
+    partial void DeleteAbit_CompetitiveGroup(Abit_CompetitiveGroup instance);
     #endregion
 		
 		public UGTUDataDataContext() : 
@@ -411,6 +414,14 @@ namespace AbitExportProject.Data
 			get
 			{
 				return this.GetTable<Direction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Abit_CompetitiveGroup> Abit_CompetitiveGroups
+		{
+			get
+			{
+				return this.GetTable<Abit_CompetitiveGroup>();
 			}
 		}
 	}
@@ -1307,7 +1318,7 @@ namespace AbitExportProject.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Photo
 		{
 			get
@@ -7468,6 +7479,14 @@ namespace AbitExportProject.Data
 		
 		private EntitySet<Abit_Campaign> _Abit_Campaigns1;
 		
+		private EntitySet<Abit_CompetitiveGroup> _Abit_CompetitiveGroups;
+		
+		private EntitySet<Abit_CompetitiveGroup> _Abit_CompetitiveGroups1;
+		
+		private EntitySet<Abit_CompetitiveGroup> _Abit_CompetitiveGroups2;
+		
+		private EntitySet<Abit_CompetitiveGroup> _Abit_CompetitiveGroups3;
+		
 		private EntityRef<DictionaryList> _DictionaryList;
 		
     #region Extensibility Method Definitions
@@ -7490,6 +7509,10 @@ namespace AbitExportProject.Data
 			this._Abit_Campaign_FormEds = new EntitySet<Abit_Campaign_FormEd>(new Action<Abit_Campaign_FormEd>(this.attach_Abit_Campaign_FormEds), new Action<Abit_Campaign_FormEd>(this.detach_Abit_Campaign_FormEds));
 			this._Abit_Campaigns = new EntitySet<Abit_Campaign>(new Action<Abit_Campaign>(this.attach_Abit_Campaigns), new Action<Abit_Campaign>(this.detach_Abit_Campaigns));
 			this._Abit_Campaigns1 = new EntitySet<Abit_Campaign>(new Action<Abit_Campaign>(this.attach_Abit_Campaigns1), new Action<Abit_Campaign>(this.detach_Abit_Campaigns1));
+			this._Abit_CompetitiveGroups = new EntitySet<Abit_CompetitiveGroup>(new Action<Abit_CompetitiveGroup>(this.attach_Abit_CompetitiveGroups), new Action<Abit_CompetitiveGroup>(this.detach_Abit_CompetitiveGroups));
+			this._Abit_CompetitiveGroups1 = new EntitySet<Abit_CompetitiveGroup>(new Action<Abit_CompetitiveGroup>(this.attach_Abit_CompetitiveGroups1), new Action<Abit_CompetitiveGroup>(this.detach_Abit_CompetitiveGroups1));
+			this._Abit_CompetitiveGroups2 = new EntitySet<Abit_CompetitiveGroup>(new Action<Abit_CompetitiveGroup>(this.attach_Abit_CompetitiveGroups2), new Action<Abit_CompetitiveGroup>(this.detach_Abit_CompetitiveGroups2));
+			this._Abit_CompetitiveGroups3 = new EntitySet<Abit_CompetitiveGroup>(new Action<Abit_CompetitiveGroup>(this.attach_Abit_CompetitiveGroups3), new Action<Abit_CompetitiveGroup>(this.detach_Abit_CompetitiveGroups3));
 			this._DictionaryList = default(EntityRef<DictionaryList>);
 			OnCreated();
 		}
@@ -7630,6 +7653,58 @@ namespace AbitExportProject.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup", Storage="_Abit_CompetitiveGroups", ThisKey="id", OtherKey="id_specFIS")]
+		public EntitySet<Abit_CompetitiveGroup> Abit_CompetitiveGroups
+		{
+			get
+			{
+				return this._Abit_CompetitiveGroups;
+			}
+			set
+			{
+				this._Abit_CompetitiveGroups.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup1", Storage="_Abit_CompetitiveGroups1", ThisKey="id", OtherKey="id_direction")]
+		public EntitySet<Abit_CompetitiveGroup> Abit_CompetitiveGroups1
+		{
+			get
+			{
+				return this._Abit_CompetitiveGroups1;
+			}
+			set
+			{
+				this._Abit_CompetitiveGroups1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup2", Storage="_Abit_CompetitiveGroups2", ThisKey="id", OtherKey="id_form")]
+		public EntitySet<Abit_CompetitiveGroup> Abit_CompetitiveGroups2
+		{
+			get
+			{
+				return this._Abit_CompetitiveGroups2;
+			}
+			set
+			{
+				this._Abit_CompetitiveGroups2.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup3", Storage="_Abit_CompetitiveGroups3", ThisKey="id", OtherKey="id_eduSource")]
+		public EntitySet<Abit_CompetitiveGroup> Abit_CompetitiveGroups3
+		{
+			get
+			{
+				return this._Abit_CompetitiveGroups3;
+			}
+			set
+			{
+				this._Abit_CompetitiveGroups3.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryList_DictionaryContent", Storage="_DictionaryList", ThisKey="DictionaryCode", OtherKey="Code", IsForeignKey=true)]
 		public DictionaryList DictionaryList
 		{
@@ -7730,6 +7805,54 @@ namespace AbitExportProject.Data
 		{
 			this.SendPropertyChanging();
 			entity.DictionaryContent1 = null;
+		}
+		
+		private void attach_Abit_CompetitiveGroups(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent = this;
+		}
+		
+		private void detach_Abit_CompetitiveGroups(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent = null;
+		}
+		
+		private void attach_Abit_CompetitiveGroups1(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent1 = this;
+		}
+		
+		private void detach_Abit_CompetitiveGroups1(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent1 = null;
+		}
+		
+		private void attach_Abit_CompetitiveGroups2(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent2 = this;
+		}
+		
+		private void detach_Abit_CompetitiveGroups2(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent2 = null;
+		}
+		
+		private void attach_Abit_CompetitiveGroups3(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent3 = this;
+		}
+		
+		private void detach_Abit_CompetitiveGroups3(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.DictionaryContent3 = null;
 		}
 	}
 	
@@ -8205,6 +8328,8 @@ namespace AbitExportProject.Data
 		
 		private EntitySet<Abit_Campaign_FormEd> _Abit_Campaign_FormEds;
 		
+		private EntitySet<Abit_CompetitiveGroup> _Abit_CompetitiveGroups;
+		
 		private EntityRef<DictionaryContent> _DictionaryContent;
 		
 		private EntityRef<DictionaryContent> _DictionaryContent1;
@@ -8231,6 +8356,7 @@ namespace AbitExportProject.Data
 		{
 			this._Abit_Campaign_Directions = new EntitySet<Abit_Campaign_Direction>(new Action<Abit_Campaign_Direction>(this.attach_Abit_Campaign_Directions), new Action<Abit_Campaign_Direction>(this.detach_Abit_Campaign_Directions));
 			this._Abit_Campaign_FormEds = new EntitySet<Abit_Campaign_FormEd>(new Action<Abit_Campaign_FormEd>(this.attach_Abit_Campaign_FormEds), new Action<Abit_Campaign_FormEd>(this.detach_Abit_Campaign_FormEds));
+			this._Abit_CompetitiveGroups = new EntitySet<Abit_CompetitiveGroup>(new Action<Abit_CompetitiveGroup>(this.attach_Abit_CompetitiveGroups), new Action<Abit_CompetitiveGroup>(this.detach_Abit_CompetitiveGroups));
 			this._DictionaryContent = default(EntityRef<DictionaryContent>);
 			this._DictionaryContent1 = default(EntityRef<DictionaryContent>);
 			OnCreated();
@@ -8390,6 +8516,19 @@ namespace AbitExportProject.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Abit_Campaign_Abit_CompetitiveGroup", Storage="_Abit_CompetitiveGroups", ThisKey="UID", OtherKey="UID_Campaign")]
+		public EntitySet<Abit_CompetitiveGroup> Abit_CompetitiveGroups
+		{
+			get
+			{
+				return this._Abit_CompetitiveGroups;
+			}
+			set
+			{
+				this._Abit_CompetitiveGroups.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_Campaign", Storage="_DictionaryContent", ThisKey="ik_FIS_TypePK", OtherKey="id", IsForeignKey=true)]
 		public DictionaryContent DictionaryContent
 		{
@@ -8497,6 +8636,18 @@ namespace AbitExportProject.Data
 		}
 		
 		private void detach_Abit_Campaign_FormEds(Abit_Campaign_FormEd entity)
+		{
+			this.SendPropertyChanging();
+			entity.Abit_Campaign = null;
+		}
+		
+		private void attach_Abit_CompetitiveGroups(Abit_CompetitiveGroup entity)
+		{
+			this.SendPropertyChanging();
+			entity.Abit_Campaign = this;
+		}
+		
+		private void detach_Abit_CompetitiveGroups(Abit_CompetitiveGroup entity)
 		{
 			this.SendPropertyChanging();
 			entity.Abit_Campaign = null;
@@ -9802,6 +9953,465 @@ namespace AbitExportProject.Data
 		{
 			this.SendPropertyChanging();
 			entity.Direction = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="FIS.Abit_CompetitiveGroup")]
+	public partial class Abit_CompetitiveGroup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_group;
+		
+		private int _UID_Campaign;
+		
+		private string _Name;
+		
+		private int _id_direction;
+		
+		private int _id_form;
+		
+		private int _id_eduSource;
+		
+		private int _id_specFIS;
+		
+		private System.Nullable<bool> _IsForKrim;
+		
+		private System.Nullable<bool> _IsAdditional;
+		
+		private EntityRef<Abit_Campaign> _Abit_Campaign;
+		
+		private EntityRef<DictionaryContent> _DictionaryContent;
+		
+		private EntityRef<DictionaryContent> _DictionaryContent1;
+		
+		private EntityRef<DictionaryContent> _DictionaryContent2;
+		
+		private EntityRef<DictionaryContent> _DictionaryContent3;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_groupChanging(int value);
+    partial void Onid_groupChanged();
+    partial void OnUID_CampaignChanging(int value);
+    partial void OnUID_CampaignChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void Onid_directionChanging(int value);
+    partial void Onid_directionChanged();
+    partial void Onid_formChanging(int value);
+    partial void Onid_formChanged();
+    partial void Onid_eduSourceChanging(int value);
+    partial void Onid_eduSourceChanged();
+    partial void Onid_specFISChanging(int value);
+    partial void Onid_specFISChanged();
+    partial void OnIsForKrimChanging(System.Nullable<bool> value);
+    partial void OnIsForKrimChanged();
+    partial void OnIsAdditionalChanging(System.Nullable<bool> value);
+    partial void OnIsAdditionalChanged();
+    #endregion
+		
+		public Abit_CompetitiveGroup()
+		{
+			this._Abit_Campaign = default(EntityRef<Abit_Campaign>);
+			this._DictionaryContent = default(EntityRef<DictionaryContent>);
+			this._DictionaryContent1 = default(EntityRef<DictionaryContent>);
+			this._DictionaryContent2 = default(EntityRef<DictionaryContent>);
+			this._DictionaryContent3 = default(EntityRef<DictionaryContent>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_group", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_group
+		{
+			get
+			{
+				return this._id_group;
+			}
+			set
+			{
+				if ((this._id_group != value))
+				{
+					this.Onid_groupChanging(value);
+					this.SendPropertyChanging();
+					this._id_group = value;
+					this.SendPropertyChanged("id_group");
+					this.Onid_groupChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UID_Campaign", DbType="Int NOT NULL")]
+		public int UID_Campaign
+		{
+			get
+			{
+				return this._UID_Campaign;
+			}
+			set
+			{
+				if ((this._UID_Campaign != value))
+				{
+					if (this._Abit_Campaign.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUID_CampaignChanging(value);
+					this.SendPropertyChanging();
+					this._UID_Campaign = value;
+					this.SendPropertyChanged("UID_Campaign");
+					this.OnUID_CampaignChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_direction", DbType="Int NOT NULL")]
+		public int id_direction
+		{
+			get
+			{
+				return this._id_direction;
+			}
+			set
+			{
+				if ((this._id_direction != value))
+				{
+					if (this._DictionaryContent1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_directionChanging(value);
+					this.SendPropertyChanging();
+					this._id_direction = value;
+					this.SendPropertyChanged("id_direction");
+					this.Onid_directionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_form", DbType="Int NOT NULL")]
+		public int id_form
+		{
+			get
+			{
+				return this._id_form;
+			}
+			set
+			{
+				if ((this._id_form != value))
+				{
+					if (this._DictionaryContent2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_formChanging(value);
+					this.SendPropertyChanging();
+					this._id_form = value;
+					this.SendPropertyChanged("id_form");
+					this.Onid_formChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_eduSource", DbType="Int NOT NULL")]
+		public int id_eduSource
+		{
+			get
+			{
+				return this._id_eduSource;
+			}
+			set
+			{
+				if ((this._id_eduSource != value))
+				{
+					if (this._DictionaryContent3.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_eduSourceChanging(value);
+					this.SendPropertyChanging();
+					this._id_eduSource = value;
+					this.SendPropertyChanged("id_eduSource");
+					this.Onid_eduSourceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_specFIS", DbType="Int NOT NULL")]
+		public int id_specFIS
+		{
+			get
+			{
+				return this._id_specFIS;
+			}
+			set
+			{
+				if ((this._id_specFIS != value))
+				{
+					if (this._DictionaryContent.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_specFISChanging(value);
+					this.SendPropertyChanging();
+					this._id_specFIS = value;
+					this.SendPropertyChanged("id_specFIS");
+					this.Onid_specFISChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsForKrim", DbType="Bit")]
+		public System.Nullable<bool> IsForKrim
+		{
+			get
+			{
+				return this._IsForKrim;
+			}
+			set
+			{
+				if ((this._IsForKrim != value))
+				{
+					this.OnIsForKrimChanging(value);
+					this.SendPropertyChanging();
+					this._IsForKrim = value;
+					this.SendPropertyChanged("IsForKrim");
+					this.OnIsForKrimChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsAdditional", DbType="Bit")]
+		public System.Nullable<bool> IsAdditional
+		{
+			get
+			{
+				return this._IsAdditional;
+			}
+			set
+			{
+				if ((this._IsAdditional != value))
+				{
+					this.OnIsAdditionalChanging(value);
+					this.SendPropertyChanging();
+					this._IsAdditional = value;
+					this.SendPropertyChanged("IsAdditional");
+					this.OnIsAdditionalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Abit_Campaign_Abit_CompetitiveGroup", Storage="_Abit_Campaign", ThisKey="UID_Campaign", OtherKey="UID", IsForeignKey=true)]
+		public Abit_Campaign Abit_Campaign
+		{
+			get
+			{
+				return this._Abit_Campaign.Entity;
+			}
+			set
+			{
+				Abit_Campaign previousValue = this._Abit_Campaign.Entity;
+				if (((previousValue != value) 
+							|| (this._Abit_Campaign.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Abit_Campaign.Entity = null;
+						previousValue.Abit_CompetitiveGroups.Remove(this);
+					}
+					this._Abit_Campaign.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_CompetitiveGroups.Add(this);
+						this._UID_Campaign = value.UID;
+					}
+					else
+					{
+						this._UID_Campaign = default(int);
+					}
+					this.SendPropertyChanged("Abit_Campaign");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup", Storage="_DictionaryContent", ThisKey="id_specFIS", OtherKey="id", IsForeignKey=true)]
+		public DictionaryContent DictionaryContent
+		{
+			get
+			{
+				return this._DictionaryContent.Entity;
+			}
+			set
+			{
+				DictionaryContent previousValue = this._DictionaryContent.Entity;
+				if (((previousValue != value) 
+							|| (this._DictionaryContent.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DictionaryContent.Entity = null;
+						previousValue.Abit_CompetitiveGroups.Remove(this);
+					}
+					this._DictionaryContent.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_CompetitiveGroups.Add(this);
+						this._id_specFIS = value.id;
+					}
+					else
+					{
+						this._id_specFIS = default(int);
+					}
+					this.SendPropertyChanged("DictionaryContent");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup1", Storage="_DictionaryContent1", ThisKey="id_direction", OtherKey="id", IsForeignKey=true)]
+		public DictionaryContent DictionaryContent1
+		{
+			get
+			{
+				return this._DictionaryContent1.Entity;
+			}
+			set
+			{
+				DictionaryContent previousValue = this._DictionaryContent1.Entity;
+				if (((previousValue != value) 
+							|| (this._DictionaryContent1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DictionaryContent1.Entity = null;
+						previousValue.Abit_CompetitiveGroups1.Remove(this);
+					}
+					this._DictionaryContent1.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_CompetitiveGroups1.Add(this);
+						this._id_direction = value.id;
+					}
+					else
+					{
+						this._id_direction = default(int);
+					}
+					this.SendPropertyChanged("DictionaryContent1");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup2", Storage="_DictionaryContent2", ThisKey="id_form", OtherKey="id", IsForeignKey=true)]
+		public DictionaryContent DictionaryContent2
+		{
+			get
+			{
+				return this._DictionaryContent2.Entity;
+			}
+			set
+			{
+				DictionaryContent previousValue = this._DictionaryContent2.Entity;
+				if (((previousValue != value) 
+							|| (this._DictionaryContent2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DictionaryContent2.Entity = null;
+						previousValue.Abit_CompetitiveGroups2.Remove(this);
+					}
+					this._DictionaryContent2.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_CompetitiveGroups2.Add(this);
+						this._id_form = value.id;
+					}
+					else
+					{
+						this._id_form = default(int);
+					}
+					this.SendPropertyChanged("DictionaryContent2");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DictionaryContent_Abit_CompetitiveGroup3", Storage="_DictionaryContent3", ThisKey="id_eduSource", OtherKey="id", IsForeignKey=true)]
+		public DictionaryContent DictionaryContent3
+		{
+			get
+			{
+				return this._DictionaryContent3.Entity;
+			}
+			set
+			{
+				DictionaryContent previousValue = this._DictionaryContent3.Entity;
+				if (((previousValue != value) 
+							|| (this._DictionaryContent3.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DictionaryContent3.Entity = null;
+						previousValue.Abit_CompetitiveGroups3.Remove(this);
+					}
+					this._DictionaryContent3.Entity = value;
+					if ((value != null))
+					{
+						value.Abit_CompetitiveGroups3.Add(this);
+						this._id_eduSource = value.id;
+					}
+					else
+					{
+						this._id_eduSource = default(int);
+					}
+					this.SendPropertyChanged("DictionaryContent3");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

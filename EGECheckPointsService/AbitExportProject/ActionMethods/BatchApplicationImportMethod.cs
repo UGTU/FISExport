@@ -64,18 +64,17 @@ namespace AbitExportProject.ActionMethods
 
         private PackageDataAdmissionInfo GetAmissionInfo(UGTUDataDataContext mainCtx, int year)
         {
-            //var currCampain = mainCtx.Abit_Campaigns.Single(x => x.YearFrom == year); //выбираем текущую кампанию
             //выбираем все кампании года
             var Campaigns = mainCtx.Abit_Campaigns.Where(x => x.YearFrom == year).ToList();
-            var CampaignsInfo = ExportCampaignInfoMethod.GetCampaignInfo(mainCtx, year);
+
+            var admVolume = new List<PackageDataAdmissionInfoItem>();
+            var campGroups = new List<PackageDataAdmissionInfoCompetitiveGroup>();
             //заполняем данные по каждой кампании
-            foreach (var compain in Campaigns)
+            foreach (var campain in Campaigns)
             {
-                var admVolume = new List<PackageDataAdmissionInfoItem>();
-                var compGroups = new List<PackageDataAdmissionInfoCompetitiveGroup>();
 
                 //все направления по поступлению, соответствующие типу кампании
-                var abitSpecs = mainCtx.ABIT_Diapazon_spec_facs.Where(x => x.NNyear == year).Where(x => x.Relation_spec_fac.EducationBranch.Direction.TypeDirection.ik_FIS_TypePK == compain.ik_FIS_TypePK).ToList();
+                var abitSpecs = mainCtx.ABIT_Diapazon_spec_facs.Where(x => x.NNyear == year).Where(x => x.Relation_spec_fac.EducationBranch.Direction.TypeDirection.ik_FIS_TypePK == campain.ik_FIS_TypePK).ToList();
 
                 //выгружаем все контр цифры приема по специальностям для кампании
                 foreach (var educBranch in abitSpecs.Select(x => x.Relation_spec_fac.EducationBranch).Distinct().ToList())
@@ -96,7 +95,7 @@ namespace AbitExportProject.ActionMethods
                     var AdmissionInfo = new PackageDataAdmissionInfoItem
                     {
                         UID = educBranch.ik_spec.ToString(), //abitSpec.NNrecord.ToString(),
-                        CampaignUID = compain.UID.ToString(),
+                        CampaignUID = campain.UID.ToString(),
                         EducationLevelID = (uint)educBranch.Direction.ik_FB,
                         DirectionID = (uint)educBranch.ik_FB,
                         //бюджет
@@ -128,7 +127,6 @@ namespace AbitExportProject.ActionMethods
                     AdmissionInfo.NumberQuotaZSpecified = AdmissionInfo.NumberQuotaZ > 0;
 
                     admVolume.Add(AdmissionInfo);
-
                     /*abitSpec.Main_NNRecord_FB = abitSpec.NNrecord;
                     var exams = abitSpec.ABIT_Diapazon_Discs.Select(disc => new PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem()
                     {
@@ -150,8 +148,37 @@ namespace AbitExportProject.ActionMethods
 
                 //выгружаем все контр цифры приема по уровням бюджета для кампании
                 /*данных таких у нас нет по местному бюджету. Можно использовать ист-к фин-я в EducationBranch для остальных уровней*/
+
+
+                //выгружаем конкурсные группы
+                foreach (Abit_CompetitiveGroup campGroup in mainCtx.Abit_CompetitiveGroups.Where(x => x.Abit_Campaign == campain))
+                {
+                    var campGroupInfo = new PackageDataAdmissionInfoCompetitiveGroup
+                    {
+                        UID = campGroup.id_group.ToString(),
+                        CampaignUID = campain.UID.ToString(),
+                        Name = campGroup.Name,
+                        EducationLevelID = (uint)campGroup.EducationLevel.IDItem,
+                        DirectionID = (uint)campGroup.Direction.IDItem,
+                        EducationSourceID = (uint)campGroup.EducSource.IDItem,
+                        EducationFormID = (uint)campGroup.FormEd.IDItem,
+                        IsForKrym = campGroup.IsForKrim.Value,
+                        IsAdditional = campGroup.IsAdditional.Value
+                    };
+
+
+                    campGroups.Add(campGroupInfo);
+                }
+
             }
 
+            PackageDataAdmissionInfo admissionInfo = new PackageDataAdmissionInfo()
+            {
+                AdmissionVolume = admVolume,
+                CompetitiveGroups = campGroups
+            };
+            mainCtx.SubmitChanges();
+            return admissionInfo;
 
             /* foreach (var abitSpec in abitSpecs.Where(abitSpec => (abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB.HasValue) &&
                                                                   (abitSpec.Relation_spec_fac.EducationBranch.ik_FB.HasValue)
@@ -174,7 +201,7 @@ namespace AbitExportProject.ActionMethods
                  {
                      //тут уместнее код специальности?
                      UID = abitSpec.Relation_spec_fac.ik_spec.ToString(), //abitSpec.NNrecord.ToString(),
-                     CampaignUID = compain.UID.ToString(),
+                     CampaignUID = campain.UID.ToString(),
                      EducationLevelID = (uint)abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB,
                      DirectionID = (uint)abitSpec.Relation_spec_fac.EducationBranch.ik_FB,
                      //бюджет
@@ -279,16 +306,9 @@ namespace AbitExportProject.ActionMethods
             //aV.NumberTargetZSpecified = aV.NumberTargetZ > 0;
 
             //admVolume.Add(aV);
-        }
-            }
 
-            var admInfo = new PackageDataAdmissionInfo()
-            {
-                AdmissionVolume = admVolume,
-                CompetitiveGroups = compGroups
-            };
-            mainCtx.SubmitChanges();
-            return admInfo;
+
+
         }
 
         public static List<PackageDataOrdersOrderOfAdmission> GetOrdersOfAdmission(UGTUDataDataContext ctx, int year)

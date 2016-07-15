@@ -60,6 +60,7 @@
     <Compile Include="ActionMethods\GetDictionaryMethod.cs" />
     <Compile Include="Controllers\MagicNumberController.cs" />
     <Compile Include="Data\Domain\Abit_Campaign.cs" />
+    <Compile Include="Data\Domain\Abit_CompetitiveGroup.cs" />
     <Compile Include="Data\UGTUData1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

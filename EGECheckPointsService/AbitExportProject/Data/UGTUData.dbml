@@ -336,6 +336,10 @@
       <Association Name="DictionaryContent_Abit_Campaign_FormEd" Member="Abit_Campaign_FormEds" ThisKey="id" OtherKey="ID_FormEd" Type="Abit_Campaign_FormEd" />
       <Association Name="DictionaryContent_Abit_Campaign" Member="Abit_Campaigns" ThisKey="id" OtherKey="ik_FIS_TypePK" Type="Abit_Campaign" />
       <Association Name="DictionaryContent_Abit_Campaign1" Member="Abit_Campaigns1" ThisKey="id" OtherKey="StatusID" Type="Abit_Campaign" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="id" OtherKey="id_specFIS" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="Abit_CompetitiveGroups1" ThisKey="id" OtherKey="id_direction" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="Abit_CompetitiveGroups2" ThisKey="id" OtherKey="id_form" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup3" Member="Abit_CompetitiveGroups3" ThisKey="id" OtherKey="id_eduSource" Type="Abit_CompetitiveGroup" />
       <Association Name="DictionaryList_DictionaryContent" Member="DictionaryList" ThisKey="DictionaryCode" OtherKey="Code" Type="DictionaryList" IsForeignKey="true" />
     </Type>
   </Table>
@@ -372,6 +376,7 @@
       <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Abit_Campaign_Abit_Campaign_Direction" Member="Abit_Campaign_Directions" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_Direction" />
       <Association Name="Abit_Campaign_Abit_Campaign_FormEd" Member="Abit_Campaign_FormEds" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_FormEd" />
+      <Association Name="Abit_Campaign_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_CompetitiveGroup" />
       <Association Name="DictionaryContent_Abit_Campaign" Member="DictionaryContent" ThisKey="ik_FIS_TypePK" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
       <Association Name="DictionaryContent_Abit_Campaign1" Member="DictionaryContent1" ThisKey="StatusID" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
     </Type>
@@ -433,6 +438,24 @@
       <Association Name="Direction_EducationBranch" Member="EducationBranches" ThisKey="ik_direction" OtherKey="ik_direction" Type="EducationBranch" />
       <Association Name="Direction_Abit_Campaign_Content" Member="Abit_Campaign_Contents" ThisKey="ik_direction" OtherKey="id_direction" Type="Abit_Campaign_Content" />
       <Association Name="TypeDirection_Direction" Member="TypeDirection" ThisKey="id_type_direction" OtherKey="id_type_direction" Type="TypeDirection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="FIS.Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups">
+    <Type Name="Abit_CompetitiveGroup">
+      <Column Name="id_group" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UID_Campaign" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="id_direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_form" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_eduSource" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_specFIS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsForKrim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsAdditional" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Abit_Campaign_Abit_CompetitiveGroup" Member="Abit_Campaign" ThisKey="UID_Campaign" OtherKey="UID" Type="Abit_Campaign" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="DictionaryContent" ThisKey="id_specFIS" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="DictionaryContent1" ThisKey="id_direction" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="DictionaryContent2" ThisKey="id_form" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup3" Member="DictionaryContent3" ThisKey="id_eduSource" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
