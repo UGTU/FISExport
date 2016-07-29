@@ -44,9 +44,8 @@ namespace AbitExportProject.ActionMethods
             var stud = mainCtx.Persons.FirstOrDefault(y => y.nCode == abit.nCode);
             foreach (var doc in stud.Doc_studs.Where(y => y.document.IsIdentity))
             {
-                    file.WriteLine(stud.Clastname.Trim().ToUpper() + "%" + stud.Cfirstname.Trim().ToUpper() + "%" +
-                                   stud.Cotch.Trim().ToUpper()
-                                   + "%" + doc.Seria + "%" + doc.Number);               
+                file.WriteLine(stud.Clastname.Trim().ToUpper() + "%" + stud.Cfirstname.Trim().ToUpper() + "%" +
+                               stud.Cotch.Trim().ToUpper() + "%" + doc.Seria + "%" + doc.Number);               
             }
         }
     }
