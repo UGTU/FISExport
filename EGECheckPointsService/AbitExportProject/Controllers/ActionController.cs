@@ -10,15 +10,25 @@ namespace AbitExportProject.Controllers
 {
     public class ActionController
     {
-        private List<IBaseMethod> _actionList;
+        private readonly List<IBaseMethod> _actionList;
 
-        public ActionController()
+        /// <summary>
+        /// В конструкторе должны быть зарегистрированы по имени типа те методы, которые доступны для вызова пользователем
+        /// </summary>
+        public ActionController()           
         {
             _actionList = new List<IBaseMethod>();
             RegisterMethod(typeof (GetDictionaryMethod));
+            RegisterMethod(typeof(GetSpecDictionaryDetailsMethod));
             RegisterMethod(typeof (GetDictionaryDetailsMethod));
             RegisterMethod(typeof(CreateEGEPackMethod));
             RegisterMethod(typeof(ExportCampaignInfoMethod));
+            RegisterMethod(typeof(AdmissionVolumeImportMethod));
+            RegisterMethod(typeof(TargetOrganizationImportMethod));
+            RegisterMethod(typeof(CompetitiveGroupsImportMethod));
+            RegisterMethod(typeof(ApplicationsImportMethod));
+            RegisterMethod(typeof(OrdersImportMethod));
+            RegisterMethod(typeof(GetUnexportedAbitsMethod));
             RegisterMethod(typeof(GetImportResultMethod));
         }
 
@@ -27,6 +37,11 @@ namespace AbitExportProject.Controllers
             _actionList.Add((IBaseMethod)Activator.CreateInstance(objType));
         }
 
+        /// <summary>
+        /// Операция, которая передается в метод, если ему необходимо задать пользователю дополнительные уточняющие вопросы. Возвращает ответ в ввиде строки.
+        /// </summary>
+        /// <param name="question">Дополнительный вопрос, который задается методом</param>
+        /// <returns></returns>
         public string AskByConsole(string question)
         {
             Console.WriteLine(question);
@@ -41,7 +56,6 @@ namespace AbitExportProject.Controllers
             {
                 Console.WriteLine(@"{0} - {1}", i, arr[i].ToString());
             }
-
            
             /*
             Console.WriteLine("0 - Импорт справочников из ФИС в БД УГТУ");
@@ -58,106 +72,18 @@ namespace AbitExportProject.Controllers
             Console.WriteLine("11 - Удалить из ФИС все приказы на зачисление");*/
         }
 
-        private static bool IsCorrectIndex(string code)
-        {
-            try
-            {
-                Convert.ToInt32(code);
-                return true;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Некорректный код");
-                return false;
-            }
-            
-        }
-
         public void MakeAction(string action)
         {
             int idAction;
-            if (int.TryParse(action, out idAction))
+            if (!int.TryParse(action, out idAction))
             {
-                _actionList.ToArray()[idAction].Run(AskByConsole);
+                Console.WriteLine("Вы выбрали недопустимую операцию. Работа программы будет завершена");
+                return;
             }
-            /*var bc = new BaseController();
-
-            
-            switch (action)
+            if (!_actionList.ToArray()[idAction].Run(AskByConsole))
             {
-                case "0":
-                {
-                    bc.GetDictionaries(); //получить справочники из ФИС в БД
-                    break;
-                }
-                case "1":
-                {
-                    Console.WriteLine("Введите имя файла:");
-                    bc.CreateEgeXMLPatch(Console.ReadLine()); //cформировать XML-пакет абитуриентов для проверки ЕГЭ
-                    break;
-                }
-                case "2":
-                {
-                    bc.ExportCampaignInfo(DateTime.Today.Year);
-                        break;
-                }
-                case "3":
-                    {
-                        bc.ExportAdmissionInfo(DateTime.Today.Year);
-                        break;
-                    }
-                case "4":
-                    {
-                        Console.WriteLine("Введите код абитуриента:");
-                        var nCode = Console.ReadLine();
-                        if (IsCorrectIndex(nCode))
-                            bc.ExportSingle(Convert.ToInt32(nCode), DateTime.Today.Year); //удалить абитуриента из ФИС по ID
-                        break;
-                    }
-                case "5":
-                    {
-                        bc.ExportApplications(DateTime.Today.Year);
-                        break;
-                    }
-                case "6":
-                    {
-                        bc.ExportOrdersBatch(DateTime.Today.Year);
-                        break;
-                    }
-                case "7":
-                    {
-                        Console.WriteLine("Введите код абитуриента:");
-                        var nCode = Console.ReadLine();
-                        if (IsCorrectIndex(nCode))
-                            bc.DeleteDefiniteApplication(Convert.ToInt32(nCode)); //удалить абитуриента из ФИС по ID
-                        break;
-                    }
-                case "8":
-                    {
-                        bc.DeleteExportedApplications();
-                        break;
-                    }
-                case "9":
-                    {
-                        bc.DeleteSPOApplications();
-                        break;
-                    }
-                case "10":
-                    {
-                        Console.WriteLine("Введите NNRecord набора:");
-                        var NNRecord = Console.ReadLine();
-                        if (IsCorrectIndex(NNRecord))
-                            bc.DeleteApplicationByNNRecord(Convert.ToInt32(NNRecord));
-                        break;
-                    }
-                case "11":
-                    {
-                        bc.DeleteOrders(DateTime.Today.Year);
-                        break;
-                    }
-                default: Console.WriteLine("Вы выбрали недопустимую операцию");
-                    break;
-            } */
+                Console.WriteLine("Операция прошла с ошибками. Смотрите результаты в папке OutLogs");
+            };
 
         }
     }

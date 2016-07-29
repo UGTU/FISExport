@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AbitExportProject.ActionMethods;
+using AbitExportProject.Controllers;
 using AbitExportProject.Data;
 using AbitExportProject.ParsersToDB;
 using Fdalilib.Actions2016.Dictionary;
@@ -11,9 +12,8 @@ using Fdalilib.Actions2016.Dictionary;
 
 namespace AbitExportProject.ActionMethods
 {
-    class GetDictionaryMethod: BaseProxyMethod<Root, TError, Fdalilib.Actions2016.Dictionary.Dictionaries>, IBaseMethod
+    class GetDictionaryMethod: BaseProxyMethod<Root, TError, Dictionaries>, IBaseMethod
     {
-        const int OlympicDictionary = 19;  //справочник олимпиад
 
         public override string ToString()
         {
@@ -24,11 +24,13 @@ namespace AbitExportProject.ActionMethods
 
         protected override string MethodName => "GetDictionaryMethod";
 
-        public void Run(Func<string, string> askMore)
+        public bool Run(Func<string, string> askMore)
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
                 var dicts = proxy.ReturnOrNullAndError(Package, "GetDictionaries");
+
+                if (dicts?.Items == null) return false;
 
                 Console.WriteLine("пошли выкачивать справочники: + {0} штук", dicts.Items.Count);
                 foreach (DictionariesDictionary dictionary in dicts.Items)
@@ -37,18 +39,22 @@ namespace AbitExportProject.ActionMethods
                     DictionaryParser.ParseDictionary(mainCtx, dictionary);
 
                     CommitToDb(mainCtx);
-
-                    if (dictionary.Code == OlympicDictionary)
+                    IBaseMethod dictDetailmethod;
+                    switch (dictionary.Code)
                     {
-                        var dictDetailmethod = new GetOlympicDictionaryDetailsMethod() {DictId = dictionary.Code};
-                        dictDetailmethod.Run(null);
+                        case MagicNumberController.OlympicDictionary:
+                            dictDetailmethod = new GetOlympicDictionaryDetailsMethod();
+                            break;
+                        case MagicNumberController.SpecDictionary:
+                            dictDetailmethod = new GetSpecDictionaryDetailsMethod();
+                            break;
+                        default:
+                            dictDetailmethod = new GetDictionaryDetailsMethod {DictId = dictionary.Code};
+                            break;                                 
                     }
-                    else
-                    {
-                        var dictDetailmethod = new GetDictionaryDetailsMethod {DictId = dictionary.Code};
-                        dictDetailmethod.Run(null);
-                    }                  
-                }         
+                    dictDetailmethod.Run(null);
+                }
+                return true;
             }
         }
 

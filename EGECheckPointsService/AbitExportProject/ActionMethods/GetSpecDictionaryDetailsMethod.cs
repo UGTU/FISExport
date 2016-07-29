@@ -6,33 +6,31 @@ using System.Threading.Tasks;
 using AbitExportProject.Controllers;
 using AbitExportProject.Data;
 using AbitExportProject.ParsersToDB;
-using Fdalilib.Actions2016.DictionaryOlympicDetails;
-
+using Fdalilib.Actions2016.DictionarySpecDetails;
 
 namespace AbitExportProject.ActionMethods
 {
-    class GetOlympicDictionaryDetailsMethod : BaseProxyMethod<Root, TError, DictionaryData>, IBaseMethod
+    class GetSpecDictionaryDetailsMethod : BaseProxyMethod<Root, TError, DictionaryData>, IBaseMethod
     {
-        protected override string MethodName => "GetOlympicDictionaryDetailsMethod";
+        protected override string MethodName => "GetSpecDictionaryDetailsMethod";
+        public int Year => DateTime.Today.Year;
 
         public override string ToString()
         {
-            return "Импорт данных справочника олимпиад из ФИС в БД УГТУ";
+            return "Импорт данных справочника направлений/специальностей из ФИС в БД УГТУ";
         }
-
-        public int Year => DateTime.Today.Year;
 
         public bool Run(Func<string, string> askMore)
         {
-            Package.GetDictionaryContent.DictionaryCode = MagicNumberController.OlympicDictionary;
-            var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
+           Package.GetDictionaryContent.DictionaryCode = MagicNumberController.SpecDictionary;
+           var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
 
             if (curDict.DictionaryItems == null) return false;
             using (var mainCtx = new UGTUDataDataContext())
             {
                 foreach (var dictItem in curDict.DictionaryItems)
                 {
-                    DictionaryParser.ParseOlympicDictionaryItems(mainCtx, dictItem, MagicNumberController.OlympicDictionary);
+                    DictionaryParser.ParseSpecDictionaryItems(mainCtx, dictItem, MagicNumberController.SpecDictionary);
                 }
                 CommitToDb(mainCtx);
             }

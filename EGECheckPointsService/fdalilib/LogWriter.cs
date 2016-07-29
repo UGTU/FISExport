@@ -18,7 +18,7 @@ namespace Fdalilib
                 if (_logWriter != null) return _logWriter;
                 lock (_syncRoot)
                 {
-                    _logWriter = File.CreateText("OutLogs/" + DateTime.Today.ToString("dd-MM-yy") + "log.txt");
+                    _logWriter = File.CreateText("OutLogs/" + DateTime.Now.ToString("dd-MM-yyyy HH-mm-ss ") + "log.txt");
                 }
                 return _logWriter;
             }

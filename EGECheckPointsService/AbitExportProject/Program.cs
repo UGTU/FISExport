@@ -71,7 +71,13 @@ namespace AbitExportProject
                  return;
           }*/
 
+            //GetImportResultByID(mainProxy, 1333273, mainCtx);  //получить результат импорта
+            //mainProxy.GetUniversityInfo(6377);
+
+            // var expRes = proxy.ExportBatch(pack)
+            //RepeatExportTillResult(pack);
+
         }
-         
+
     }     
 }

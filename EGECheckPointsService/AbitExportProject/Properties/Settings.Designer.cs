@@ -28,28 +28,6 @@ namespace AbitExportProject.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.16.22;Initial Catalog=UGTU;Persist Security Info=True;User ID=" +
             "exportfis;Password=NjkmrjNs23")]
-        public string UGTUConnectionString {
-            get {
-                return ((string)(this["UGTUConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.16.22;Initial Catalog=UGTU_ACTTEST;Integrated Security=True;Us" +
-            "er ID=exportfis;Password=NjkmrjNs23")]
-        public string UGTUConnectionStringTEST {
-            get {
-                return ((string)(this["UGTUConnectionStringTEST"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.16.22;Initial Catalog=UGTU;Persist Security Info=True;User ID=" +
-            "exportfis;Password=NjkmrjNs23")]
         public string UGTUConnectionString1 {
             get {
                 return ((string)(this["UGTUConnectionString1"]));
@@ -63,6 +41,27 @@ namespace AbitExportProject.Properties {
         public string UGTUConnectionString2 {
             get {
                 return ((string)(this["UGTUConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.16.22;Initial Catalog=UGTU;Persist Security Info=True;User ID=" +
+            "exportfis;Password=NjkmrjNs23")]
+        public string UGTUConnectionString {
+            get {
+                return ((string)(this["UGTUConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.16.22;Initial Catalog=UGTU_ACTTEST;Integrated Security=True")]
+        public string UGTUConnectionStringTEST {
+            get {
+                return ((string)(this["UGTUConnectionStringTEST"]));
             }
         }
     }

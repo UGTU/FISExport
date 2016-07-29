@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using AbitExportProject;
 using Fdalilib;
 using Fdalilib.Service;
-using Fdalilib.Actions2015;
+//using Fdalilib.Actions2015;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace fdalilibtests
@@ -189,20 +189,20 @@ namespace fdalilibtests
         }
 
 
-        private static FisProxy<Root, TError, ImportResultPackage> CreateIntegrationService()
-        {
-            WebRequest.DefaultWebProxy = new WebProxy("http://195.22.104.27:3128/", true);
+        //private static FisProxy<Root, TError, ImportResultPackage> CreateIntegrationService()
+        //{
+        //    WebRequest.DefaultWebProxy = new WebProxy("http://195.22.104.27:3128/", true);
 
-            IFisProxyService service = new WebClientFisProxyService(new EnlargeYourTimeoutClient(600000), new Uri("http://10.0.3.1:8080/import/"));
+        //    IFisProxyService service = new WebClientFisProxyService(new EnlargeYourTimeoutClient(600000), new Uri("http://10.0.3.1:8080/import/"));
 
-            var federalDatabase = new FisProxy<Root, TError, ImportResultPackage>(/*"fmarakasov@ugtu.net","bylnMu4",*/service)
-            {
-                //LogWriter =
-                //    File.CreateText("../../OutLogs/" + ((DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds) +
-                //                    "log.txt")
-            };
-            return federalDatabase;
-        }
+        //    var federalDatabase = new FisProxy<Root, TError, ImportResultPackage>(/*"fmarakasov@ugtu.net","bylnMu4",*/service)
+        //    {
+        //        //LogWriter =
+        //        //    File.CreateText("../../OutLogs/" + ((DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds) +
+        //        //                    "log.txt")
+        //    };
+        //    return federalDatabase;
+        //}
 
 
         

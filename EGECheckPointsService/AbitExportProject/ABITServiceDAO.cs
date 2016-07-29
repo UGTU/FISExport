@@ -31,7 +31,7 @@ namespace AbitExportProject
 
     //    //private bool _isLastFail = false;
 
- 
+
 
     //    //public bool IsLastFail
     //    //{
@@ -46,7 +46,7 @@ namespace AbitExportProject
     //    private AbitServiceDao()
     //    {
     //        //WebRequest.DefaultWebProxy = new WebProxy("http://195.22.104.27:3128/", true);
-            
+
     //        proxy = FisProxy.Instance("pk@ugtu.net", "2lvFeaJ", service);
     //        proxy.
     //    }
@@ -107,10 +107,10 @@ namespace AbitExportProject
     //    /// Получение списка экспортированных заявлений
     //    /// </summary>
     //    /// <returns>список экспортированных заявлений</returns>
-    //    public List<InstitutionExportsInstitutionExportApplication> GetExportedApps()
-    //    {
-    //        return ReturnOrNullAndError(proxy.GetUniversityInfo(), x => x.InstitutionExport.Applications);
-    //    }
+    //public List<InstitutionExportsInstitutionExportApplication> GetExportedApps()
+    //{
+    //    return ReturnOrNullAndError(proxy.GetUniversityInfo(), x => x.InstitutionExport.Applications);
+    //}
 
     //    /// <summary>
     //    /// Получение импортированных приказов

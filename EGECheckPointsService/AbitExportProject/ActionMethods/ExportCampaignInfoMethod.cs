@@ -123,7 +123,7 @@ namespace AbitExportProject.ActionMethods
             Package.AuthData.Pass = Password;
         }
 
-        public void Run(Func<string, string> askMore)
+        public bool Run(Func<string, string> askMore)
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
@@ -137,7 +137,9 @@ namespace AbitExportProject.ActionMethods
 
                 var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
 
+                if (expRes == null) return false;
                 SavePackNumber(expRes.PackageID);
+                return true;
 
                 // var expRes = proxy.ExportBatch(pack)
                 //RepeatExportTillResult(pack);

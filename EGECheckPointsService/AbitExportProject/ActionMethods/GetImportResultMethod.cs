@@ -27,7 +27,7 @@ namespace AbitExportProject.ActionMethods
         }
         public int Year => DateTime.Today.Year;
 
-        public void Run(Func<string, string> askMore)
+        public bool Run(Func<string, string> askMore)
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
@@ -37,10 +37,9 @@ namespace AbitExportProject.ActionMethods
 
                 PackID = (uint) packId;
 
-
                 var Result = proxy.ReturnOrNullAndError(Package, "ImportPackResult");
             }
-
+            return true;
         }
         protected override void SetAuth()
         {

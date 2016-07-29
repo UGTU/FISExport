@@ -62,6 +62,11 @@ namespace AbitExportProject.ActionMethods
             SetAuth();
         }
 
+        protected void GetImportException(Exception e)
+        {
+            Console.WriteLine($"импорт в ФИс не проходит. {e}");
+        }
+
         protected virtual string MethodName => "BaseProxyMethod";
 
         private void CreateFisProxy()
@@ -86,6 +91,41 @@ namespace AbitExportProject.ActionMethods
                 MakeLog(e.InnerException?.Message);
                 throw;
             }
+        }
+
+        protected void RepeatExportTillResult(TInput pack)
+        {
+            MakeLog("Всё собрали и пошли отправлять:");
+            Console.WriteLine("Всё собрали и пошли отправлять:");
+
+            //var expRes = _sDao.ExportBatch(pack); //получить результат экспорта
+            //if (expRes != null)
+            //{
+            //    MakeLog("expRes: " + Convert.ToString(expRes.PackageID));
+            //    Console.WriteLine("expRes: " + Convert.ToString(expRes.PackageID));
+            //    MakeLog(expRes.ToString());
+            //}
+            //else MakeLog("Похоже, что expRes = null");
+
+            //try
+            //{
+            //    var pakId = expRes.PackageID; //получить номер экспортированного пакета 
+            //    MakeLog("Номер импортированного пакета: " + Convert.ToString(pakId));
+
+            //    Console.WriteLine("Номер импортированного пакета: " + Convert.ToString(pakId));
+            //    Console.WriteLine("Теперь жди. Программа завершит работу сама, как только получит результаты импорта");
+            //    GetImportResultById(pakId);
+            //}
+            //catch (Exception exception)
+            //{
+            //    MakeLog(exception.Message);
+            //    MakeLog("MainMetod");
+            //    if (expRes != null)
+            //    {
+            //        MakeLog(expRes.ToString());
+            //    }
+            //    else Console.ReadLine();
+            //}
         }
 
         protected void MakeLog(string message)
@@ -114,7 +154,6 @@ namespace AbitExportProject.ActionMethods
             //var authType = auth.GetType();
             //var login = authType.GetProperty("Login");
             //if ((login.PropertyType != typeof(string))) return;
-
 
             //authType.GetProperty("Login").SetValue(auth, Login, null);
             //authType.GetProperty("Pass").SetValue(auth, Password, null);

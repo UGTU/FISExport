@@ -10,14 +10,14 @@ namespace AbitExportProject.Data
     {
         public DictionaryContent StatusPK 
         {
-            get { return DictionaryContent1; }
-            set { DictionaryContent1 = value; }
+            get { return DictionaryContent; }
+            set { DictionaryContent = value; }
         }
 
         public DictionaryContent TypePK
         {
-            get { return DictionaryContent; }
-            set { DictionaryContent = value; }
+            get { return DictionaryContent1; }
+            set { DictionaryContent1 = value; }
         }
     }
 }

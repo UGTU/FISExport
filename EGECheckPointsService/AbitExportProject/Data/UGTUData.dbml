@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UGTU" Class="UGTUDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=ugtudb.ugtu.net;Initial Catalog=UGTU;Integrated Security=True" SettingsObjectName="AbitExportProject.Properties.Settings" SettingsPropertyName="UGTUConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.16.22;Initial Catalog=UGTU;Persist Security Info=True;User ID=exportfis" SettingsObjectName="AbitExportProject.Properties.Settings" SettingsPropertyName="UGTUConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Student" Member="Students">
     <Type Name="Student">
       <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -101,6 +101,7 @@
       <Column Name="Np_number" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="Cd_seria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="nCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="Doc_stud_Abit_Bonuse" Member="Abit_Bonuse" ThisKey="Ik_doc" OtherKey="ik_doc" Type="Abit_Bonuse" Cardinality="One" />
       <Association Name="Person_Doc_stud" Member="Person" ThisKey="nCode" OtherKey="nCode" Type="Person" IsForeignKey="true" />
       <Association Name="document_Doc_stud" Member="document" ThisKey="Ik_vid_doc" OtherKey="ik_vid_doc" Type="document" IsForeignKey="true" />
     </Type>
@@ -163,6 +164,7 @@
       <Association Name="ABIT_Disc_ABIT_Vstup_exam" Member="ABIT_Vstup_exams" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Vstup_exam" />
       <Association Name="ABIT_Disc_ABIT_Diapazon_Disc" Member="ABIT_Diapazon_Discs" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Diapazon_Disc" />
       <Association Name="ABIT_Disc_ABIT_Raspisanie" Member="ABIT_Raspisanies" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Raspisanie" />
+      <Association Name="ABIT_Disc_Abit_Bonuse" Member="Abit_Bonuses" ThisKey="ik_disc" OtherKey="ik_disc" Type="Abit_Bonuse" />
     </Type>
   </Table>
   <Table Name="dbo.ABIT_Diapazon_spec_fac" Member="ABIT_Diapazon_spec_facs">
@@ -336,10 +338,9 @@
       <Association Name="DictionaryContent_Abit_Campaign_FormEd" Member="Abit_Campaign_FormEds" ThisKey="id" OtherKey="ID_FormEd" Type="Abit_Campaign_FormEd" />
       <Association Name="DictionaryContent_Abit_Campaign" Member="Abit_Campaigns" ThisKey="id" OtherKey="ik_FIS_TypePK" Type="Abit_Campaign" />
       <Association Name="DictionaryContent_Abit_Campaign1" Member="Abit_Campaigns1" ThisKey="id" OtherKey="StatusID" Type="Abit_Campaign" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="id" OtherKey="id_specFIS" Type="Abit_CompetitiveGroup" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="Abit_CompetitiveGroups1" ThisKey="id" OtherKey="id_direction" Type="Abit_CompetitiveGroup" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="Abit_CompetitiveGroups2" ThisKey="id" OtherKey="id_form" Type="Abit_CompetitiveGroup" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup3" Member="Abit_CompetitiveGroups3" ThisKey="id" OtherKey="id_eduSource" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="id" OtherKey="id_educLevel" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="Abit_CompetitiveGroups1" ThisKey="id" OtherKey="id_form" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="Abit_CompetitiveGroups2" ThisKey="id" OtherKey="id_eduSource" Type="Abit_CompetitiveGroup" />
       <Association Name="DictionaryList_DictionaryContent" Member="DictionaryList" ThisKey="DictionaryCode" OtherKey="Code" Type="DictionaryList" IsForeignKey="true" />
     </Type>
   </Table>
@@ -364,21 +365,6 @@
       <Column Name="Code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Association Name="DictionaryList_DictionaryContent" Member="DictionaryContents" ThisKey="Code" OtherKey="DictionaryCode" Type="DictionaryContent" />
-    </Type>
-  </Table>
-  <Table Name="FIS.Abit_Campaign" Member="Abit_Campaigns">
-    <Type Name="Abit_Campaign">
-      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="YearFrom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="YearTo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ik_FIS_TypePK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Abit_Campaign_Abit_Campaign_Direction" Member="Abit_Campaign_Directions" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_Direction" />
-      <Association Name="Abit_Campaign_Abit_Campaign_FormEd" Member="Abit_Campaign_FormEds" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_FormEd" />
-      <Association Name="Abit_Campaign_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_CompetitiveGroup" />
-      <Association Name="DictionaryContent_Abit_Campaign" Member="DictionaryContent" ThisKey="ik_FIS_TypePK" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
-      <Association Name="DictionaryContent_Abit_Campaign1" Member="DictionaryContent1" ThisKey="StatusID" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ABIT_postup" Member="ABIT_postups">
@@ -440,22 +426,57 @@
       <Association Name="TypeDirection_Direction" Member="TypeDirection" ThisKey="id_type_direction" OtherKey="id_type_direction" Type="TypeDirection" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="FIS.SpecDetailDictionary" Member="SpecDetailDictionaries">
+    <Type Name="SpecDetailDictionary">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="QualificationCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UGSCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NewCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UGSName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="SpecDetailDictionary_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="ID" OtherKey="id_specFIS" Type="Abit_CompetitiveGroup" />
+    </Type>
+  </Table>
+  <Table Name="FIS.Abit_Campaign" Member="Abit_Campaigns">
+    <Type Name="Abit_Campaign">
+      <Column Name="UID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="YearFrom" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YearTo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_FIS_TypePK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Abit_Campaign_Abit_Campaign_Direction" Member="Abit_Campaign_Directions" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_Direction" />
+      <Association Name="Abit_Campaign_Abit_Campaign_FormEd" Member="Abit_Campaign_FormEds" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_Campaign_FormEd" />
+      <Association Name="Abit_Campaign_Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups" ThisKey="UID" OtherKey="UID_Campaign" Type="Abit_CompetitiveGroup" />
+      <Association Name="DictionaryContent_Abit_Campaign" Member="DictionaryContent" ThisKey="ik_FIS_TypePK" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_Campaign1" Member="DictionaryContent1" ThisKey="StatusID" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="FIS.Abit_CompetitiveGroup" Member="Abit_CompetitiveGroups">
     <Type Name="Abit_CompetitiveGroup">
       <Column Name="id_group" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="UID_Campaign" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_direction" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_educLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_form" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_eduSource" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_specFIS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="IsForKrim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="IsAdditional" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Abit_Campaign_Abit_CompetitiveGroup" Member="Abit_Campaign" ThisKey="UID_Campaign" OtherKey="UID" Type="Abit_Campaign" IsForeignKey="true" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="DictionaryContent" ThisKey="id_specFIS" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="DictionaryContent1" ThisKey="id_direction" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="DictionaryContent2" ThisKey="id_form" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
-      <Association Name="DictionaryContent_Abit_CompetitiveGroup3" Member="DictionaryContent3" ThisKey="id_eduSource" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="SpecDetailDictionary_Abit_CompetitiveGroup" Member="SpecDetailDictionary" ThisKey="id_specFIS" OtherKey="ID" Type="SpecDetailDictionary" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup" Member="DictionaryContent" ThisKey="id_educLevel" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup1" Member="DictionaryContent1" ThisKey="id_form" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+      <Association Name="DictionaryContent_Abit_CompetitiveGroup2" Member="DictionaryContent2" ThisKey="id_eduSource" OtherKey="id" Type="DictionaryContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Abit_Bonuses" Member="Abit_Bonuses">
+    <Type Name="Abit_Bonuse">
+      <Column Name="ik_doc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="balls" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ik_disc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ABIT_Disc_Abit_Bonuse" Member="ABIT_Disc" ThisKey="ik_disc" OtherKey="ik_disc" Type="ABIT_Disc" IsForeignKey="true" />
+      <Association Name="Doc_stud_Abit_Bonuse" Member="Doc_stud" ThisKey="ik_doc" OtherKey="Ik_doc" Type="Doc_stud" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
 </Database>
