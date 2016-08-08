@@ -137,15 +137,16 @@
     <Compile Include="Actions2016\DictionarySpecDetails\ответ-детали по справочнику специальностей.designer.cs" />
     <Compile Include="Actions2016\DictionaryDetails\ответ-детали по справочнику.designer.cs" />
     <Compile Include="Actions2016\SingleAppicationImport\ответ-импорт 1 заявления.designer.cs" />
-    <Compile Include="Actions2016\BatchApplicationImport\ответ-импорт.designer.cs" />
     <Compile Include="Actions2016\GetImportResult\ответ-получение результата импорта.designer.cs" />
     <Compile Include="Actions2016\GetDeleteResult\ответ-получение результата удаления.designer.cs" />
     <Compile Include="Actions2016\GetUniversityProperty\ответ-получение сведений об ОУ.designer.cs" />
     <Compile Include="Actions2016\GetPartUniversityProperty\ответ-получение части сведений об ОУ.designer.cs" />
     <Compile Include="Actions2016\Delete\ответ-удаление.designer.cs" />
     <Compile Include="Actions2016\Dictionary\ответ-список справочников.designer.cs" />
-    <Compile Include="Actions2016\BatchApplicationImport\запрос-импорт.designer.cs" />
     <Compile Include="Actions2016\GetImportResult\запрос-получение результата импорта.designer.cs" />
+    <Compile Include="Actions2016\BatchApplicationImport\запрос-импорт.designer.cs" />
+    <Compile Include="Actions2016\BatchApplicationImport\ответ-импорт.designer.cs" />
+    <Compile Include="XML\Schemes 2016\ответ-детали по справочнику специальностей.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

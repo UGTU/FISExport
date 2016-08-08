@@ -74,7 +74,7 @@ namespace Fdalilib.Actions2016.DictionarySpecDetails
 
         private string nameField;
 
-        private string codeField;
+        private string newcodeField;
 
         private string qualificationCodeField;
 
@@ -108,15 +108,15 @@ namespace Fdalilib.Actions2016.DictionarySpecDetails
             }
         }
 
-        public string Code
+        public string NewCode
         {
             get
             {
-                return this.codeField;
+                return this.newcodeField;
             }
             set
             {
-                this.codeField = value;
+                this.newcodeField = value;
             }
         }
 

@@ -19,7 +19,7 @@ namespace AbitExportProject.ActionMethods
             return "Сформировать XML-пакет для проверки ЕГЭ абитуриента...";
         }
 
-        public void Run(Func<string, string> askMore)
+        public bool Run(Func<string, string> askMore)
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
@@ -36,17 +36,16 @@ namespace AbitExportProject.ActionMethods
                     }
                 }
             }
+            return true;
         }
 
         private static void PackAbitToFile(UGTUDataDataContext mainCtx, Export_FB_journal abit, StreamWriter file)
         {
             var stud = mainCtx.Persons.FirstOrDefault(y => y.nCode == abit.nCode);
-            var doc = stud.Doc_studs.FirstOrDefault(y => y.document.IsIdentity);
-            if (doc != null)
+            foreach (var doc in stud.Doc_studs.Where(y => y.document.IsIdentity))
             {
                 file.WriteLine(stud.Clastname.Trim().ToUpper() + "%" + stud.Cfirstname.Trim().ToUpper() + "%" +
-                               stud.Cotch.Trim().ToUpper()
-                               + "%" + doc.Seria + "%" + doc.Number);
+                               stud.Cotch.Trim().ToUpper() + "%" + doc.Seria + "%" + doc.Number);               
             }
         }
     }

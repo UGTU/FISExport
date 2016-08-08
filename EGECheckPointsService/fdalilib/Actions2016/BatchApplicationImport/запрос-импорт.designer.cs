@@ -30,16 +30,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private PackageDataOrders ordersField;
 
-        public PackageData()
-        {
-            this.ordersField = new PackageDataOrders();
-            this.applicationsField = new List<PackageDataApplication>();
-            this.targetOrganizationsField = new List<PackageDataTargetOrganization>();
-            this.institutionAchievementsField = new List<PackageDataInstitutionAchievement>();
-            this.admissionInfoField = new PackageDataAdmissionInfo();
-            this.campaignInfoField = new PackageDataCampaignInfo();
-        }
-
         public PackageDataCampaignInfo CampaignInfo
         {
             get
@@ -120,11 +110,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
     {
 
         private List<PackageDataCampaignInfoCampaign> campaignsField;
-
-        public PackageDataCampaignInfo()
-        {
-            this.campaignsField = new List<PackageDataCampaignInfoCampaign>();
-        }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("Campaign", IsNullable = false)]
         public List<PackageDataCampaignInfoCampaign> Campaigns
@@ -263,13 +248,13 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
     }
-
-    public partial class TInstitutionDocument
+    
+    public partial class InstitutionDocument
     {
 
         private string documentNumberField;
 
-        private System.DateTime documentDateField;
+        private string documentDateField;
 
         private bool documentDateFieldSpecified;
 
@@ -289,7 +274,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime DocumentDate
+        public string DocumentDate
         {
             get
             {
@@ -1031,7 +1016,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -1079,7 +1064,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -1308,7 +1293,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -1356,7 +1341,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -2139,7 +2124,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -2187,7 +2172,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -2416,7 +2401,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -2457,7 +2442,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -4139,19 +4124,43 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
     public partial class TEntranceTestSubject
     {
 
-        private object itemField;
+        private uint SubjectIDField;
 
-        public object Item
+        public uint SubjectID
         {
             get
             {
-                return this.itemField;
+                return this.SubjectIDField;
             }
             set
             {
-                this.itemField = value;
+                this.SubjectIDField = value;
             }
         }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SubjectIDSpecified
+        {
+            get
+            {
+                return this.SubjectID > 0;
+            }
+        }
+
+        private string SubjectNameField;
+
+        public string SubjectName
+        {
+            get
+            {
+                return this.SubjectNameField;
+            }
+            set
+            {
+                this.SubjectNameField = value;
+            }
+        }
+
     }
 
     public partial class PackageDataAdmissionInfo
@@ -4162,13 +4171,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private List<PackageDataAdmissionInfoItem1> distributedAdmissionVolumeField;
 
         private List<PackageDataAdmissionInfoCompetitiveGroup> competitiveGroupsField;
-
-        public PackageDataAdmissionInfo()
-        {
-            this.competitiveGroupsField = new List<PackageDataAdmissionInfoCompetitiveGroup>();
-            this.distributedAdmissionVolumeField = new List<PackageDataAdmissionInfoItem1>();
-            this.admissionVolumeField = new List<PackageDataAdmissionInfoItem>();
-        }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
         public List<PackageDataAdmissionInfoItem> AdmissionVolume
@@ -4334,7 +4336,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         {
             get
             {
-                return this.numberBudgetOFieldSpecified;
+                return NumberBudgetO > 0;
             }
             set
             {
@@ -4359,7 +4361,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         {
             get
             {
-                return this.numberBudgetOZFieldSpecified;
+                return NumberBudgetOZ > 0;
             }
             set
             {
@@ -4384,7 +4386,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         {
             get
             {
-                return this.numberBudgetZFieldSpecified;
+                return NumberBudgetZ > 0;
             }
             set
             {
@@ -4409,7 +4411,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         {
             get
             {
-                return this.numberPaidOFieldSpecified;
+                return NumberPaidO > 0;
             }
             set
             {
@@ -4946,15 +4948,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem> entranceTestItemsField;
 
-        public PackageDataAdmissionInfoCompetitiveGroup()
-        {
-            this.entranceTestItemsField = new List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem>();
-            this.commonBenefitField = new List<PackageDataAdmissionInfoCompetitiveGroupCommonBenefitItem>();
-            this.targetOrganizationsField = new List<PackageDataAdmissionInfoCompetitiveGroupTargetOrganization>();
-            this.competitiveGroupItemField = new PackageDataAdmissionInfoCompetitiveGroupCompetitiveGroupItem();
-            this.eduProgramsField = new List<PackageDataAdmissionInfoCompetitiveGroupEduProgram>();
-        }
-
         public string UID
         {
             get
@@ -5127,6 +5120,12 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TargetOrganizationsSpecified
+        {
+            get { return TargetOrganizations?.Count > 0; }
+        }
+
         [System.Xml.Serialization.XmlArrayItemAttribute("CommonBenefitItem", IsNullable = false)]
         public List<PackageDataAdmissionInfoCompetitiveGroupCommonBenefitItem> CommonBenefit
         {
@@ -5152,6 +5151,13 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
                 this.entranceTestItemsField = value;
             }
         }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool EntranceTestItemsSpecified
+        {
+            get { return EntranceTestItems?.Count > 0; }
+        }
+
     }
 
     public partial class PackageDataAdmissionInfoCompetitiveGroupEduProgram
@@ -5207,7 +5213,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private ItemChoiceType itemElementNameField;
 
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+      //  [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
         public uint Item
         {
             get
@@ -5236,7 +5242,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
     public enum ItemChoiceType
     {
-
         /// <remarks/>
         NumberBudgetO,
 
@@ -5316,9 +5321,12 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private uint itemField;
 
-        private ItemChoiceType1 itemElementNameField;
+        private NumberTargetType itemElementNameField;
 
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        [XmlChoiceIdentifier("ItemElementName")]
+        [XmlElement("NumberTargetO")]
+        [XmlElement("NumberTargetOZ")]
+        [XmlElement("NumberTargetZ")]
         public uint Item
         {
             get
@@ -5331,8 +5339,8 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType1 ItemElementName
+        [XmlIgnore]
+        public NumberTargetType ItemElementName
         {
             get
             {
@@ -5345,7 +5353,8 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         }
     }
 
-    public enum ItemChoiceType1
+    [XmlType(IncludeInSchema = false)]
+    public enum NumberTargetType
     {
 
         /// <remarks/>
@@ -5757,13 +5766,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItemEntranceTestBenefitItem> entranceTestBenefitsField;
 
         private PackageDataAdmissionInfoCompetitiveGroupEntranceTestItemIsForSPOandVO isForSPOandVOField;
-
-        public PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem()
-        {
-            this.isForSPOandVOField = new PackageDataAdmissionInfoCompetitiveGroupEntranceTestItemIsForSPOandVO();
-            this.entranceTestBenefitsField = new List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItemEntranceTestBenefitItem>();
-            this.entranceTestSubjectField = new TEntranceTestSubject();
-        }
 
         public string UID
         {
@@ -6279,7 +6281,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private PackageDataApplicationEntrant entrantField;
 
-        private System.DateTime registrationDateField;
+        private string registrationDateField;
 
         private bool needHostelField;
 
@@ -6296,16 +6298,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private List<PackageDataApplicationEntranceTestResult> entranceTestResultsField;
 
         private List<PackageDataApplicationIndividualAchievement> individualAchievementsField;
-
-        public PackageDataApplication()
-        {
-            this.individualAchievementsField = new List<PackageDataApplicationIndividualAchievement>();
-            this.entranceTestResultsField = new List<PackageDataApplicationEntranceTestResult>();
-            this.applicationDocumentsField = new PackageDataApplicationApplicationDocuments();
-            this.applicationCommonBenefitsField = new List<PackageDataApplicationApplicationCommonBenefit>();
-            this.finSourceAndEduFormsField = new List<PackageDataApplicationFinSourceEduForm>();
-            this.entrantField = new PackageDataApplicationEntrant();
-        }
 
         public string UID
         {
@@ -6343,7 +6335,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime RegistrationDate
+        public string RegistrationDate
         {
             get
             {
@@ -6454,6 +6446,15 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
                 this.individualAchievementsField = value;
             }
         }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IndividualAchievementsSpecified
+        {
+            get
+            {
+                return (IndividualAchievements.Count > 0);
+            }
+        }
     }
 
     public partial class PackageDataApplicationEntrant
@@ -6474,12 +6475,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private PackageDataApplicationEntrantEmailOrMailAddress emailOrMailAddressField;
 
         private PackageDataApplicationEntrantIsFromKrym isFromKrymField;
-
-        public PackageDataApplicationEntrant()
-        {
-            this.isFromKrymField = new PackageDataApplicationEntrantIsFromKrym();
-            this.emailOrMailAddressField = new PackageDataApplicationEntrantEmailOrMailAddress();
-        }
 
         public string UID
         {
@@ -6686,7 +6681,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string targetOrganizationUIDField;
 
-        private System.DateTime isAgreedDateField;
+        private string isAgreedDateField;
 
         private bool isAgreedDateFieldSpecified;
 
@@ -6718,7 +6713,16 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime IsAgreedDate
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TargetOrganizationUIDSpecified
+        {
+            get
+            {
+                return (TargetOrganizationUID  != "0");
+            }
+        }
+
+        public string IsAgreedDate
         {
             get
             {
@@ -6931,7 +6935,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private PackageDataApplicationApplicationDocumentsIdentityDocument identityDocumentField;
 
-        private List<PackageDataApplicationApplicationDocumentsIdentityDocument1> otherIdentityDocumentsField;
+        private List<PackageDataApplicationApplicationDocumentsIdentityDocument> otherIdentityDocumentsField;
 
         private List<PackageDataApplicationApplicationDocumentsEduDocument> eduDocumentsField;
 
@@ -6948,22 +6952,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private List<TCompatriotDocument> compatriotDocumentsField;
 
         private List<TCustomDocument> customDocumentsField;
-
-        public PackageDataApplicationApplicationDocuments()
-        {
-            this.customDocumentsField = new List<TCustomDocument>();
-            this.compatriotDocumentsField = new List<TCompatriotDocument>();
-            this.sportDocumentsField = new List<TSportDocument>();
-            this.veteranDocumentsField = new List<TVeteranDocument>();
-            this.orphanDocumentsField = new List<TOrphanDocument>();
-            this.studentDocumentField = new PackageDataApplicationApplicationDocumentsStudentDocument();
-            this.militaryCardDocumentField = new PackageDataApplicationApplicationDocumentsMilitaryCardDocument();
-            this.eduDocumentsField = new List<PackageDataApplicationApplicationDocumentsEduDocument>();
-            this.otherIdentityDocumentsField = new List<PackageDataApplicationApplicationDocumentsIdentityDocument1>();
-            this.identityDocumentField = new PackageDataApplicationApplicationDocumentsIdentityDocument();
-            this.giaDocumentsField = new List<PackageDataApplicationApplicationDocumentsGiaDocument>();
-            this.egeDocumentsField = new List<PackageDataApplicationApplicationDocumentsEgeDocument>();
-        }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("EgeDocument", IsNullable = false)]
         public List<PackageDataApplicationApplicationDocumentsEgeDocument> EgeDocuments
@@ -7004,7 +6992,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("IdentityDocument", IsNullable = false)]
-        public List<PackageDataApplicationApplicationDocumentsIdentityDocument1> OtherIdentityDocuments
+        public List<PackageDataApplicationApplicationDocumentsIdentityDocument> OtherIdentityDocuments
         {
             get
             {
@@ -7436,7 +7424,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -7456,7 +7444,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string subdivisionCodeField;
 
-        private System.DateTime documentDateField;
+        private string documentDateField;
 
         private string documentOrganizationField;
 
@@ -7464,7 +7452,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private uint nationalityTypeIDField;
 
-        private System.DateTime birthDateField;
+        private string birthDateField;
 
         private string birthPlaceField;
 
@@ -7480,7 +7468,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -7602,7 +7590,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime DocumentDate
+        public string DocumentDate
         {
             get
             {
@@ -7650,7 +7638,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime BirthDate
+        public string BirthDate
         {
             get
             {
@@ -7680,7 +7668,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string uIDField;
 
-        private System.DateTime originalReceivedDateField;
+        private string originalReceivedDateField;
 
         private bool originalReceivedDateFieldSpecified;
 
@@ -7700,7 +7688,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private string subdivisionCodeField;
 
-        private System.DateTime documentDateField;
+        private string documentDateField;
 
         private string documentOrganizationField;
 
@@ -7708,7 +7696,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private uint nationalityTypeIDField;
 
-        private System.DateTime birthDateField;
+        private string birthDateField;
 
         private string birthPlaceField;
 
@@ -7724,7 +7712,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime OriginalReceivedDate
+        public string OriginalReceivedDate
         {
             get
             {
@@ -7741,7 +7729,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         {
             get
             {
-                return this.originalReceivedDateFieldSpecified;
+                return !string.IsNullOrEmpty(originalReceivedDateField);
             }
             set
             {
@@ -7846,7 +7834,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime DocumentDate
+        public string DocumentDate
         {
             get
             {
@@ -7894,7 +7882,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        public System.DateTime BirthDate
+        public string BirthDate
         {
             get
             {
@@ -7924,9 +7912,18 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private object itemField;
 
-        private ItemChoiceType2 itemElementNameField;
+        private EduDocItemChoiceType itemElementNameField;
 
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        [XmlChoiceIdentifier("ItemElementName")]
+        [XmlElement("AcademicDiplomaDocument", typeof(TAcademicDiplomaDocument))]
+        [XmlElement("BasicDiplomaDocument", typeof(TBasicDiplomaDocument))]
+        [XmlElement("EduCustomDocument", typeof(TEduCustomDocument))]
+        [XmlElement("HighEduDiplomaDocument", typeof(THighEduDiplomaDocument))]
+        [XmlElement("IncomplHighEduDiplomaDocument", typeof(TIncomplHighEduDiplomaDocument))]
+        [XmlElement("MiddleEduDiplomaDocument", typeof(TMiddleEduDiplomaDocument))]
+        [XmlElement("PhDDiplomaDocument", typeof(TPhDDiplomaDocument))]
+        [XmlElement("PostGraduateDiplomaDocument", typeof(TPostGraduateDiplomaDocument))]
+        [XmlElement("SchoolCertificateDocument", typeof(TSchoolCertificateDocument))]
         public object Item
         {
             get
@@ -7939,8 +7936,8 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemChoiceType2 ItemElementName
+        [XmlIgnore]
+        public EduDocItemChoiceType ItemElementName
         {
             get
             {
@@ -7953,7 +7950,8 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         }
     }
 
-    public enum ItemChoiceType2
+    [XmlType(IncludeInSchema = false)]
+    public enum EduDocItemChoiceType
     {
 
         /// <remarks/>
@@ -8288,6 +8286,57 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         }
     }
 
+    //public partial class PackageDataAdmissionInfoCompetitiveGroupTargetOrganizationCompetitiveGroupTargetItem
+    //{
+
+    //    private uint itemField;
+
+    //    private NumberTargetType itemElementNameField;
+
+    //    [XmlChoiceIdentifier("ItemElementName")]
+    //    [XmlElement("NumberTargetO")]
+    //    [XmlElement("NumberTargetOZ")]
+    //    [XmlElement("NumberTargetZ")]
+    //    public uint Item
+    //    {
+    //        get
+    //        {
+    //            return this.itemField;
+    //        }
+    //        set
+    //        {
+    //            this.itemField = value;
+    //        }
+    //    }
+
+    //    [XmlIgnore]
+    //    public NumberTargetType ItemElementName
+    //    {
+    //        get
+    //        {
+    //            return this.itemElementNameField;
+    //        }
+    //        set
+    //        {
+    //            this.itemElementNameField = value;
+    //        }
+    //    }
+    //}
+
+    //[XmlType(IncludeInSchema = false)]
+    //public enum NumberTargetType
+    //{
+
+    //    /// <remarks/>
+    //    NumberTargetO,
+
+    //    /// <remarks/>
+    //    NumberTargetOZ,
+
+    //    /// <remarks/>
+    //    NumberTargetZ,
+    //}
+
     public partial class PackageDataApplicationEntranceTestResultResultDocument
     {
 
@@ -8304,6 +8353,20 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
                 this.itemField = value;
             }
         }
+    }
+
+    [XmlType(IncludeInSchema = false)]
+    public enum ResultDocumentChoice
+    {
+
+        /// <remarks/>
+        NumberTargetO,
+
+        /// <remarks/>
+        NumberTargetOZ,
+
+        /// <remarks/>
+        NumberTargetZ,
     }
 
     public partial class PackageDataApplicationEntranceTestResultIsDistant
@@ -8425,13 +8488,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private List<PackageDataOrdersOrderOfException> ordersOfExceptionField;
 
         private List<PackageDataOrdersApplication> applicationsField;
-
-        public PackageDataOrders()
-        {
-            this.applicationsField = new List<PackageDataOrdersApplication>();
-            this.ordersOfExceptionField = new List<PackageDataOrdersOrderOfException>();
-            this.ordersOfAdmissionField = new List<PackageDataOrdersOrderOfAdmission>();
-        }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("OrderOfAdmission", IsNullable = false)]
         public List<PackageDataOrdersOrderOfAdmission> OrdersOfAdmission

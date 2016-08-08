@@ -6,18 +6,22 @@ namespace AbitExportProject.Data
 {
     partial class ABIT_postup
     {
-        const int ZachislState = 2;
-        const int CurrentState = 4;
+        public const int ZachislState = 2;
+        public const int CurrentState = 4;
+        public const int NetworkState = 9;
+        public const int ReplacedState = 2;
+
         public List<Doc_stud> IdentityDocs => Student.Person.IdentityDocs;       //список идентификационных документов     
         public List<Doc_stud> EducationalDocs => Student.Person.EducationalDocs; //список образовательных документов
         public bool IsCurrent => ABIT_sost_zach.ik_type_zach == CurrentState;    //текущее состояние
         public bool IsZachisl => ABIT_sost_zach.ik_type_zach == ZachislState;    //состояние зачисления
-
-
+        public bool IsNetwork => _ik_zach == NetworkState;                       //подано по сети
+        public bool IsReplaced => _ik_zach == ReplacedState;                     //переведен
 
         public bool IsActual => Student.Person.Export_FB_journal.Is_actual;
         public string OriginalReceivedDate => DateTimeDecoder.DateToString(dateOriginal);
 
+        public string RegistrationDate => DateTimeDecoder.DateToString(dd_pod_zayav);
 
         public int SpecIk
         {

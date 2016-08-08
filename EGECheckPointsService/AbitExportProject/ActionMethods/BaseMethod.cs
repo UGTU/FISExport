@@ -10,6 +10,6 @@ namespace AbitExportProject.ActionMethods
     {
         int Year { get; }
         string ToString();
-        void Run(Func<string,string> askMore);
+        bool Run(Func<string,string> askMore);
     }
 }

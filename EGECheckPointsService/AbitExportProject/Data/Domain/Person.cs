@@ -27,6 +27,8 @@ namespace AbitExportProject.Data
             get { return Doc_studs.Where(y => y.document.IsEducational).ToList(); }
         }
 
+        
+
         public List<EgeDocument> EgeDocs
         { 
             get

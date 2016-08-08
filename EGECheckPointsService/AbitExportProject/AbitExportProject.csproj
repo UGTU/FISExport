@@ -47,20 +47,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABITServiceDAO.cs" />
+    <Compile Include="ActionMethods\AdmissionVolumeImportMethod.cs" />
     <Compile Include="ActionMethods\BaseMethod.cs" />
+    <Compile Include="ActionMethods\CompetitiveGroupsImportMethod.cs" />
     <Compile Include="ActionMethods\CreateEGEPackMethod.cs" />
     <Compile Include="ActionMethods\ExportCampaignInfoMethod.cs" />
     <Compile Include="ActionMethods\GetDictionaryDetailsMethod.cs" />
     <Compile Include="ActionMethods\GetImportResultMethod.cs" />
     <Compile Include="ActionMethods\GetOlympicDictionaryDetailsMethod.cs" />
+    <Compile Include="ActionMethods\GetSpecDictionaryDetailsMethod.cs" />
+    <Compile Include="ActionMethods\GetUnexportedAbitsMethod.cs" />
+    <Compile Include="ActionMethods\OrdersImportMethod.cs" />
+    <Compile Include="ActionMethods\TargetOrganizationImportMethod.cs" />
     <Compile Include="Collector.cs" />
     <Compile Include="Controllers\ActionController.cs" />
     <Compile Include="ActionMethods\BaseProxyMethod.cs" />
-    <Compile Include="ActionMethods\BatchApplicationImportMethod.cs" />
+    <Compile Include="ActionMethods\ApplicationsImportMethod.cs" />
     <Compile Include="ActionMethods\GetDictionaryMethod.cs" />
     <Compile Include="Controllers\MagicNumberController.cs" />
     <Compile Include="Data\Domain\Abit_Campaign.cs" />
     <Compile Include="Data\Domain\Abit_CompetitiveGroup.cs" />
+    <Compile Include="Data\Domain\ABIT_VidSdachi.cs" />
     <Compile Include="Data\UGTUData1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +76,7 @@
     <Compile Include="ExportParam.cs" />
     <Compile Include="ParsersToDB\DictionaryDetailsOlympicParser.cs" />
     <Compile Include="ParsersToDB\DictionaryDetailsParser.cs" />
+    <Compile Include="ParsersToDB\DictionaryDetailsSpecParser.cs" />
     <Compile Include="ParsersToDB\DictionaryParser.cs" />
     <Compile Include="DataDecoders\DateTimeDecoder.cs" />
     <Compile Include="Data\Domain\AbitPostup.cs" />

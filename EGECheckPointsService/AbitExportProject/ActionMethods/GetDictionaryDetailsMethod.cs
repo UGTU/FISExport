@@ -27,7 +27,7 @@ namespace AbitExportProject.ActionMethods
         protected override string MethodName => "GetDictionaryDetailsMethod";
 
 
-        public void Run(Func<string, string> askMore)
+        public bool Run(Func<string, string> askMore)
         {
             if (askMore != null)
             {
@@ -37,7 +37,7 @@ namespace AbitExportProject.ActionMethods
             
             var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
 
-            if (curDict.DictionaryItems == null) return;
+            if (curDict.DictionaryItems == null) return false;
             using (var mainCtx = new UGTUDataDataContext())
             {
                 foreach (var dictItem in curDict.DictionaryItems)
@@ -46,6 +46,7 @@ namespace AbitExportProject.ActionMethods
                 }
                 CommitToDb(mainCtx);
             }
+            return true;
         }
 
         protected override void SetAuth()

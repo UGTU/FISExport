@@ -12,6 +12,8 @@ namespace AbitExportProject.Data
     {
         public const int MiddleEduDiplomaDocument = 7;
         public const int HighEduDiplomaDocument = 9;
+        public const int OtherIdentity = 9;
+
         public const int VremDocument = 12;
         public string Seria => Cd_seria.Trim();
         public bool IsEmptySeria => (Seria == "");

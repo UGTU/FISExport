@@ -9,28 +9,13 @@ namespace AbitExportProject.Controllers
 {
     public class MagicNumberController
     {
-        public static int idOchnFormEd
-        {
-            get
-            {
-                return 1;
-            }
-        }
+        public static int IdOchnFormEd => 1;
 
-        public static int idZaochFormEd
-        {
-            get
-            {
-                return 2;
-            }
-        }
+        public static int IdZaochFormEd => 2;
 
-        public static int idOZaochFormEd
-        {
-            get
-            {
-                return 7;
-            }
-        }
+        public static int IdOZaochFormEd => 7;
+
+        public const int OlympicDictionary = 19;   //справочник олимпиад
+        public const int SpecDictionary = 10;      //справочник специальностей/направлений
     }
 }
