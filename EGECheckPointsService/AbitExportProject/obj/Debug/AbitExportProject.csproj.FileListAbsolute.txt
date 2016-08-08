@@ -1,0 +1,8 @@
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\bin\Debug\export2fis.exe.config
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\bin\Debug\export2fis.exe
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\bin\Debug\export2fis.pdb
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\bin\Debug\fdalilib.dll
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\bin\Debug\fdalilib.pdb
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\obj\Debug\AbitExportProject.csprojResolveAssemblyReference.cache
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\obj\Debug\export2fis.exe
+E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\AbitExportProject\obj\Debug\export2fis.pdb
