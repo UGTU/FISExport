@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:complexType name="TError">
 		<xs:all>
@@ -1238,66 +1237,137 @@
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="ErrorInfo" type="TErrorInfo">
+													<xs:element name="ApplicationInOrder" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>Сведения об ошибке</xs:documentation>
+															<xs:documentation>Заявление, включенное в приказ</xs:documentation>
 														</xs:annotation>
-													</xs:element>
-													<xs:element name="ApplicationNumber" type="xs:string">
-														<xs:annotation>
-															<xs:documentation>Номер заявления</xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="RegistrationDate" type="xs:dateTime">
-														<xs:annotation>
-															<xs:documentation>Дата регистрации заявления</xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="UID" type="TUID">
-														<xs:annotation>
-															<xs:documentation>Идентификатор заявления</xs:documentation>
-														</xs:annotation>
+														<xs:complexType>
+															<xs:all>
+																<xs:element name="ErrorInfo" type="TErrorInfo">
+																	<xs:annotation>
+																		<xs:documentation>Сведения об ошибке</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="ApplicationNumber" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>Номер заявления</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="RegistrationDate" type="xs:dateTime">
+																	<xs:annotation>
+																		<xs:documentation>Дата регистрации заявления</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="UID" type="TUID">
+																	<xs:annotation>
+																		<xs:documentation>Идентификатор заявления</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:all>
+														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="OrderOfAdmission" minOccurs="0">
+										<xs:element name="OrdersOfAdmissions" minOccurs="0">
 											<xs:annotation>
-												<xs:documentation>Сведения о приказе</xs:documentation>
+												<xs:documentation>Сведения о приказах</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
-												<xs:all>
-													<xs:element name="ErrorInfo" type="TErrorInfo">
+												<xs:sequence>
+													<xs:element name="OrderOfAdmission" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>Сведения об ошибке</xs:documentation>
+															<xs:documentation>Сведения о приказе</xs:documentation>
 														</xs:annotation>
+														<xs:complexType>
+															<xs:all>
+																<xs:element name="ErrorInfo" type="TErrorInfo">
+																	<xs:annotation>
+																		<xs:documentation>Сведения об ошибке</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="OrderOfAdmissionUID" type="TUID">
+																	<xs:annotation>
+																		<xs:documentation>Идентификатор в ИС ОО</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="OrderName">
+																	<xs:annotation>
+																		<xs:documentation>Наименование (текстовое описание) приказа</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:length value="250"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="OrderNumber" type="xs:unsignedInt">
+																	<xs:annotation>
+																		<xs:documentation>Номер приказа</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="OrderDate" type="xs:date">
+																	<xs:annotation>
+																		<xs:documentation>Дата приказа</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:all>
+														</xs:complexType>
 													</xs:element>
-													<xs:element name="OrderUID" type="TUID">
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="OrdersOfException" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Приказы об исключении из приказа о зачислении</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="OrderOfException" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>Идентификатор в ИС ОО</xs:documentation>
+															<xs:documentation>Приказ об исключении из приказа о зачислении</xs:documentation>
 														</xs:annotation>
+														<xs:complexType>
+															<xs:all>
+																<xs:element name="ErrorInfo" type="TErrorInfo">
+																	<xs:annotation>
+																		<xs:documentation>Сведения об ошибке</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="OrderOfExceptionUID" type="TUID">
+																	<xs:annotation>
+																		<xs:documentation>Идентификатор в ИС ОО</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="OrderName">
+																	<xs:annotation>
+																		<xs:documentation>Наименование (текстовое описание) приказа</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="200"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="OrderNumber">
+																	<xs:annotation>
+																		<xs:documentation>Номер приказа</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="50"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="OrderDate" type="xs:date">
+																	<xs:annotation>
+																		<xs:documentation>Дата регистрации приказа</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:all>
+														</xs:complexType>
 													</xs:element>
-													<xs:element name="OrderName">
-														<xs:annotation>
-															<xs:documentation>Наименование (текстовое описание) приказа</xs:documentation>
-														</xs:annotation>
-														<xs:simpleType>
-															<xs:restriction base="xs:string">
-																<xs:length value="250"/>
-															</xs:restriction>
-														</xs:simpleType>
-													</xs:element>
-													<xs:element name="OrderNumber" type="xs:unsignedInt">
-														<xs:annotation>
-															<xs:documentation>Номер приказа</xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="OrderDate" type="xs:date">
-														<xs:annotation>
-															<xs:documentation>Дата приказа</xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:all>
+												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>

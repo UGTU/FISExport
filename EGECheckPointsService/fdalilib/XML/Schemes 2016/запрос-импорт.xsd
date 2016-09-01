@@ -39,12 +39,22 @@
 			</xs:element>
 			<xs:element name="ProfileID" type="xs:unsignedInt">
 				<xs:annotation>
-					<xs:documentation>ИД профиля олимпиады (справочник №39)</xs:documentation>
+					<xs:documentation>Профиль олимпиады (справочник №39)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ClassNumber" type="xs:unsignedInt">
 				<xs:annotation>
 					<xs:documentation>Класс обучения (7,8,9,10 или 11)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OlympicSubjectID" type="xs:unsignedInt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИД предмета олимпиады  (должен соответствовать профилю олимпиады) (справочник № 1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EgeSubjectID" type="xs:unsignedInt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ИД предмета, по которому будет осуществляться проверка ЕГЭ (справочник № 1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
@@ -94,7 +104,7 @@
 					<xs:sequence>
 						<xs:element name="SubjectID" type="xs:unsignedInt">
 							<xs:annotation>
-								<xs:documentation>ИД дисциплины  (справочник №39)</xs:documentation>
+								<xs:documentation>ИД профильной дисциплины  (справочник №39)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -2536,6 +2546,11 @@
 																<xs:element name="IsAgreedDate" type="TDateTime" minOccurs="0">
 																	<xs:annotation>
 																		<xs:documentation>Дата согласия на зачисление (необходимо передать при наличии согласия на зачисление)</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="IsDisagreedDate" type="TDateTime" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Дата отказа от зачисления (необходимо передать при включении заявления в приказ об исключении)</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="IsForSPOandVO" type="xs:boolean" minOccurs="0">

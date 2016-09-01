@@ -146,7 +146,6 @@
     <Compile Include="Actions2016\GetImportResult\запрос-получение результата импорта.designer.cs" />
     <Compile Include="Actions2016\BatchApplicationImport\запрос-импорт.designer.cs" />
     <Compile Include="Actions2016\BatchApplicationImport\ответ-импорт.designer.cs" />
-    <Compile Include="XML\Schemes 2016\ответ-детали по справочнику специальностей.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
