@@ -60,12 +60,17 @@ namespace AbitExportProject.ActionMethods
                 //выгружаем все контр цифры приема по специальностям для кампании
                 foreach (var educBranch in abitSpecs)
                 {
-                    var allNaborsBySpec = nabors.Where(x => x.Relation_spec_fac.EducationBranch.ik_FB == educBranch);     
-                    var ourSpec = mainCtx.EducationBranches.Where(x => x.ik_FB == educBranch).OrderBy(x=>x.Cname_spec.Length).FirstOrDefault();        //за образец берется специальность с наименьшим именем
-                    Debug.Assert(ourSpec != null, "OurSpec != null");
+                    var allNaborsBySpec = nabors.Where(x => x.Relation_spec_fac.EducationBranch.ik_FB == educBranch);
+                    //за образец берется специальность с наименьшим именем
+                    var ourSpec = mainCtx.EducationBranches.Where(x => x.ik_FB == educBranch).OrderBy(x=>x.Cname_spec.Length).FirstOrDefault();        
+                    
+                    //Debug.Assert(ourSpec != null, "OurSpec != null");
+                    if (ourSpec == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не найдена специальность для {0}", nabors.Select(x => x.Relation_spec_fac.EducationBranch).First(x => x.ik_FB == educBranch).Cname_qualif));
 
                     var levelIk = ourSpec.Direction.ik_FB;
-                    Debug.Assert(levelIk != null, "levelIk != null");
+                    
+                    //Debug.Assert(levelIk != null, "levelIk != null");
+                    if (levelIk == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указан код для {0} по ФИС", ourSpec.Direction.cName_direction));
 
                     var AdmissionInfo = new PackageDataAdmissionInfoItem
                     {

@@ -4031,6 +4031,10 @@ namespace Fdalilib.Actions2016.SingleAppicationImport
 
         private uint classNumberField;
 
+        private uint olympicSubjectIDField;     //3.0.3
+
+        private uint egeSubjectIDField;         //3.0.3
+
         public string UID
         {
             get
@@ -4164,6 +4168,30 @@ namespace Fdalilib.Actions2016.SingleAppicationImport
                 this.classNumberField = value;
             }
         }
+
+        public uint OlympicSubjectID
+        {
+            get
+            {
+                return this.olympicSubjectIDField;
+            }
+            set
+            {
+                this.olympicSubjectIDField = value;
+            }
+        }
+
+        public uint EgeSubjectID
+        {
+            get
+            {
+                return this.egeSubjectIDField;
+            }
+            set
+            {
+                this.egeSubjectIDField = value;
+            }
+        }
     }
 
     public partial class PackageDataApplicationEntrantIsFromKrym
@@ -4192,6 +4220,8 @@ namespace Fdalilib.Actions2016.SingleAppicationImport
         private string targetOrganizationUIDField;
 
         private System.DateTime isAgreedDateField;
+
+        private System.DateTime isDisagreedDateField;   //3.0.3
 
         private bool isAgreedDateFieldSpecified;
 
@@ -4232,6 +4262,18 @@ namespace Fdalilib.Actions2016.SingleAppicationImport
             set
             {
                 this.isAgreedDateField = value;
+            }
+        }
+
+        public System.DateTime IsDisagreedDate
+        {
+            get
+            {
+                return this.isDisagreedDateField;
+            }
+            set
+            {
+                this.isDisagreedDateField = value;
             }
         }
 

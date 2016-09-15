@@ -1,0 +1,8 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\bin\Release\export2fis.exe.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\bin\Release\export2fis.exe
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\bin\Release\export2fis.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\bin\Release\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\bin\Release\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\obj\Release\AbitExportProject.csprojResolveAssemblyReference.cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\obj\Release\export2fis.exe
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\AbitExportProject\obj\Release\export2fis.pdb

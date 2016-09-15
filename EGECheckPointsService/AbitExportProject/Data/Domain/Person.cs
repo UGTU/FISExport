@@ -15,6 +15,7 @@ namespace AbitExportProject.Data
         //образовательный документ по-умолчанию
         public Doc_stud EducationalDoc => EducationalDocs.OrderByDescending(o => o.Dd_vidan).FirstOrDefault();
         public string BirthDay => DateTimeDecoder.DateToString(Dd_birth);
+
         public List<Doc_stud> AllDocs => Student.Person.Doc_studs.ToList();
 
         public List<Doc_stud> IdentityDocs
@@ -44,37 +45,38 @@ namespace AbitExportProject.Data
                             var indStr = eD.NNvedom.IndexOf('-');
                             if (indStr <= 0) continue;
                             var nSert = eD.NNvedom.Substring(eD.NNvedom.IndexOf('-') - 2, 15);
-                            if (listEge.All(z => z.DocumentNumber != nSert))
-                                //если еще не было сертификата с данным номером
+                            if (listEge.All(z => z.DocumentNumber != nSert))    //если еще не было сертификата с данным номером
                             {
-                                listEge.Add(new EgeDocument() //добавляем сертификат
+                                listEge.Add(new EgeDocument()   //добавляем сертификат
                                 {
-                                    DocumentNumber = nSert, //eD.NNvedom,
+                                    DocumentNumber = nSert,     //eD.NNvedom,
                                     DocumentYear = "20" + nSert.Substring(nSert.Length-2, 2),
                                     Subjects = new List<Subject>()
                                 });
                             }
-                            if (
-                                listEge.Single(s => s.DocumentNumber == nSert)
-                                    .Subjects.All(s => s.SubjectId != eD.ABIT_Disc.ik_FB))
+                            if ( listEge.Single(s => s.DocumentNumber == nSert).Subjects.All(s => s.SubjectId != eD.ABIT_Disc.ik_FB))
                             {
-                                listEge.Single(s => s.DocumentNumber == nSert)
-                                    .Subjects.Add(new Subject() //добавляем предмет с оценкой
-                                    {
-                                        SubjectId = (int) eD.ABIT_Disc.ik_FB,
-                                        Value = (int) eD.cosenka
-                                    });
+                                listEge.Single(s => s.DocumentNumber == nSert).Subjects.Add(new Subject()   //добавляем предмет с оценкой
+                                                                                            {
+                                                                                                SubjectId = (int) eD.ABIT_Disc.ik_FB,
+                                                                                                Value = (int) eD.cosenka
+                                                                                            });
                             }
                         }
                 }
 
                 return listEge.Count > 0 ? listEge : null;
-            }              }
+            }
+        }
+
         public void SetError(string message)
         {
             Export_FB_journal.Import_result = message;
             Export_FB_journal.Is_actual = false;
+            Fdalilib.LogWriter.MakeLog(string.Format("Ошибка: Абитуриент с nCode: {0}. \"{1}\".", nCode, message));
+            Fdalilib.LogWriter.MakeLog("");
         }
+
         public bool IsIdentityDocsCorrect()
         {
             if (IdentityDocs.Count == 0)
@@ -84,7 +86,7 @@ namespace AbitExportProject.Data
             }
             if (IdentityDocs.Any(doc => doc.Dd_vidan == null))
             {
-                SetError("В идентификационных документах должна быть дата выдачи");
+                SetError(string.Format("В идентификационном документе ({0}) должна быть дата выдачи", string.Join(", ", EducationalDocs.Select(x => x.document.cvid_doc))));
                 return false;
             }
             if (IdentityDocs.Any(doc => (doc.Ik_vid_doc == Doc_stud.VremDocument) && doc.IsEmptySeria))
@@ -103,13 +105,10 @@ namespace AbitExportProject.Data
                 SetError("Нет образовательного документа");
                 return false;
             }
-            if (
-                EducationalDocs.Any(
-                    doc =>
-                        ((doc.Ik_vid_doc == Doc_stud.MiddleEduDiplomaDocument) ||
-                         (doc.Ik_vid_doc == Doc_stud.HighEduDiplomaDocument)) && doc.IsEmptySeria))
+            if ( EducationalDocs.Any( doc => (doc.Ik_vid_doc == Doc_stud.MiddleEduDiplomaDocument || doc.Ik_vid_doc == Doc_stud.HighEduDiplomaDocument) 
+                                             && doc.IsEmptySeria))
             {
-                SetError("Диплом об образовании должен иметь серию");
+                SetError(string.Format("Диплом об образовании ({0}) должен иметь серию", string.Join(", ", EducationalDocs.Select(x => x.document.cvid_doc))));
                 return false;
             }
             return true;
@@ -119,17 +118,41 @@ namespace AbitExportProject.Data
         {
             if (AllDocs.Any(a => !a.IsCorrectData))
             {
-                SetError("Даты документов должны быть выданы в прошлом, а не в будущем");
+                SetError(string.Format("Дата документа ({0}) должны быть выданы в прошлом, а не в будущем", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
                 return false;
             }
             if (AllDocs.Any(a => string.IsNullOrEmpty(a.Number)))
             {
-                SetError("У всех документов должен быть номер");
+                SetError(string.Format("У документа ({0}) должен быть номер", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+            if (AllDocs.Any(a => a.Dd_vidan != null))
+            {
+                SetError(string.Format("Дата выдачи документа ({0}) должна быть проставлены", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+            if (AllDocs.Any(a => a.document.ik_FB != null))
+            {
+                SetError(string.Format("Для документа ({0}) должны быть проставлены код из справочников ФИС", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+            if (Dd_birth == null)
+            {
+                SetError("Дата рождения должна быть проставлена");
+                return false;
+            }
+            if (IdentityDoc == null)
+            {
+                SetError("Идентификационный документ не может отсутствовать");
+                return false;
+            }
+            if (grazd.ik_FB == null)
+            {
+                SetError("Гражданство не может отсутствовать");
                 return false;
             }
             return IsIdentityDocsCorrect() && IsEducationalDocsCorrect();
         }
-
     }
 }
         

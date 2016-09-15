@@ -4,3 +4,9 @@ E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\fdalilib\
 E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.csprojResolveAssemblyReference.cache
 E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.dll
 E:\tanvok\Проекты\ФИС ЕГЭ\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Debug\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Debug\fdalilib.csprojResolveAssemblyReference.cache

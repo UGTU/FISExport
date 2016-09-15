@@ -1,0 +1,8 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Debug\EGECheckPointsService.Resource.resources
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Debug\EGECheckPointsService.csproj.GenerateResource.Cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Debug\EGECheckPointsService.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Debug\EGECheckPointsService.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Debug\EGECheckPointsService.csprojResolveAssemblyReference.cache

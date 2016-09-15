@@ -23,11 +23,24 @@ namespace AbitExportProject.ActionMethods
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
-                var impApps = proxy.ReturnOrNullAndError(Package, "GetUniversityInfo").InstitutionExport.Applications;  //все экспортированные заявления
-                var allApps = mainCtx.Export_FB_journals.Where(x => x.NNYear == Year);                                  //все наши заявления
-                foreach (var abit in allApps.Select(x => x.nCode.ToString()).Except(impApps.Select(y => y.UID)))
+                try
                 {
-                  MakeLog(abit);   
+                    var import = proxy.ReturnOrNullAndError(Package, "GetUniversityInfo");
+
+                    var impApps = import.InstitutionExport.Applications;                                            //все экспортированные заявления             
+                    var allApps = mainCtx.Export_FB_journals.Where(x => x.NNYear == Year);                          //все наши заявления                
+                    foreach (var abit in allApps.Select(x => x.nCode.ToString()).Except(impApps.Select(y => y.UID)))
+                    {
+                        MakeLog(abit);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MakeLog(ex.Message);
+                    MakeLog(ex.Source);
+                    MakeLog(ex.HelpLink);
+                    MakeLog(ex.StackTrace);
+                    MakeLog(ex.ToString());
                 }
                 return true;
             }

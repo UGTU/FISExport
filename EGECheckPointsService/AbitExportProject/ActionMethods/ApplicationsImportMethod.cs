@@ -17,7 +17,7 @@ namespace AbitExportProject.ActionMethods
 
         public override string ToString()
         {
-            return "Экспортировать новые и изменившиеся заявления";
+            return "Импортировать новые и изменившиеся заявления";
         }
 
         protected override void SetAuth()
@@ -43,25 +43,58 @@ namespace AbitExportProject.ActionMethods
             }
         }
 
-        public static List<PackageDataApplication> GetCurrentApps(UGTUDataDataContext ctx, int year, int specIk, int facIk)   //если SpecIK == 0, то импортируем все специальности
-        {                                                                                                      //если FacIK == 0, то импортируем все институты
+        public static List<PackageDataApplication> GetCurrentApps(UGTUDataDataContext ctx, int year, int specIk, int facIk) //если SpecIK == 0, то импортируем все специальности
+        {                                                                                                                   //если FacIK == 0, то импортируем все институты
 
-            var persons =
-                ctx.ABIT_postups.Where(x =>
-                    (x.ABIT_Diapazon_spec_fac.NNyear == year) &&                                        //за текущий год
-                    ((x.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_spec == specIk)     //фильтр специальности                      
-                     || (specIk == 0)) &&
-                    ((x.ABIT_Diapazon_spec_fac.Relation_spec_fac.ik_fac == facIk)                       //фильтр института
-                     || (facIk == 0)) &&
-                    (x.ABIT_sost_zach.ik_FB != null)                                                    //в тех состояних, которые предусматриваются в ФИС
-                    && !x.Student.Person.Export_FB_journal.Is_actual).Select(s => s.Student.Person).Distinct();
+            var persons = ctx.ABIT_postups.Where(x =>
+                                                (x.ABIT_Diapazon_spec_fac.NNyear == year) &&                                        //за текущий год
+                                                ((x.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_spec == specIk)     //фильтр специальности                      
+                                                 || (specIk == 0)) &&
+                                                ((x.ABIT_Diapazon_spec_fac.Relation_spec_fac.ik_fac == facIk)                       //фильтр института
+                                                 || (facIk == 0)) &&
+                                                (x.ABIT_sost_zach.ik_FB != null)                                                    //в тех состояних, которые предусматриваются в ФИС
+                                                && !x.Student.Person.Export_FB_journal.Is_actual).Select(s => s.Student.Person).Distinct();
 
             var apps = new List<PackageDataApplication>();
-            var ind = 0;
+            var NotPerson = new List<Person>();
+            //var ind = 0;
+            var set = new List<decimal>()   { 167778, 167793, 167808, 167901, 167936, 167937, 167951, 168020, 168027, 168057
+                                            , 168078, 168138, 168166, 168185, 168194, 168196, 168224, 168247, 168365, 168415
+                                            , 168457, 168490, 168507, 168514, 168572, 168613, 168614, 168663, 168798, 168804
+                                            , 168871, 168912, 168913, 168923, 168928, 168934, 168935, 168953, 168960, 168962
+                                            , 168967, 168979, 168984, 168992, 169019, 169057, 169067, 169098, 169103, 169124
+                                            , 169142, 169164, 169223, 169268, 169284, 169317, 169335, 169336, 169345, 169359
+                                            , 169364, 169378, 169381, 169404, 169406, 169440, 169444, 169472, 169474, 169475
+                                            , 169483, 169500, 169545, 169550, 169572, 169603, 169610, 169613, 169615, 169635
+                                            , 169641, 169648, 169652, 169655, 169672, 169695, 169697, 169709, 169723, 169770
+                                            , 169800, 169803, 169804, 169812, 169820, 169822, 169849, 169850, 169851, 169857
+                                            , 169863, 169869, 169877, 169887, 169911, 169920, 169933, 169934, 169977, 169990
+                                            , 170018, 170023, 170038, 170045, 170046, 170049, 170076, 170091, 170110, 170141
+                                            , 170157, 170160, 170169, 170178, 170184, 170189, 170193, 170194, 170198, 170206
+                                            , 170207, 170210, 170213, 170216, 170220, 170225, 170243, 170250, 170255, 170265
+                                            , 170282, 170284, 170285, 170287, 170289, 170299, 170300, 170326, 170334, 170337
+                                            , 170345, 170346, 170361, 170363, 170382, 170386, 170391, 170394, 170395, 170434
+                                            , 170477, 170480, 170481, 170498, 170510, 170516, 170519, 170558, 170565, 170572
+                                            , 170585, 170594, 170607, 170609, 170632, 170645, 170657, 170663, 170665, 170667
+                                            , 170682, 170699, 170707, 170713, 170779, 170875, 170884, 170912, 170968, 170990
+                                            , 171083, 171154, 171203, 171252, 171260, 171295, 171313, 171369, 171370, 171389
+                                            , 171394, 171410, 171416, 171421, 171423, 171424, 171442 };
             foreach (var person in persons)
             {
-                if (!person.IsAllDocsCorrect()) continue;   //проверка документов, без которой пакет вообще не будет принят сервисом
+                //проверка документов, без которой пакет вообще не будет принят сервисом
+                if (!person.IsAllDocsCorrect()) continue; 
+
+                if (set.Contains(person.nCode)) 
+                {
+                    NotPerson.Add(person);                 
+                    continue;   
+                }
                 apps.Add(BuildApplicationPackage(person, ctx, year));
+            }
+            if (NotPerson.Count > 0) Fdalilib.LogWriter.MakeLog("Не все студенты попали в пакет:");
+            foreach (var item in NotPerson)
+            {
+                Fdalilib.LogWriter.MakeLog(string.Format("{0}: {1} {2} {3}", item.nCode, item.Clastname, item.Cfirstname, item.Cotch));
             }
             return apps;
         }
@@ -75,11 +108,12 @@ namespace AbitExportProject.ActionMethods
         /// <returns>Экземпляр Application с данными абитуриента</returns>
         internal static PackageDataApplication BuildApplicationPackage(Person person, UGTUDataDataContext ctx, int year)
         {
-            var applications = ctx.ABIT_postups.Where(x => (x.nCode == person.nCode) && (x.ik_zach != ABIT_postup.NetworkState)).ToList();  //все его заявления (кроме поданных по сети)
+            //все его заявления (кроме поданных по сети)
+            var applications = ctx.ABIT_postups.Where(x => (x.nCode == person.nCode) && (x.ik_zach != ABIT_postup.NetworkState)).ToList();
 
-            var application =
-                applications.FirstOrDefault(x => x.IsMain || x.IsZachisl || x.IsCurrent) ??  //сначала отбираем заявление с зачисленным, потом - с текущим состоянием
-                applications.FirstOrDefault();
+            //сначала отбираем заявление с зачисленным, потом - с текущим состоянием
+            var application = applications.FirstOrDefault(x => x.IsMain || x.IsZachisl || x.IsCurrent || x.IsZachislAnotherApplication) ?? applications.FirstOrDefault(); 
+
             var isReal = applications.Any(x => x.Realy_postup) || applications.Any(x => x.IsZachisl);
   
             //идентификационный документ
@@ -102,13 +136,16 @@ namespace AbitExportProject.ActionMethods
             {
                 var specID = postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_FB;
                 var compGroup = ctx.Abit_CompetitiveGroups.ToList().FirstOrDefault(x => (x.SpecID == specID)
-                                                                              && (x.FormEdID == postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB) 
-                                                                              && (x.EducSourceID == postup.Kat_zach.TypeKatZach.ik_FB)
-                                                                              && (x.EducationLevelID == postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.Direction.ik_FB));
+                                                                                          && (x.FormEdID == postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB) 
+                                                                                          && (x.EducSourceID == postup.Kat_zach.TypeKatZach.ik_FB)
+                                                                                          && (x.EducationLevelID == postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.Direction.ik_FB));
 
-                Debug.Assert(compGroup != null, "BuildApplicationPackage: compGroup != null");
-                Debug.Assert(postup.Kat_zach.TypeKatZach.ik_FB != null, "postup.Kat_zach.TypeKatZach.ik_FB != null");
-                Debug.Assert(postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB.HasValue, "postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB != null");
+                //Debug.Assert(compGroup != null, "BuildApplicationPackage: compGroup != null");
+                if (compGroup == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не найдена конкурсная группа для заявления {0}", postup.NN_abit));
+                //Debug.Assert(postup.Kat_zach.TypeKatZach.ik_FB != null, "postup.Kat_zach.TypeKatZach.ik_FB != null");
+                if (postup.Kat_zach.TypeKatZach.ik_FB == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указан код для \"{0}\" по ФИС {0}", postup.Kat_zach.TypeKatZach));
+                //Debug.Assert(postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB.HasValue, "postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB != null");
+                if (postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указан код для \"{0}\" по ФИС {0}", postup.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.Cname_form_ed));
 
                 finS.Add(new PackageDataApplicationFinSourceEduForm
                 {
@@ -120,13 +157,15 @@ namespace AbitExportProject.ActionMethods
                 });
 
                 //заполняем результаты вступительных испытаний
-                foreach (var disc in postup.ABIT_Diapazon_spec_fac.ABIT_Diapazon_Discs)                        //для всех дисциплин направления       
+                foreach (var disc in postup.ABIT_Diapazon_spec_fac.ABIT_Diapazon_Discs)             //для всех дисциплин направления       
                 {
                     var exam = postup.ABIT_Vstup_exams.SingleOrDefault(x => x.ik_disc == disc.ik_disc);
 
                     if (exam?.cosenka == null || exam.ABIT_VidSdachi.IsEGE) continue;
 
-                    Debug.Assert(exam.cosenka != null, "exam.cosenka != null");
+                    //Debug.Assert(exam.cosenka != null, "exam.cosenka != null");
+                    if (exam.cosenka == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не проставлена оценка по {0} по {1}", exam.ABIT_VidSdachi.cname_sdach, exam.ABIT_Disc.сname_disc));
+
                     var ets = new TEntranceTestSubject();
                     if (exam.ABIT_Disc.ik_FB != null) ets.SubjectID = (uint)exam.ABIT_Disc.ik_FB;
                     else ets.SubjectName = exam.ABIT_Disc.сname_disc.Trim();
@@ -157,12 +196,16 @@ namespace AbitExportProject.ActionMethods
                     });
                 }
             }
+            //Debug.Assert(docI.Dd_vidan != null, "docI.Dd_vidan != null");
+            if (docI.Dd_vidan == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указана дата выдачи \"{0}\", у абитуриента [nCode]{1}", docI.document.cvid_doc, person.nCode));
+            //Debug.Assert(person.Dd_birth != null, "person.Dd_birth != null");
+            if (person.Dd_birth == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указана дата рождения, у абитуриента [nCode]{0}", person.nCode));
+            //Debug.Assert(docI.document.ik_FB != null, "docI.document.ik_FB != null");
+            if (docI.document.ik_FB == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указан тип документа \"{0}\" по ФИС, у абитуриента [nCode]{1}", docI.document.cvid_doc, person.nCode));
 
-            Debug.Assert(application.ABIT_sost_zach.ik_FB != null, "application.ABIT_sost_zach.ik_FB != null");
-            Debug.Assert(docI.Dd_vidan != null, "docI.Dd_vidan != null");
-            Debug.Assert(person.Dd_birth != null, "person.Dd_birth != null");
-            Debug.Assert(docI.document.ik_FB != null, "docI.document.ik_FB != null");
-            Debug.Assert(person.grazd.ik_FB != null, "person.grazd.ik_FB != null " + person.Clastname + " " + person.Cfirstname);             //предусмотреть ситуацию, когда гражданство не указано
+            //Debug.Assert(person.grazd.ik_FB != null, "person.grazd.ik_FB != null " + person.Clastname + " " + person.Cfirstname);   //предусмотреть ситуацию, когда гражданство не указано
+            if (person.grazd.ik_FB == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указано гражданство, у абитуриента [nCode]{0}", person.nCode));
+
             var app = new PackageDataApplication
             {
                 UID = person.nCode.ToString(),
@@ -179,21 +222,33 @@ namespace AbitExportProject.ActionMethods
 
                 RegistrationDate = application.RegistrationDate,
                 NeedHostel = (person.Lobchegit != null) && person.Lobchegit.GetValueOrDefault(),
-                StatusID = (application.IsZachisl) ? ABIT_postup.CurrentState : (uint)application.ABIT_sost_zach.ik_FB, //если уже зачислен, то импортировать с состоянием "Текущее"
+
+                //если уже зачислен, то импортировать с состоянием "Текущее", иначе с состоянием "Непрошедий проверку"
+                StatusID = (uint)application.StatusId,
                 FinSourceAndEduForms = finS,
                 EntranceTestResults = eTestResult,
                 ApplicationDocuments = new PackageDataApplicationApplicationDocuments
                 {
-                    IdentityDocument = PackOneIdentDoc(person, application.OriginalReceivedDate, docI),                    
+                    IdentityDocument = PackOneIdentDoc(person, application.OriginalReceivedDate, docI),
                     EduDocuments = PackEduDocuments(year, docEdu, application, isReal),
-                    OtherIdentityDocuments = otherDocs
+                    OtherIdentityDocuments = otherDocs,
                 },
                 IndividualAchievements = GetIndividualAchievments(person)
             };
 
             var mem = new MemoryStream();
             var ser = new XmlSerializer(app.GetType());
-            ser.Serialize(mem, app);
+            try
+            {
+                ser.Serialize(mem, app);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.InnerException);
+                throw;
+            }
+            
+          
             mem.Position = 0;
             var xmlApp = XElement.Load(mem);
 
@@ -215,7 +270,6 @@ namespace AbitExportProject.ActionMethods
             expRecord.xml_str = xmlApp;
 
             //--------------------------------------------------------------------------------------------------------------------------------------
-
             return app;
         }
 
@@ -238,7 +292,7 @@ namespace AbitExportProject.ActionMethods
                             ? Doc_stud.OtherIdentity
                             : doc.document.ik_subFB),
                 BirthDate = person.BirthDay,
-                NationalityTypeID = (uint) person.grazd.ik_FB
+                NationalityTypeID = (uint) (person.grazd.ik_FB ?? -1) //елси не указано гражданство
             };
         }
 
@@ -259,7 +313,8 @@ namespace AbitExportProject.ActionMethods
             EduDocItemChoiceType eduType;
             object eItem;
 
-            Debug.Assert(docEdu.Dd_vidan != null, "docEdu.Dd_vidan != null");
+            //Debug.Assert(docEdu.Dd_vidan != null, "docEdu.Dd_vidan != null");
+            if (docEdu.Dd_vidan == null) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указана дата выдачи \"{0}\", у абитуриента [nCode]{1}", docEdu.document.cvid_doc, docEdu.nCode));
 
             switch ((int)docEdu.document.ik_FB)
             {
@@ -288,7 +343,9 @@ namespace AbitExportProject.ActionMethods
                     };
                     break;
                 case 5: //"5">Диплом о среднем профессиональном образовании
-                    Debug.Assert(!string.IsNullOrEmpty(docEdu.Cd_seria), "docEdu.Cd_seria in MiddleEduDiplomaDocument. NCode=" + docEdu.nCode);
+                    //Debug.Assert(!string.IsNullOrEmpty(docEdu.Cd_seria), "docEdu.Cd_seria in MiddleEduDiplomaDocument. NCode=" + docEdu.nCode);
+                    if (string.IsNullOrEmpty(docEdu.Cd_seria)) Fdalilib.LogWriter.MakeLog(string.Format("Ошибка. Не указана серия \"{0}\" у абитуриент [nCode]{1}", docEdu.document.cvid_doc, docEdu.nCode));
+
                     eduType = EduDocItemChoiceType.MiddleEduDiplomaDocument;
                     eItem = new TMiddleEduDiplomaDocument()
                     {

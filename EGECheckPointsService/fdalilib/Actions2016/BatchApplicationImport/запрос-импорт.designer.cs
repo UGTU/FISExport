@@ -17,7 +17,6 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
     public partial class PackageData
     {
-
         private PackageDataCampaignInfo campaignInfoField;
 
         private PackageDataAdmissionInfo admissionInfoField;
@@ -248,7 +247,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
     }
-    
+    [Serializable]
     public partial class InstitutionDocument
     {
 
@@ -261,6 +260,11 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         private uint documentTypeIDField;
 
         private bool documentTypeIDFieldSpecified;
+
+        public InstitutionDocument()
+        {
+            documentNumberField = "";
+        }
 
         public string DocumentNumber
         {
@@ -2395,7 +2399,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
             }
         }
     }
-
+    
     public partial class TSchoolCertificateDocument
     {
 
@@ -7907,6 +7911,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         }
     }
 
+    //[XmlInclude(typeof(TSchoolCertificateDocument))]
     public partial class PackageDataApplicationApplicationDocumentsEduDocument
     {
 
@@ -7914,7 +7919,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
 
         private EduDocItemChoiceType itemElementNameField;
 
-        [XmlChoiceIdentifier("ItemElementName")]
+        //[XmlChoiceIdentifier("ItemElementName")]
         [XmlElement("AcademicDiplomaDocument", typeof(TAcademicDiplomaDocument))]
         [XmlElement("BasicDiplomaDocument", typeof(TBasicDiplomaDocument))]
         [XmlElement("EduCustomDocument", typeof(TEduCustomDocument))]
@@ -7923,7 +7928,7 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
         [XmlElement("MiddleEduDiplomaDocument", typeof(TMiddleEduDiplomaDocument))]
         [XmlElement("PhDDiplomaDocument", typeof(TPhDDiplomaDocument))]
         [XmlElement("PostGraduateDiplomaDocument", typeof(TPostGraduateDiplomaDocument))]
-        [XmlElement("SchoolCertificateDocument", typeof(TSchoolCertificateDocument))]
+        [XmlElement("SchoolCertificateDocument", typeof(TSchoolCertificateDocument))] 
         public object Item
         {
             get
@@ -8336,12 +8341,12 @@ namespace Fdalilib.Actions2016.BatchApplicationImport
     //    /// <remarks/>
     //    NumberTargetZ,
     //}
-
+    [XmlInclude(typeof(InstitutionDocument))]
     public partial class PackageDataApplicationEntranceTestResultResultDocument
     {
 
         private object itemField;
-
+        
         public object Item
         {
             get

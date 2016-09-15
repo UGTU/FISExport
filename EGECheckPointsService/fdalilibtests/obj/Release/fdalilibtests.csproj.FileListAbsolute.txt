@@ -1,0 +1,15 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\1424450777.74524log.txt
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\fdalilibtests.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\fdalilibtests.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\fdalilibtests.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\export2fis.exe
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\export2fis.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\obj\Release\fdalilibtests.csprojResolveAssemblyReference.cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\obj\Release\fdalilibtests.TestRes.resources
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\obj\Release\fdalilibtests.csproj.GenerateResource.Cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\obj\Release\fdalilibtests.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilibtests\obj\Release\fdalilibtests.pdb

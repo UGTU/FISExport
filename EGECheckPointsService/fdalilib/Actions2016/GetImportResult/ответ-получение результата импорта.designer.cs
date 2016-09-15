@@ -943,6 +943,8 @@ namespace Fdalilib.Actions2016.GetImportResult
 
         private ImportResultPackageLogFailedOrderOfAdmission orderOfAdmissionField;
 
+        private List<ImportResultPackageLogFailedOrderOfException> ordersOfExceptionField;  //3.0.3
+
         public ImportResultPackageLogFailed()
         {
             this.orderOfAdmissionField = new ImportResultPackageLogFailedOrderOfAdmission();
@@ -967,7 +969,8 @@ namespace Fdalilib.Actions2016.GetImportResult
             this.institutionAchievementsField = new List<ImportResultPackageLogFailedInstitutionAchievement>();
             this.distributedAdmissionVolumesField = new ImportResultPackageLogFailedDistributedAdmissionVolumes();
             this.admissionVolumesField = new List<ImportResultPackageLogFailedAdmissionVolume>();
-        }
+            this.ordersOfExceptionField = new List<ImportResultPackageLogFailedOrderOfException>();
+    }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("AdmissionVolume", IsNullable = false)]
         public List<ImportResultPackageLogFailedAdmissionVolume> AdmissionVolumes
@@ -1249,6 +1252,19 @@ namespace Fdalilib.Actions2016.GetImportResult
             set
             {
                 this.orderOfAdmissionField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlArrayItemAttribute("OrderOfException", IsNullable = false)]
+        public List<ImportResultPackageLogFailedOrderOfException> OrdersOfException
+        {
+            get
+            {
+                return this.ordersOfExceptionField;
+            }
+            set
+            {
+                this.ordersOfExceptionField = value;
             }
         }
     }
@@ -2797,6 +2813,86 @@ namespace Fdalilib.Actions2016.GetImportResult
             }
         }
 
+        public System.DateTime OrderDate
+        {
+            get
+            {
+                return this.orderDateField;
+            }
+            set
+            {
+                this.orderDateField = value;
+            }
+        }
+    }
+
+    public partial class ImportResultPackageLogFailedOrderOfException
+    {
+
+        private TErrorInfo errorInfoField;
+
+        private string orderOfExceptionUIDField;
+
+        private string orderNameField;
+
+        private string orderNumberField;
+
+        private System.DateTime orderDateField;
+
+        /// <remarks/>
+        public TErrorInfo ErrorInfo
+        {
+            get
+            {
+                return this.errorInfoField;
+            }
+            set
+            {
+                this.errorInfoField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string OrderOfExceptionUID
+        {
+            get
+            {
+                return this.orderOfExceptionUIDField;
+            }
+            set
+            {
+                this.orderOfExceptionUIDField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string OrderName
+        {
+            get
+            {
+                return this.orderNameField;
+            }
+            set
+            {
+                this.orderNameField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string OrderNumber
+        {
+            get
+            {
+                return this.orderNumberField;
+            }
+            set
+            {
+                this.orderNumberField = value;
+            }
+        }
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "date")]
         public System.DateTime OrderDate
         {
             get

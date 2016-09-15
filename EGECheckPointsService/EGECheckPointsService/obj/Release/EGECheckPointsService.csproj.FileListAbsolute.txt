@@ -1,0 +1,7 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\bin\EGECheckPointsService.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Release\EGECheckPointsService.Resource.resources
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Release\EGECheckPointsService.csproj.GenerateResource.Cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Release\EGECheckPointsService.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckPointsService\obj\Release\EGECheckPointsService.pdb

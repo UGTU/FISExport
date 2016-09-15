@@ -1,0 +1,12 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\EGECheckUnitTestProject.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\EGECheckUnitTestProject.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\EGECheckUnitTestProject.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\EGECheckPointsService.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\EGECheckPointsService.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\obj\Debug\EGECheckUnitTestProject.csprojResolveAssemblyReference.cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\obj\Debug\EGECheckUnitTestProject.Resource.resources
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\obj\Debug\EGECheckUnitTestProject.csproj.GenerateResource.Cache
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\obj\Debug\EGECheckUnitTestProject.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\EGECheckUnitTestProject\obj\Debug\EGECheckUnitTestProject.pdb

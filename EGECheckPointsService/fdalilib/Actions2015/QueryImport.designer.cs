@@ -7243,6 +7243,7 @@ namespace Fdalilib.Actions2015
         }
     }
 
+    [XmlInclude(typeof(TInstitutionDocument))]
     public partial class PackageDataApplicationEntranceTestResultResultDocument
     {
 
@@ -7284,14 +7285,14 @@ namespace Fdalilib.Actions2015
 
         public PackageDataApplicationApplicationDocuments()
         {
-           // this.customDocumentsField = new List<TCustomDocument>();
-           // this.studentDocumentField = new PackageDataApplicationApplicationDocumentsStudentDocument();
-           // this.militaryCardDocumentField = new PackageDataApplicationApplicationDocumentsMilitaryCardDocument();
-         //   this.eduDocumentsField = new List<PackageDataApplicationApplicationDocumentsEduDocument>();
-          //  this.otherIdentityDocumentsField = new List<PackageDataApplicationApplicationDocumentsIdentityDocument1>();
-         //   this.identityDocumentField = new PackageDataApplicationApplicationDocumentsIdentityDocument();
-         //   this.giaDocumentsField = new List<PackageDataApplicationApplicationDocumentsGiaDocument>();
-         //   this.egeDocumentsField = new List<PackageDataApplicationApplicationDocumentsEgeDocument>();
+            this.egeDocumentsField = new List<PackageDataApplicationApplicationDocumentsEgeDocument>();
+            this.giaDocumentsField = new List<PackageDataApplicationApplicationDocumentsGiaDocument>();
+            this.identityDocumentField = new PackageDataApplicationApplicationDocumentsIdentityDocument();
+            this.otherIdentityDocumentsField = new List<PackageDataApplicationApplicationDocumentsIdentityDocument1>();
+            this.militaryCardDocumentField = new PackageDataApplicationApplicationDocumentsMilitaryCardDocument();
+            this.eduDocumentsField = new List<PackageDataApplicationApplicationDocumentsEduDocument>();
+            this.studentDocumentField = new PackageDataApplicationApplicationDocumentsStudentDocument();
+            this.customDocumentsField = new List<TCustomDocument>();
         }
 
         [System.Xml.Serialization.XmlArrayItemAttribute("EgeDocument", IsNullable = false)]

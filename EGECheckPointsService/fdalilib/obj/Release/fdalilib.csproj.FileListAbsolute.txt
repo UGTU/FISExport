@@ -1,0 +1,6 @@
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Release\fdalilib.dll.config
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Release\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\bin\Release\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Release\fdalilib.dll
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Release\fdalilib.pdb
+C:\Users\ngrigoriev\Source\Repos\FISExport\EGECheckPointsService\fdalilib\obj\Release\fdalilib.csprojResolveAssemblyReference.cache

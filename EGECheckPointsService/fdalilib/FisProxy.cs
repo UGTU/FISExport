@@ -109,15 +109,23 @@ namespace Fdalilib
         /// <returns>Результат вызова сервиса в объекте типа Answer</returns>
         private Answer<T, TErr> Request<T, TErr>(Func<XElement, XElement> func, TInput param) where T : class where TErr : class
         {
-            Contract.Requires(func != null);
-            Contract.Requires(param != null);
-            var xParam = Serialize(param);
-            LogWriter.MakeLog(xParam.ToString());
-            var result = func(xParam);
-            Contract.Assert(result != null);
-            LogWriter.MakeLog(result.ToString());
-            LogWriter.MakeLog("----------------------------\\---------------------------------------------");
-            return Deserialize<T, TErr>(result);
+            try
+            {
+                Contract.Requires(func != null);
+                Contract.Requires(param != null);
+                var xParam = Serialize(param);
+                LogWriter.MakeLog(xParam.ToString());
+                var result = func(xParam);
+                Contract.Assert(result != null);
+                LogWriter.MakeLog(result.ToString());
+                LogWriter.MakeLog("----------------------------\\---------------------------------------------");
+                return Deserialize<T, TErr>(result);
+            }
+            catch (Exception ex)
+            {
+                LogWriter.MakeLog(ex.InnerException.ToString());
+                throw;
+            }          
         }
 
         public Answer<TReturn, TError> DeserialisDeserializeFromXml(XElement result)

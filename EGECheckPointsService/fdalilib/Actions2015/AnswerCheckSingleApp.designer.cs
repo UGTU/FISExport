@@ -25,12 +25,12 @@ namespace Fdalilib.Actions2015
         private AppSingleCheckResultGetEgeDocuments getEgeDocumentsField;
 
         private AppSingleCheckResultGetCompositionResults getCompositionResultsField;
-
-        private AppSingleCheckResultGetOlympicDocuments getOlympicDocumentsField;
+        //Удален в спецификации 3.0.3
+        //private AppSingleCheckResultGetOlympicDocuments getOlympicDocumentsField;
 
         public AppSingleCheckResult()
         {
-            this.getOlympicDocumentsField = new AppSingleCheckResultGetOlympicDocuments();
+            //this.getOlympicDocumentsField = new AppSingleCheckResultGetOlympicDocuments();
             this.getCompositionResultsField = new AppSingleCheckResultGetCompositionResults();
             this.getEgeDocumentsField = new AppSingleCheckResultGetEgeDocuments();
             this.olympicDocumentCheckResultsField = new AppSingleCheckResultOlympicDocumentCheckResults();
@@ -85,17 +85,18 @@ namespace Fdalilib.Actions2015
             }
         }
 
-        public AppSingleCheckResultGetOlympicDocuments GetOlympicDocuments
-        {
-            get
-            {
-                return this.getOlympicDocumentsField;
-            }
-            set
-            {
-                this.getOlympicDocumentsField = value;
-            }
-        }
+        //Удален в спецификации 3.0.3
+        //public AppSingleCheckResultGetOlympicDocuments GetOlympicDocuments
+        //{
+        //    get
+        //    {
+        //        return this.getOlympicDocumentsField;
+        //    }
+        //    set
+        //    {
+        //        this.getOlympicDocumentsField = value;
+        //    }
+        //}
     }
 
     public partial class AppSingleCheckResultEgeDocumentCheckResults
@@ -1229,250 +1230,250 @@ namespace Fdalilib.Actions2015
         }
     }
 
-    public partial class AppSingleCheckResultGetOlympicDocuments
-    {
+    //public partial class AppSingleCheckResultGetOlympicDocuments
+    //{
 
-        private AppSingleCheckResultGetOlympicDocumentsApplication applicationField;
+    //    private AppSingleCheckResultGetOlympicDocumentsApplication applicationField;
 
-        private List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument> olympicDocumentsField;
+    //    private List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument> olympicDocumentsField;
 
-        private string errorField;
+    //    private string errorField;
 
-        public AppSingleCheckResultGetOlympicDocuments()
-        {
-            this.olympicDocumentsField = new List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument>();
-            this.applicationField = new AppSingleCheckResultGetOlympicDocumentsApplication();
-        }
+    //    public AppSingleCheckResultGetOlympicDocuments()
+    //    {
+    //        this.olympicDocumentsField = new List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument>();
+    //        this.applicationField = new AppSingleCheckResultGetOlympicDocumentsApplication();
+    //    }
 
-        public AppSingleCheckResultGetOlympicDocumentsApplication Application
-        {
-            get
-            {
-                return this.applicationField;
-            }
-            set
-            {
-                this.applicationField = value;
-            }
-        }
+    //    public AppSingleCheckResultGetOlympicDocumentsApplication Application
+    //    {
+    //        get
+    //        {
+    //            return this.applicationField;
+    //        }
+    //        set
+    //        {
+    //            this.applicationField = value;
+    //        }
+    //    }
 
-        [System.Xml.Serialization.XmlArrayItemAttribute("OlympicDocument", IsNullable = false)]
-        public List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument> OlympicDocuments
-        {
-            get
-            {
-                return this.olympicDocumentsField;
-            }
-            set
-            {
-                this.olympicDocumentsField = value;
-            }
-        }
+    //    [System.Xml.Serialization.XmlArrayItemAttribute("OlympicDocument", IsNullable = false)]
+    //    public List<AppSingleCheckResultGetOlympicDocumentsOlympicDocument> OlympicDocuments
+    //    {
+    //        get
+    //        {
+    //            return this.olympicDocumentsField;
+    //        }
+    //        set
+    //        {
+    //            this.olympicDocumentsField = value;
+    //        }
+    //    }
 
-        public string Error
-        {
-            get
-            {
-                return this.errorField;
-            }
-            set
-            {
-                this.errorField = value;
-            }
-        }
-    }
+    //    public string Error
+    //    {
+    //        get
+    //        {
+    //            return this.errorField;
+    //        }
+    //        set
+    //        {
+    //            this.errorField = value;
+    //        }
+    //    }
+    //}
 
-    public partial class AppSingleCheckResultGetOlympicDocumentsApplication
-    {
+    //public partial class AppSingleCheckResultGetOlympicDocumentsApplication
+    //{
 
-        private string applicationNumberField;
+    //    private string applicationNumberField;
 
-        private string orderOfAdmissionUIDField;
+    //    private string orderOfAdmissionUIDField;
 
-        private System.DateTime registrationDateField;
+    //    private System.DateTime registrationDateField;
 
-        private System.DateTime originalDocumentsReceivedDateField;
+    //    private System.DateTime originalDocumentsReceivedDateField;
 
-        private bool originalDocumentsReceivedDateFieldSpecified;
+    //    private bool originalDocumentsReceivedDateFieldSpecified;
 
-        private string uIDField;
+    //    private string uIDField;
 
-        public string ApplicationNumber
-        {
-            get
-            {
-                return this.applicationNumberField;
-            }
-            set
-            {
-                this.applicationNumberField = value;
-            }
-        }
+    //    public string ApplicationNumber
+    //    {
+    //        get
+    //        {
+    //            return this.applicationNumberField;
+    //        }
+    //        set
+    //        {
+    //            this.applicationNumberField = value;
+    //        }
+    //    }
 
-        public string OrderOfAdmissionUID
-        {
-            get
-            {
-                return this.orderOfAdmissionUIDField;
-            }
-            set
-            {
-                this.orderOfAdmissionUIDField = value;
-            }
-        }
+    //    public string OrderOfAdmissionUID
+    //    {
+    //        get
+    //        {
+    //            return this.orderOfAdmissionUIDField;
+    //        }
+    //        set
+    //        {
+    //            this.orderOfAdmissionUIDField = value;
+    //        }
+    //    }
 
-        public System.DateTime RegistrationDate
-        {
-            get
-            {
-                return this.registrationDateField;
-            }
-            set
-            {
-                this.registrationDateField = value;
-            }
-        }
+    //    public System.DateTime RegistrationDate
+    //    {
+    //        get
+    //        {
+    //            return this.registrationDateField;
+    //        }
+    //        set
+    //        {
+    //            this.registrationDateField = value;
+    //        }
+    //    }
 
-        public System.DateTime OriginalDocumentsReceivedDate
-        {
-            get
-            {
-                return this.originalDocumentsReceivedDateField;
-            }
-            set
-            {
-                this.originalDocumentsReceivedDateField = value;
-            }
-        }
+    //    public System.DateTime OriginalDocumentsReceivedDate
+    //    {
+    //        get
+    //        {
+    //            return this.originalDocumentsReceivedDateField;
+    //        }
+    //        set
+    //        {
+    //            this.originalDocumentsReceivedDateField = value;
+    //        }
+    //    }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool OriginalDocumentsReceivedDateSpecified
-        {
-            get
-            {
-                return this.originalDocumentsReceivedDateFieldSpecified;
-            }
-            set
-            {
-                this.originalDocumentsReceivedDateFieldSpecified = value;
-            }
-        }
+    //    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    //    public bool OriginalDocumentsReceivedDateSpecified
+    //    {
+    //        get
+    //        {
+    //            return this.originalDocumentsReceivedDateFieldSpecified;
+    //        }
+    //        set
+    //        {
+    //            this.originalDocumentsReceivedDateFieldSpecified = value;
+    //        }
+    //    }
 
-        public string UID
-        {
-            get
-            {
-                return this.uIDField;
-            }
-            set
-            {
-                this.uIDField = value;
-            }
-        }
-    }
+    //    public string UID
+    //    {
+    //        get
+    //        {
+    //            return this.uIDField;
+    //        }
+    //        set
+    //        {
+    //            this.uIDField = value;
+    //        }
+    //    }
+    //}
 
-    public partial class AppSingleCheckResultGetOlympicDocumentsOlympicDocument
-    {
+    //public partial class AppSingleCheckResultGetOlympicDocumentsOlympicDocument
+    //{
 
-        private uint olympicIDField;
+    //    private uint olympicIDField;
 
-        private bool olympicIDFieldSpecified;
+    //    private bool olympicIDFieldSpecified;
 
-        private uint olympicDiplomTypeIDField;
+    //    private uint olympicDiplomTypeIDField;
 
-        private bool olympicDiplomTypeIDFieldSpecified;
+    //    private bool olympicDiplomTypeIDFieldSpecified;
 
-        private string documentNumberField;
+    //    private string documentNumberField;
 
-        private System.DateTime documentDateField;
+    //    private System.DateTime documentDateField;
 
-        private bool documentDateFieldSpecified;
+    //    private bool documentDateFieldSpecified;
 
-        public uint OlympicID
-        {
-            get
-            {
-                return this.olympicIDField;
-            }
-            set
-            {
-                this.olympicIDField = value;
-            }
-        }
+    //    public uint OlympicID
+    //    {
+    //        get
+    //        {
+    //            return this.olympicIDField;
+    //        }
+    //        set
+    //        {
+    //            this.olympicIDField = value;
+    //        }
+    //    }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool OlympicIDSpecified
-        {
-            get
-            {
-                return this.olympicIDFieldSpecified;
-            }
-            set
-            {
-                this.olympicIDFieldSpecified = value;
-            }
-        }
+    //    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    //    public bool OlympicIDSpecified
+    //    {
+    //        get
+    //        {
+    //            return this.olympicIDFieldSpecified;
+    //        }
+    //        set
+    //        {
+    //            this.olympicIDFieldSpecified = value;
+    //        }
+    //    }
 
-        public uint OlympicDiplomTypeID
-        {
-            get
-            {
-                return this.olympicDiplomTypeIDField;
-            }
-            set
-            {
-                this.olympicDiplomTypeIDField = value;
-            }
-        }
+    //    public uint OlympicDiplomTypeID
+    //    {
+    //        get
+    //        {
+    //            return this.olympicDiplomTypeIDField;
+    //        }
+    //        set
+    //        {
+    //            this.olympicDiplomTypeIDField = value;
+    //        }
+    //    }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool OlympicDiplomTypeIDSpecified
-        {
-            get
-            {
-                return this.olympicDiplomTypeIDFieldSpecified;
-            }
-            set
-            {
-                this.olympicDiplomTypeIDFieldSpecified = value;
-            }
-        }
+    //    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    //    public bool OlympicDiplomTypeIDSpecified
+    //    {
+    //        get
+    //        {
+    //            return this.olympicDiplomTypeIDFieldSpecified;
+    //        }
+    //        set
+    //        {
+    //            this.olympicDiplomTypeIDFieldSpecified = value;
+    //        }
+    //    }
 
-        public string DocumentNumber
-        {
-            get
-            {
-                return this.documentNumberField;
-            }
-            set
-            {
-                this.documentNumberField = value;
-            }
-        }
+    //    public string DocumentNumber
+    //    {
+    //        get
+    //        {
+    //            return this.documentNumberField;
+    //        }
+    //        set
+    //        {
+    //            this.documentNumberField = value;
+    //        }
+    //    }
 
-        public System.DateTime DocumentDate
-        {
-            get
-            {
-                return this.documentDateField;
-            }
-            set
-            {
-                this.documentDateField = value;
-            }
-        }
+    //    public System.DateTime DocumentDate
+    //    {
+    //        get
+    //        {
+    //            return this.documentDateField;
+    //        }
+    //        set
+    //        {
+    //            this.documentDateField = value;
+    //        }
+    //    }
 
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DocumentDateSpecified
-        {
-            get
-            {
-                return this.documentDateFieldSpecified;
-            }
-            set
-            {
-                this.documentDateFieldSpecified = value;
-            }
-        }
-    }
+    //    [System.Xml.Serialization.XmlIgnoreAttribute()]
+    //    public bool DocumentDateSpecified
+    //    {
+    //        get
+    //        {
+    //            return this.documentDateFieldSpecified;
+    //        }
+    //        set
+    //        {
+    //            this.documentDateFieldSpecified = value;
+    //        }
+    //    }
+    //}
 }

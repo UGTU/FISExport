@@ -18,7 +18,7 @@ namespace AbitExportProject.ActionMethods
             var orders = new List<PackageDataOrdersOrderOfAdmission>();
             foreach (var stud in ctx.Export_FB_journals.Where(x => (x.NNYear == year)))
             {
-                if (!ctx.ABIT_postups.Any(
+                if (!ctx.ABIT_postups.ToArray().Any(
                     x => (x.nCode == stud.nCode) && x.IsZachisl)) continue;
 
                 /*  var jourRecord =

@@ -86,7 +86,9 @@ namespace Fdalilib.Actions2015
 
         public RootImportedAppCheckResultPackage()
         {
-            this.getOlympicDocumentsField = new List<RootImportedAppCheckResultPackageGetOlympicDocument>();
+            //Удален в спецификации 3.0.3
+            //this.getOlympicDocumentsField = new List<RootImportedAppCheckResultPackageGetOlympicDocument>();
+
             this.getCompositionResultsField = new List<RootImportedAppCheckResultPackageGetCompositionResult>();
             this.getEgeDocumentsField = new List<RootImportedAppCheckResultPackageGetEgeDocument>();
             this.olympicDocumentCheckResultsField = new List<RootImportedAppCheckResultPackageOlympicDocumentCheckResult>();
@@ -181,18 +183,19 @@ namespace Fdalilib.Actions2015
             }
         }
 
-        [System.Xml.Serialization.XmlArrayItemAttribute("GetOlympicDocument", IsNullable = false)]
-        public List<RootImportedAppCheckResultPackageGetOlympicDocument> GetOlympicDocuments
-        {
-            get
-            {
-                return this.getOlympicDocumentsField;
-            }
-            set
-            {
-                this.getOlympicDocumentsField = value;
-            }
-        }
+        //Удален в спецификации 3.0.3
+        //[System.Xml.Serialization.XmlArrayItemAttribute("GetOlympicDocument", IsNullable = false)]
+        //public List<RootImportedAppCheckResultPackageGetOlympicDocument> GetOlympicDocuments
+        //{
+        //    get
+        //    {
+        //        return this.getOlympicDocumentsField;
+        //    }
+        //    set
+        //    {
+        //        this.getOlympicDocumentsField = value;
+        //    }
+        //}
     }
 
     public partial class RootImportedAppCheckResultPackageEgeDocumentCheckResult

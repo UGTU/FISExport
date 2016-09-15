@@ -159,12 +159,22 @@ namespace Fdalilib.Service
 
             /*var file1 = new System.IO.StreamWriter("requerst.txt");
             file1.WriteLine(innerParam);
-            file1.Close();*/
+            file1.Close();*/           
 
             Client.Encoding = Encoding.UTF8;
             Client.Headers["Content-Type"] = "text/xml";
-            var result = Client.UploadString(uri, innerParam);
-            Contract.Assert(!string.IsNullOrWhiteSpace(result));
+
+            string result = "";
+            try
+            {
+                result = Client.UploadString(uri, innerParam);
+                Contract.Assert(!string.IsNullOrWhiteSpace(result));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new XElement(XName.Get("NULL"));
+            }
 
             /*var file = new System.IO.StreamWriter("result.txt");
             file.WriteLine(result);

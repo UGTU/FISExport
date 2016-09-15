@@ -17,8 +17,7 @@ using Fdalilib.Service;
 namespace AbitExportProject
 {
     internal class Program
-    {
-    
+    {   
         internal static void Main(string[] args)
         {
             var actController = new ActionController();
@@ -28,10 +27,10 @@ namespace AbitExportProject
             Console.WriteLine("Операция выполнена. Нажмите [ENTER]...");
             Console.ReadLine();
 
-            //CreateEGEPatch();
-            //Требуется создавать 2 скрипта: для импорта заявления и для импорта приказов на зачисление
+            // CreateEGEPatch();
+            // Требуется создавать 2 скрипта: для импорта заявления и для импорта приказов на зачисление
 
-            //  GetDictionaryById(35);
+            // GetDictionaryById(35);
             // GetApplicationsStatus();  //получить статусы всех импортированных заявлений
 
             //DeleteApplication(DateTime.Now.Year, 0);  //удалить заявления
@@ -76,8 +75,6 @@ namespace AbitExportProject
 
             // var expRes = proxy.ExportBatch(pack)
             //RepeatExportTillResult(pack);
-
         }
-
     }     
 }
