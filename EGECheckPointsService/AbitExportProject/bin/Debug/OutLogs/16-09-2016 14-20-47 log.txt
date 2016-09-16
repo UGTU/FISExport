@@ -1,0 +1,8 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AuthData>
+    <Login>pk@ugtu.net</Login>
+    <Pass>2lvFeaJ</Pass>
+  </AuthData>
+</Root>
+<NULL />
+----------------------------\---------------------------------------------

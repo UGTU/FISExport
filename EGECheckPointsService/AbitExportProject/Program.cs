@@ -20,61 +20,22 @@ namespace AbitExportProject
     {   
         internal static void Main(string[] args)
         {
-            var actController = new ActionController();
-            actController.PrintPossibleActions(); //вывести все возможные действия
-            var action = Console.ReadLine();
-            actController.MakeAction(action.Trim());
-            Console.WriteLine("Операция выполнена. Нажмите [ENTER]...");
-            Console.ReadLine();
+            do
+            {
+                Console.Clear();
+                LogWriter.WriteToNext();
+                var actController = new ActionController();
+                //вывести все возможные действия
+                actController.PrintPossibleActions();
 
-            // CreateEGEPatch();
-            // Требуется создавать 2 скрипта: для импорта заявления и для импорта приказов на зачисление
+                Console.Write("\nВведите кодманду:");
 
-            // GetDictionaryById(35);
-            // GetApplicationsStatus();  //получить статусы всех импортированных заявлений
+                var action = Console.ReadLine();
+                actController.MakeAction(action.Trim());
 
-            //DeleteApplication(DateTime.Now.Year, 0);  //удалить заявления
-            //DeleteOrders(DateTime.Now.Year);
+                Console.WriteLine("\nНажмите [ANY KEY] для продолжения или [ESCAPE] для выхода...");
 
-            // DeleteSPOApplication();
-            //DeleteDefiniteApplication(115279);
-
-            //  GetImportResultById(mainProxy, 2487080, mainCtx);
-            //ParseXmlAnswer("mistake.xml");
-            //mainProxy.GetUniversityInfo(6377);
-            /*     
-#if DEBUG
-          // Для тестирования можно использовать явную задачу параметров 
-          //var param = new ExportParam(ExportType.Single, 67627);
-          var param = new ExportParam(ExportType.Batch, 0);
-#else
-          // Получение параметров из коммандной строки
-          var param = ParseArgument(args.Length == 1 ? args[0] : string.Empty);
-#endif
-
-          switch (param.ExportType)
-          {
-              // Экспорт данных по одному абитуриенту
-              case ExportType.Single:
-                  ExportSingle(param, DateTime.Now.Year);
-                  break;
-              // Экспорт данных по всем абитуриентам, данные по которым не эспортировались или были изменены с момента предыдущего экспорта
-              case ExportType.Batch:
-                  ExportBatch(DateTime.Now.Year);
-                  break;
-              default:
-                  // Утилита позволяет производить экспорт заявлений указанного студента, либо всех студентов, данные по которым не экспортировались в ФИС ЕГЭ
-                  // либо были изменены с момена прошедшего импорта
-                  Console.WriteLine("Usage: {0} [/Id:<abitId> | /p ]",
-                                    AppDomain.CurrentDomain.SetupInformation.ApplicationName);
-                 return;
-          }*/
-
-            //GetImportResultByID(mainProxy, 1333273, mainCtx);  //получить результат импорта
-            //mainProxy.GetUniversityInfo(6377);
-
-            // var expRes = proxy.ExportBatch(pack)
-            //RepeatExportTillResult(pack);
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
         }
     }     
 }

@@ -28,31 +28,38 @@ namespace AbitExportProject.ActionMethods
         {
             using (var mainCtx = new UGTUDataDataContext())
             {
-                var dicts = proxy.ReturnOrNullAndError(Package, "GetDictionaries");
-
-                if (dicts?.Items == null) return false;
-
-                Console.WriteLine("пошли выкачивать справочники: + {0} штук", dicts.Items.Count);
-                foreach (DictionariesDictionary dictionary in dicts.Items)
+                try
                 {
-                    Console.WriteLine(dictionary.Name);  
-                    DictionaryParser.ParseDictionary(mainCtx, dictionary);
+                    var dicts = proxy.ReturnOrNullAndError(Package, "GetDictionaries");
 
-                    CommitToDb(mainCtx);
-                    IBaseMethod dictDetailmethod;
-                    switch (dictionary.Code)
+                    if (dicts?.Items == null) return false;
+
+                    Console.WriteLine("пошли выкачивать справочники: + {0} штук", dicts.Items.Count);
+                    foreach (DictionariesDictionary dictionary in dicts.Items)
                     {
-                        case MagicNumberController.OlympicDictionary:
-                            dictDetailmethod = new GetOlympicDictionaryDetailsMethod();
-                            break;
-                        case MagicNumberController.SpecDictionary:
-                            dictDetailmethod = new GetSpecDictionaryDetailsMethod();
-                            break;
-                        default:
-                            dictDetailmethod = new GetDictionaryDetailsMethod {DictId = dictionary.Code};
-                            break;                                 
+                        Console.WriteLine(dictionary.Name);
+                        DictionaryParser.ParseDictionary(mainCtx, dictionary);
+
+                        CommitToDb(mainCtx);
+                        IBaseMethod dictDetailmethod;
+                        switch (dictionary.Code)
+                        {
+                            case MagicNumberController.OlympicDictionary:
+                                dictDetailmethod = new GetOlympicDictionaryDetailsMethod();
+                                break;
+                            case MagicNumberController.SpecDictionary:
+                                dictDetailmethod = new GetSpecDictionaryDetailsMethod();
+                                break;
+                            default:
+                                dictDetailmethod = new GetDictionaryDetailsMethod { DictId = dictionary.Code };
+                                break;
+                        }
+                        dictDetailmethod.Run(null);
                     }
-                    dictDetailmethod.Run(null);
+                }
+                catch(Exception)
+                {
+                    return false;
                 }
                 return true;
             }

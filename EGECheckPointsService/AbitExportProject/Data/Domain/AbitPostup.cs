@@ -33,17 +33,17 @@ namespace AbitExportProject.Data
 
         public int SpecIk
         {
-
             get
             {
                 //если бакалавры, магистры или специалитет
                 if (ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_FB.HasValue)
+                {
                     return ABIT_Diapazon_spec_fac.Relation_spec_fac.ik_spec;
+                }
                 else
                 {
-                    return (int) ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_main_spec;
+                    return (int)ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_main_spec;
                 }
-
             }
         }
 
@@ -55,7 +55,6 @@ namespace AbitExportProject.Data
                 var spik = SpecIk;
                 return mContext.EducationBranches.Single(x => x.ik_spec == spik).ik_FB ?? 0;
             }
-
         }
 
         public int StatusId => (IsZachisl) ? CurrentState : (int)(ABIT_sost_zach.ik_FB ?? NotAuthenticatedState);  //Если ik_FB = null, то считаем, что оно не прошло проверку

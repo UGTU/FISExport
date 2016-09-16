@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Fdalilib
 {
+    /// <summary>
+    /// Класс для записи лог-файлов
+    /// </summary>
     public static class LogWriter
     {
         private static object _syncRoot = new Object();
-        private static TextWriter _logWriter; //= Console.Out;
+        private static TextWriter _logWriter;
         public static TextWriter Logger
         {
             get
@@ -24,11 +27,19 @@ namespace Fdalilib
                 return _logWriter;
             }
         }
-
+        /// <summary>
+        /// Добавления сообщения в лог
+        /// </summary>
+        /// <param name="message">текст сообщения</param>
         public static void MakeLog(string message)
         {
             Logger.WriteLine(message);
             Logger.Flush();
+        }
+
+        public static void WriteToNext()
+        {
+            _logWriter = null;
         }
     }
 }

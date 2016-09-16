@@ -28,24 +28,27 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                Package.PackageData = new PackageData()
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    Applications = GetCurrentApps(mainCtx, Year, 0, 0)
-                };
-
-                var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
-
-                if (expRes == null) return false;
-                SavePackNumber(expRes.PackageID);
-                return true;
+                    Package.PackageData = new PackageData()
+                    {
+                        Applications = GetCurrentApps(mainCtx, Year, 0, 0)
+                    };
+                        var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
+                        if (expRes == null) return false;
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         public static List<PackageDataApplication> GetCurrentApps(UGTUDataDataContext ctx, int year, int specIk, int facIk) //если SpecIK == 0, то импортируем все специальности
         {                                                                                                                   //если FacIK == 0, то импортируем все институты
-
             var persons = ctx.ABIT_postups.Where(x =>
                                                 (x.ABIT_Diapazon_spec_fac.NNyear == year) &&                                        //за текущий год
                                                 ((x.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.ik_spec == specIk)     //фильтр специальности                      
@@ -58,43 +61,12 @@ namespace AbitExportProject.ActionMethods
             var apps = new List<PackageDataApplication>();
             var NotPerson = new List<Person>();
             //var ind = 0;
-            var set = new List<decimal>()   { 167778, 167793, 167808, 167901, 167936, 167937, 167951, 168020, 168027, 168057
-                                            , 168078, 168138, 168166, 168185, 168194, 168196, 168224, 168247, 168365, 168415
-                                            , 168457, 168490, 168507, 168514, 168572, 168613, 168614, 168663, 168798, 168804
-                                            , 168871, 168912, 168913, 168923, 168928, 168934, 168935, 168953, 168960, 168962
-                                            , 168967, 168979, 168984, 168992, 169019, 169057, 169067, 169098, 169103, 169124
-                                            , 169142, 169164, 169223, 169268, 169284, 169317, 169335, 169336, 169345, 169359
-                                            , 169364, 169378, 169381, 169404, 169406, 169440, 169444, 169472, 169474, 169475
-                                            , 169483, 169500, 169545, 169550, 169572, 169603, 169610, 169613, 169615, 169635
-                                            , 169641, 169648, 169652, 169655, 169672, 169695, 169697, 169709, 169723, 169770
-                                            , 169800, 169803, 169804, 169812, 169820, 169822, 169849, 169850, 169851, 169857
-                                            , 169863, 169869, 169877, 169887, 169911, 169920, 169933, 169934, 169977, 169990
-                                            , 170018, 170023, 170038, 170045, 170046, 170049, 170076, 170091, 170110, 170141
-                                            , 170157, 170160, 170169, 170178, 170184, 170189, 170193, 170194, 170198, 170206
-                                            , 170207, 170210, 170213, 170216, 170220, 170225, 170243, 170250, 170255, 170265
-                                            , 170282, 170284, 170285, 170287, 170289, 170299, 170300, 170326, 170334, 170337
-                                            , 170345, 170346, 170361, 170363, 170382, 170386, 170391, 170394, 170395, 170434
-                                            , 170477, 170480, 170481, 170498, 170510, 170516, 170519, 170558, 170565, 170572
-                                            , 170585, 170594, 170607, 170609, 170632, 170645, 170657, 170663, 170665, 170667
-                                            , 170682, 170699, 170707, 170713, 170779, 170875, 170884, 170912, 170968, 170990
-                                            , 171083, 171154, 171203, 171252, 171260, 171295, 171313, 171369, 171370, 171389
-                                            , 171394, 171410, 171416, 171421, 171423, 171424, 171442 };
             foreach (var person in persons)
             {
                 //проверка документов, без которой пакет вообще не будет принят сервисом
-                if (!person.IsAllDocsCorrect()) continue; 
+                if (!person.IsAllDataCorrect()) continue; 
 
-                if (set.Contains(person.nCode)) 
-                {
-                    NotPerson.Add(person);                 
-                    continue;   
-                }
                 apps.Add(BuildApplicationPackage(person, ctx, year));
-            }
-            if (NotPerson.Count > 0) Fdalilib.LogWriter.MakeLog("Не все студенты попали в пакет:");
-            foreach (var item in NotPerson)
-            {
-                Fdalilib.LogWriter.MakeLog(string.Format("{0}: {1} {2} {3}", item.nCode, item.Clastname, item.Cfirstname, item.Cotch));
             }
             return apps;
         }

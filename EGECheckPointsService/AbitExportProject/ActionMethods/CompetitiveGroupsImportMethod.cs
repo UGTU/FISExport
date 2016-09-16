@@ -26,32 +26,31 @@ namespace AbitExportProject.ActionMethods
         }
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                Package.PackageData = new PackageData()
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    AdmissionInfo = GetCompetitiveGroupsInfo(mainCtx, Year)
-                };
-                ImportPackageInfo expRes = null;
-                try
-                {
-                    expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
-                }
-                catch (Exception exception)
-                {
-                    GetImportException(exception);
-                }
-                
+                    Package.PackageData = new PackageData()
+                    {
+                        AdmissionInfo = GetCompetitiveGroupsInfo(mainCtx, Year)
+                    };
+                    ImportPackageInfo expRes = null;
 
-                if (expRes == null) return false;
-                SavePackNumber(expRes.PackageID);
-                return true;
+                    expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
+
+                    if (expRes == null) return false;
+                    SavePackNumber(expRes.PackageID);
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         private PackageDataAdmissionInfo GetCompetitiveGroupsInfo(UGTUDataDataContext mainCtx, int year)
-        {
-            
+        {         
             var campGroups = new List<PackageDataAdmissionInfoCompetitiveGroup>();
 
             //выбираем все кампании года
@@ -93,8 +92,7 @@ namespace AbitExportProject.ActionMethods
         /// <param name="campGroup"></param>
         /// <returns></returns>
         private static List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem> GetExams(UGTUDataDataContext mainCtx, int year, Abit_CompetitiveGroup campGroup)
-        {
-            
+        {           
             var allNaborsBySpec = mainCtx.ABIT_Diapazon_spec_facs.Where(x => (x.NNyear == year) &&
                                                                              (x.Relation_spec_fac.EducationBranch.ik_FB ==
                                                                               campGroup.SpecID) &&
@@ -126,12 +124,10 @@ namespace AbitExportProject.ActionMethods
                     examToFis.Add(ex);
                 }
             }
-
             return examToFis;
         }
 
-        private static string GetUniqueUID(ABIT_Diapazon_Disc defaultExam,
-            List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem> examToFis)
+        private static string GetUniqueUID(ABIT_Diapazon_Disc defaultExam, List<PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem> examToFis)
         {
             var uid = defaultExam.ik_disc_nabor;
             while (examToFis.Select(x => x.UID).Contains(uid.ToString())) uid++;

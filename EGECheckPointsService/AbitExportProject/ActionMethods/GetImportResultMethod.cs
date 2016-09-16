@@ -14,33 +14,46 @@ namespace AbitExportProject.ActionMethods
     {
         private string _question = "Введите номер пакета:";
         protected override string MethodName => "GetImportResultMethod";
-
         private uint PackID
         {
-            get { return Package.GetResultImportApplication.PackageID; }
-            set { Package.GetResultImportApplication.PackageID = value; }
+            get
+            {
+                return Package.GetResultImportApplication.PackageID;
+            }
+            set
+            {
+                Package.GetResultImportApplication.PackageID = value;
+            }
         }
-
         public override string ToString()
         {
             return "Получить результаты импорта...";
         }
         public int Year => DateTime.Today.Year;
-
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                int packId;
-                if ((askMore == null)|| !int.TryParse(askMore(_question), out packId))
-                    packId = Convert.ToInt32(mainCtx.PackageImports.OrderByDescending(x => x.ImportTime).First().id);
+                using (var mainCtx = new UGTUDataDataContext())
+                {
+                    int packId;
+                    if ((askMore == null) || !int.TryParse(askMore(_question), out packId))
+                    {
+                        packId = Convert.ToInt32(mainCtx.PackageImports.OrderByDescending(x => x.ImportTime).First().id);
+                    }
 
-                PackID = (uint) packId;
+                    PackID = (uint)packId;
 
-                var Result = proxy.ReturnOrNullAndError(Package, "ImportPackResult");
+                    var Result = proxy.ReturnOrNullAndError(Package, "ImportPackResult");
+                }
+            }
+            catch (Exception)
+            {
+                return false;
             }
             return true;
         }
+
         protected override void SetAuth()
         {
             Package.AuthData.Login = Login;

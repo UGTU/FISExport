@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AbitExportProject.DataDecoders;
 
@@ -77,81 +78,125 @@ namespace AbitExportProject.Data
             Fdalilib.LogWriter.MakeLog("");
         }
 
-        public bool IsIdentityDocsCorrect()
+        /// <summary>
+        /// Проверка на корректность идентифицирующих документов
+        /// </summary>
+        /// <returns></returns>
+        public bool IsIdentityDocumentsCorrect()
         {
             if (IdentityDocs.Count == 0)
             {
                 SetError("Нет идентификационного документа");
                 return false;
             }
-            if (IdentityDocs.Any(doc => doc.Dd_vidan == null))
+
+            var NotCorrect = IdentityDocs.Where(doc => doc.Dd_vidan == null);
+            if (NotCorrect?.Count() > 0)
             {
-                SetError(string.Format("В идентификационном документе ({0}) должна быть дата выдачи", string.Join(", ", EducationalDocs.Select(x => x.document.cvid_doc))));
+                SetError(string.Format("В идентификационном документе ({0}) должна быть дата выдачи", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
                 return false;
             }
-            if (IdentityDocs.Any(doc => (doc.Ik_vid_doc == Doc_stud.VremDocument) && doc.IsEmptySeria))
+
+            NotCorrect = IdentityDocs.Where(doc => string.IsNullOrEmpty(doc.Number));
+            if (NotCorrect?.Count() > 0)
             {
-                SetError("Во временном удостоверении должна быть серия");
+                SetError(string.Format("В идентификационном документе ({0}) должен быть номер", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+
+
+            if (IdentityDocs.Any(x => x.Ik_vid_doc == (int)IdentityDocuments.Passport && string.IsNullOrEmpty(x.Seria)))
+            {
+                SetError("Паспорт РФ должен иметь серию");
                 return false;
             }
 
             return true;
         }
 
-        public bool IsEducationalDocsCorrect()
+        /// <summary>
+        /// Проверка на корректность документов об образовании
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEducationalDocumentsCorrect()
         {
             if (EducationalDocs.Count == 0)
             {
                 SetError("Нет образовательного документа");
                 return false;
             }
-            if ( EducationalDocs.Any( doc => (doc.Ik_vid_doc == Doc_stud.MiddleEduDiplomaDocument || doc.Ik_vid_doc == Doc_stud.HighEduDiplomaDocument) 
-                                             && doc.IsEmptySeria))
+
+            var NotCorrect = EducationalDocs.Where(x => (x.Ik_vid_doc == (int)EducationalDocuments.BasicDiploma
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.MiddleEduDiplome
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.IncomplHightEduDiploma
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.HightEduDiploma
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.PostGraduateDiploma
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.PhDDiploma
+                                                           || x.Ik_vid_doc == (int)EducationalDocuments.AcademicDiploma)
+                                                    && string.IsNullOrEmpty(x.Seria));
+            if (NotCorrect?.Count() > 0)
             {
-                SetError(string.Format("Диплом об образовании ({0}) должен иметь серию", string.Join(", ", EducationalDocs.Select(x => x.document.cvid_doc))));
+                SetError(string.Format("Документ об образовании ({0}) должен иметь серию", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
                 return false;
             }
+
+            NotCorrect = EducationalDocs.Where(x => x.Ik_vid_doc != (int)EducationalDocuments.Another && string.IsNullOrEmpty(x.Number));
+            if (NotCorrect?.Count() > 0)
+            {
+                SetError(string.Format("Документ об образовании ({0}) должен иметь номер", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+
+            NotCorrect = EducationalDocs.Where(x => (x.Ik_vid_doc == (int)EducationalDocuments.Another) && (x.Dd_vidan == null || string.IsNullOrEmpty(x.document.cvid_doc)));
+            if(NotCorrect?.Count() > 0)
+            {
+                SetError(string.Format("Иной документ об образовании ({0}) должен иметь и дату выдачи и наименование", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
+                return false;
+            }
+
             return true;
         }
 
-        public bool IsAllDocsCorrect()
+        /// <summary>
+        /// Проверка данных на корректность
+        /// </summary>
+        /// <returns></returns>
+        public bool IsAllDataCorrect()
         {
-            if (AllDocs.Any(a => !a.IsCorrectData))
+            var NotCorrect = AllDocs.Where(x => x?.Dd_vidan > DateTime.Today);
+            //if (NotCorrect?.Count() > 0)
+            //{
+            //    SetError(string.Format("Дата документа ({0}) должны быть выданы в прошлом, а не в будущем", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
+            //    return false;
+            //}
+
+            NotCorrect = AllDocs.Where(a => a.document.ik_FB == null);
+
+            if (NotCorrect?.Count() > 0)
             {
-                SetError(string.Format("Дата документа ({0}) должны быть выданы в прошлом, а не в будущем", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
+                SetError(string.Format("Для документа ({0}) должны быть проставлены код из справочников ФИС", string.Join(", ", NotCorrect.Select(x => x.document.cvid_doc))));
                 return false;
             }
-            if (AllDocs.Any(a => string.IsNullOrEmpty(a.Number)))
-            {
-                SetError(string.Format("У документа ({0}) должен быть номер", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
-                return false;
-            }
-            if (AllDocs.Any(a => a.Dd_vidan != null))
-            {
-                SetError(string.Format("Дата выдачи документа ({0}) должна быть проставлены", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
-                return false;
-            }
-            if (AllDocs.Any(a => a.document.ik_FB != null))
-            {
-                SetError(string.Format("Для документа ({0}) должны быть проставлены код из справочников ФИС", string.Join(", ", AllDocs.Select(x => x.document.cvid_doc))));
-                return false;
-            }
+
             if (Dd_birth == null)
             {
                 SetError("Дата рождения должна быть проставлена");
                 return false;
             }
+
             if (IdentityDoc == null)
             {
                 SetError("Идентификационный документ не может отсутствовать");
                 return false;
             }
+
             if (grazd.ik_FB == null)
             {
                 SetError("Гражданство не может отсутствовать");
                 return false;
             }
-            return IsIdentityDocsCorrect() && IsEducationalDocsCorrect();
+
+            return IsIdentityDocumentsCorrect() && IsEducationalDocumentsCorrect();
         }
     }
 }

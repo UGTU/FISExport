@@ -26,19 +26,27 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                Package.PackageData = new PackageData()
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    AdmissionInfo = GetAdmissionVolumeInfo(mainCtx, Year)
-                };
+                    Package.PackageData = new PackageData()
+                    {
+                        AdmissionInfo = GetAdmissionVolumeInfo(mainCtx, Year)
+                    };
 
-                var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
+                    var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
 
-                if (expRes == null) return false;
-                SavePackNumber(expRes.PackageID);
-                return true;                
+                    if (expRes == null) return false;
+
+                    SavePackNumber(expRes.PackageID);
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         private PackageDataAdmissionInfo GetAdmissionVolumeInfo(UGTUDataDataContext mainCtx, int year)
@@ -107,27 +115,7 @@ namespace AbitExportProject.ActionMethods
                     AdmissionInfo.NumberQuotaZSpecified = AdmissionInfo.NumberQuotaZ > 0;
 
                     admVolume.Add(AdmissionInfo);
-
-
-                    /*abitSpec.Main_NNRecord_FB = abitSpec.NNrecord;
-                    var exams = abitSpec.ABIT_Diapazon_Discs.Select(disc => new PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem()
-                    {
-                        UID = disc.ik_disc_nabor.ToString(),
-                        EntranceTestTypeID = (uint)(disc.ABIT_Disc.ik_FB_type),
-                        //Form = (disc.ABIT_Disc.ik_FB != null ? "ЕГЭ" : "Вступительное испытание ОУ"),
-                        EntranceTestSubject = /*(disc.ABIT_Disc.ik_FB != null) ?
-                    new TEntranceTestSubject()
-                    {
-                     SubjectID = (uint)(disc.ABIT_Disc.ik_FB)
-                    } :
-                        new TEntranceTestSubject()
-                        {
-                            //SubjectName = disc.ABIT_Disc.сname_disc.Trim()
-                        }
-                    }).ToList();*/
-
                 }
-
             }
             var admissionInfo = new PackageDataAdmissionInfo()
             {
@@ -135,137 +123,6 @@ namespace AbitExportProject.ActionMethods
             };
 
             return admissionInfo;
-
-
-            /* foreach (var abitSpec in abitSpecs.Where(abitSpec => (abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB.HasValue) &&
-                                                                  (abitSpec.Relation_spec_fac.EducationBranch.ik_FB.HasValue)
-                                                                  ))
-             {
-                 //  var specIk = abitSpec.Relation_spec_fac.ik_spec;
-                 var directIK = abitSpec.Relation_spec_fac.EducationBranch.ik_FB;
-                 var levelIK = abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB;
-                 if (admVolume.Exists(x => (x.DirectionID == abitSpec.Relation_spec_fac.EducationBranch.ik_FB)
-                                           && (x.EducationLevelID == levelIK)))
-                 {
-                     //abitSpec.Main_NNRecord_FB = Convert.ToInt32(
-                     //    admVolume.Single(x => (x.DirectionID == abitSpec.Relation_spec_fac.EducationBranch.ik_FB)
-                     //                                 && (x.EducationLevelID == levelIK))
-                     //        .NNRecord);
-                     continue;
-                 }
-
-                 var cGi = new PackageDataAdmissionInfoItem
-                 {
-                     //тут уместнее код специальности?
-                     UID = abitSpec.Relation_spec_fac.ik_spec.ToString(), //abitSpec.NNrecord.ToString(),
-                     CampaignUID = campain.UID.ToString(),
-                     EducationLevelID = (uint)abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB,
-                     DirectionID = (uint)abitSpec.Relation_spec_fac.EducationBranch.ik_FB,
-                     //бюджет
-                     NumberBudgetO = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0),
-                     NumberBudgetZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0),
-                     NumberBudgetOZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0),
-                     //договор (устанавливаем плановые цифры только в том случае, если набор по данной форме обучения есть)
-                     NumberPaidO = (uint)((abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0) ? 50 : 0),
-                     NumberPaidZ = (uint)((abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0) ? 50 : 0),
-                     NumberPaidOZ = (uint)((abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0) ? 50 : 0),
-                     //особое право
-                     NumberQuotaO = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0),
-                     NumberQuotaZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0),
-                     NumberQuotaOZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0)
-                 };
-                 //отправляем только там, где есть цифры приема
-                 cGi.NumberBudgetOSpecified = cGi.NumberBudgetO > 0;
-                 cGi.NumberBudgetOZSpecified = cGi.NumberBudgetOZ > 0;
-                 cGi.NumberBudgetZSpecified = cGi.NumberBudgetZ > 0;
-                 cGi.NumberPaidOSpecified = cGi.NumberPaidO > 0;
-                 cGi.NumberPaidOZSpecified = cGi.NumberPaidOZ > 0;
-                 cGi.NumberPaidZSpecified = cGi.NumberPaidZ > 0;
-                 cGi.NumberQuotaOSpecified = cGi.NumberQuotaO > 0;
-                 cGi.NumberQuotaOZSpecified = cGi.NumberQuotaOZ > 0;
-                 cGi.NumberQuotaZSpecified = cGi.NumberQuotaZ > 0;
-
-
-                 abitSpec.Main_NNRecord_FB = abitSpec.NNrecord;
-                 var exams = abitSpec.ABIT_Diapazon_Discs.Select(disc => new PackageDataAdmissionInfoCompetitiveGroupEntranceTestItem()
-                 {
-                     UID = disc.ik_disc_nabor.ToString(),
-                     EntranceTestTypeID = (uint)(disc.ABIT_Disc.ik_FB_type),
-                     //Form = (disc.ABIT_Disc.ik_FB != null ? "ЕГЭ" : "Вступительное испытание ОУ"),
-                     EntranceTestSubject = /*(disc.ABIT_Disc.ik_FB != null) ?
-                 new TEntranceTestSubject()
-                 {
-                  SubjectID = (uint)(disc.ABIT_Disc.ik_FB)
-                 } :
-                     new TEntranceTestSubject()
-                     {
-                     //SubjectName = disc.ABIT_Disc.сname_disc.Trim()
-                 }
-                 }).ToList();
-*/
-
-            ////конкурсные группы
-            //compGroups.Add(new PackageDataAdmissionInfoCompetitiveGroup()
-            //{
-            //    CampaignUID = currCampain.UID.ToString(),
-            //    UID = abitSpec.NNrecord.ToString(),
-            //    Course = 1,
-            //    Name =
-            //        abitSpec.Relation_spec_fac.EducationBranch.Cname_spec + "(" +
-            //        abitSpec.Relation_spec_fac.EducationBranch.Direction.cShort_name_direction + ")",
-            //    Items = new List<PackageDataAdmissionInfoCompetitiveGroupCompetitiveGroupItem>() { cGi }
-            //});
-
-            //if (exams.Count > 0) compGroups[compGroups.Count - 1].EntranceTestItems = exams;
-
-            //объем и структура приема
-            //var aV = new PackageDataAdmissionInfoItem
-            //{
-            //    UID = abitSpec.NNrecord.ToString(),
-            //    CampaignUID = currCampain.UID.ToString(),
-            //    Course = 1,
-            //    EducationLevelID = (uint)abitSpec.Relation_spec_fac.EducationBranch.Direction.ik_FB,
-            //    DirectionID = (uint)abitSpec.Relation_spec_fac.EducationBranch.ik_FB,
-            //    NNRecord = abitSpec.NNrecord,  //доп. поле
-            //    NumberBudgetO = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0),
-            //    NumberBudgetZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0),
-            //    NumberBudgetOZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestBudjet) ?? 0)
-            //};
-
-            //бюджет
-            //договор (устанавливаем плановые цифры только в том случае, если набор по данной форме обучения есть)
-            //if (abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0)
-            //    aV.NumberPaidO = 50;
-            //if (abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0)
-            //    aV.NumberPaidZ = 50;
-            //if (abitSpecs.Count(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)) > 0)
-            //    aV.NumberPaidOZ = 50;
-            ////особое право
-            //aV.NumberQuotaO = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0);
-            //aV.NumberQuotaZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0);
-            //aV.NumberQuotaOZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestLgot) ?? 0);
-            ////целевой прием
-            //aV.NumberTargetO = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Ochn) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestCKP) ?? 0);
-            //aV.NumberTargetZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == Zaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestCKP) ?? 0);
-            //aV.NumberTargetOZ = (uint)(abitSpecs.Where(y => (y.Relation_spec_fac.EducationBranch.ik_FB == directIK) && (y.Relation_spec_fac.Ik_form_ed == OZaoch) && (y.Relation_spec_fac.EducationBranch.Direction.ik_FB == levelIK)).Sum(z => z.MestCKP) ?? 0);
-            ////отправляем только там, где есть цифры приема
-            //aV.NumberBudgetOSpecified = aV.NumberBudgetO > 0;
-            //aV.NumberBudgetOZSpecified = aV.NumberBudgetOZ > 0;
-            //aV.NumberBudgetZSpecified = aV.NumberBudgetZ > 0;
-            //aV.NumberPaidOSpecified = aV.NumberPaidO > 0;
-            //aV.NumberPaidOZSpecified = aV.NumberPaidOZ > 0;
-            //aV.NumberPaidZSpecified = aV.NumberPaidZ > 0;
-            //aV.NumberQuotaOSpecified = aV.NumberQuotaO > 0;
-            //aV.NumberQuotaOZSpecified = aV.NumberQuotaOZ > 0;
-            //aV.NumberQuotaZSpecified = aV.NumberQuotaZ > 0;
-            //aV.NumberTargetOSpecified = aV.NumberTargetO > 0;
-            //aV.NumberTargetOZSpecified = aV.NumberTargetOZ > 0;
-            //aV.NumberTargetZSpecified = aV.NumberTargetZ > 0;
-
-            //admVolume.Add(aV);
-
-
-
         }
     }
 }

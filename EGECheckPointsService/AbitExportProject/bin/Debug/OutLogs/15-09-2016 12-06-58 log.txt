@@ -1,0 +1,11 @@
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GetDictionaryContent>
+    <DictionaryCode>10</DictionaryCode>
+  </GetDictionaryContent>
+  <AuthData>
+    <Login>pk@ugtu.net</Login>
+    <Pass>2lvFeaJ</Pass>
+  </AuthData>
+</Root>
+<NULL />
+----------------------------\---------------------------------------------

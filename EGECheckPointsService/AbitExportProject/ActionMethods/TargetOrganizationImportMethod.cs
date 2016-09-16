@@ -25,19 +25,26 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                Package.PackageData = new PackageData()
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    TargetOrganizations = GetTargetOrganization(mainCtx, Year)
-                };
+                    Package.PackageData = new PackageData()
+                    {
+                        TargetOrganizations = GetTargetOrganization(mainCtx, Year)
+                    };
 
-                var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
+                    var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
 
-                if (expRes == null) return false;
-                SavePackNumber(expRes.PackageID);
-                return true;
+                    if (expRes == null) return false;
+                    SavePackNumber(expRes.PackageID);
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         private List<PackageDataTargetOrganization> GetTargetOrganization(UGTUDataDataContext mainCtx, int year)

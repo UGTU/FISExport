@@ -21,9 +21,6 @@ namespace AbitExportProject.ActionMethods
                 if (!ctx.ABIT_postups.ToArray().Any(
                     x => (x.nCode == stud.nCode) && x.IsZachisl)) continue;
 
-                /*  var jourRecord =
-                           ctx.Export_FB_journals.FirstOrDefault(x => x.nCode == stud.nCode);*/
-
                 //Если были ошибки на этапе импорта заявления 
                 if (stud.Import_result != "Is exported")
                 {
@@ -32,10 +29,8 @@ namespace AbitExportProject.ActionMethods
                     continue;
                 }
 
-                foreach (   //получить заявления, по которому зачислили студента
-                    var app in
-                        ctx.ABIT_postups.Where(x => (x.nCode == stud.nCode) && (x.IsZachisl))
-                    )
+                //получить заявления, по которому зачислили студента
+                foreach (var app in ctx.ABIT_postups.Where(x => (x.nCode == stud.nCode) && (x.IsZachisl)))
                 {
 
                     var stageVal = ctx.Abit_Campaign_Contents.Single(x => (x.ik_prikaz_zach == app.ik_prikaz_zach)
@@ -47,22 +42,8 @@ namespace AbitExportProject.ActionMethods
                     {
                         orders.Add(new PackageDataOrdersOrderOfAdmission()
                         {
-                            //Application = new PackageDataOrdersOrderOfAdmission()
-                            //{
-                            //    ApplicationNumber = stud.nCode.ToString(),
-                            //    RegistrationDate = (DateTime)ctx.Export_FB_journals.Single(y => y.nCode == stud.nCode).Registration_Date,
-                            //    OrderIdLevelBudget = ((app.Kat_zach.ik_type_kat == Budjet) || (app.Kat_zach.ik_type_kat == CKP)) ?
-                            //    (uint)app.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.FinancingSource.ik_FB : 0
-                            //},
-                            //EducationLevelID =
-                            //    (uint)app.ABIT_Diapazon_spec_fac.Relation_spec_fac.EducationBranch.Direction.ik_FB,
-                            //DirectionID = (uint)app.DirectionId,
-                            //EducationFormID = (uint)app.ABIT_Diapazon_spec_fac.Relation_spec_fac.Form_ed.ik_FB,
-                            //CompetitiveGroupUID = app.ABIT_Diapazon_spec_fac.Main_NNRecord_FB.ToString(),
-
                             FinanceSourceID = (uint)app.Kat_zach.TypeKatZach.ik_FB,
                             OrderOfAdmissionUID = app.ik_prikaz_zach.ToString()
-
                         });
                         if (stageVal != null) orders[orders.Count - 1].Stage = (uint)stageVal;
                     }
@@ -92,22 +73,29 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                var pack = new PackageData
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    Orders = new PackageDataOrders()
+                    var pack = new PackageData
                     {
-                        OrdersOfAdmission = GetOrdersOfAdmission(mainCtx, Year)
-                    }
-                };
+                        Orders = new PackageDataOrders()
+                        {
+                            OrdersOfAdmission = GetOrdersOfAdmission(mainCtx, Year)
+                        }
+                    };
 
-                var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
+                    var expRes = proxy.ReturnOrNullAndError(Package, "ImportPack");
 
-                if (expRes == null) return false;
-                SavePackNumber(expRes.PackageID);
-                return true;
+                    if (expRes == null) return false;
+                    SavePackNumber(expRes.PackageID);
+                }
             }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

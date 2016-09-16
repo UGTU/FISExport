@@ -22,17 +22,25 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-           Package.GetDictionaryContent.DictionaryCode = MagicNumberController.SpecDictionary;
-           var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
-
-            if (curDict.DictionaryItems == null) return false;
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                foreach (var dictItem in curDict.DictionaryItems)
+                Package.GetDictionaryContent.DictionaryCode = MagicNumberController.SpecDictionary;
+                var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
+
+                if (curDict.DictionaryItems == null) return false;
+
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    DictionaryParser.ParseSpecDictionaryItems(mainCtx, dictItem, MagicNumberController.SpecDictionary);
+                    foreach (var dictItem in curDict.DictionaryItems)
+                    {
+                        DictionaryParser.ParseSpecDictionaryItems(mainCtx, dictItem, MagicNumberController.SpecDictionary);
+                    }
+                    CommitToDb(mainCtx);
                 }
-                CommitToDb(mainCtx);
+            }
+            catch(Exception)
+            {
+                return false;
             }
             return true;
         }

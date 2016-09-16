@@ -21,20 +21,26 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            using (var mainCtx = new UGTUDataDataContext())
+            try
             {
-                var lastName = (askMore != null) ? askMore(_question) : "";
-                using (var file = new StreamWriter(FileName + lastName + DateTime.Today.ToString("yyyy MMMM dd") + @".csv", true, Encoding.UTF8))
+                using (var mainCtx = new UGTUDataDataContext())
                 {
-                    foreach (
-                        var abit in
-                            mainCtx.Export_FB_journals.Where(x => (x.NNYear == Year) && (((lastName == "") 
-                            && x.Person.Student.ABIT_postups.Any(y=>y.NeedCheckEGE == true)) || (x.Person.Clastname == lastName))
-                            ).OrderBy(y => y.Person.Clastname))
+                    var lastName = (askMore != null) ? askMore(_question) : "";
+                    using (var file = new StreamWriter(FileName + lastName + DateTime.Today.ToString("yyyy MMMM dd") + @".csv", true, Encoding.UTF8))
                     {
-                        PackAbitToFile(mainCtx, abit, file);
+                        foreach (var abit in
+                                              mainCtx.Export_FB_journals.Where(x => (x.NNYear == Year) && (((lastName == "")
+                                              && x.Person.Student.ABIT_postups.Any(y => y.NeedCheckEGE == true)) || (x.Person.Clastname == lastName))
+                                              ).OrderBy(y => y.Person.Clastname))
+                        {
+                            PackAbitToFile(mainCtx, abit, file);
+                        }
                     }
                 }
+            }
+            catch(Exception)
+            {
+                return false;
             }
             return true;
         }

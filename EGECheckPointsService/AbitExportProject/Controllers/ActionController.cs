@@ -54,7 +54,7 @@ namespace AbitExportProject.Controllers
             var arr = _actionList.ToArray();
             for (var i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine(@"{0} - {1}", i, arr[i].ToString());
+                Console.WriteLine("{0,3} - {1}", i, arr[i].ToString());
             }
 
             /*
@@ -84,8 +84,9 @@ namespace AbitExportProject.Controllers
             if (!_actionList.ToArray()[idAction].Run(AskByConsole))
             {
                 Console.WriteLine("Операция прошла с ошибками. Смотрите результаты в папке OutLogs");
+                return;
             };
-
+            Console.WriteLine("Операция выполнена");
         }
     }
 }

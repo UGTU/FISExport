@@ -29,22 +29,30 @@ namespace AbitExportProject.ActionMethods
 
         public bool Run(Func<string, string> askMore)
         {
-            if (askMore != null)
+            try
             {
-                int dictId;
-                if (int.TryParse(askMore(_question), out dictId)) DictId = (uint)dictId;
-            }
-            
-            var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
-
-            if (curDict.DictionaryItems == null) return false;
-            using (var mainCtx = new UGTUDataDataContext())
-            {
-                foreach (var dictItem in curDict.DictionaryItems)
+                if (askMore != null)
                 {
-                    DictionaryParser.ParseDictionaryItems(mainCtx, dictItem, (int)DictId);
+                    int dictId;
+                    if (int.TryParse(askMore(_question), out dictId)) DictId = (uint)dictId;
                 }
-                CommitToDb(mainCtx);
+
+                var curDict = proxy.ReturnOrNullAndError(Package, "GetDictionaryDetails");
+
+                if (curDict.DictionaryItems == null) return false;
+
+                using (var mainCtx = new UGTUDataDataContext())
+                {
+                    foreach (var dictItem in curDict.DictionaryItems)
+                    {
+                        DictionaryParser.ParseDictionaryItems(mainCtx, dictItem, (int)DictId);
+                    }
+                    CommitToDb(mainCtx);
+                }
+            }
+            catch(Exception)
+            {
+                return false;
             }
             return true;
         }
