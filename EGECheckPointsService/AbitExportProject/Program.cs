@@ -28,7 +28,7 @@ namespace AbitExportProject
                 //вывести все возможные действия
                 actController.PrintPossibleActions();
 
-                Console.Write("\nВведите кодманду:");
+                Console.Write("\nВведите кодманду: ");
 
                 var action = Console.ReadLine();
                 actController.MakeAction(action.Trim());

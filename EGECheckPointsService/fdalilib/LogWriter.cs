@@ -39,6 +39,7 @@ namespace Fdalilib
 
         public static void WriteToNext()
         {
+            _logWriter.Close();
             _logWriter = null;
         }
     }
